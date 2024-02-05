@@ -70,7 +70,7 @@ function HomeIntroSection() {
         <Heading
           fontWeight="700"
           fontSize={media.isDesktop ? "60px" : "25px"}
-          fontFamily="nexa"
+          fontFamily="nexaFont"
           w={media.isDesktop && "450px"}
           color={colors.accent2}
           mb={media.isDesktop ? "50px" : "20px"}

@@ -9,7 +9,6 @@ import "./styles/main.css"
 ReactDOM.createRoot(document.getElementById("root")).render(
   <ChakraProvider>
     <BrowserRouter>
-    
       <div className="App">
         <AppProvider>
           <AppLayout />

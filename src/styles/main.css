@@ -14,6 +14,12 @@
   src: url("../fonts//Protest-Riot-Regular.ttf") format("truetype");
 }
 
+
+@font-face {
+  font-family: "nexaFont";
+  src: url("../fonts/Nexa-Trial-Regular.ttf") format("truetype");
+}
+
 /* @font-face {
     font-family: 'Lato';
     src: local('Lato'), url(./fonts/Lato-Regular.otf) format('opentype');
