@@ -5,7 +5,7 @@ import path from "node:path"
 
 
 export default defineConfig({
-  base: "/Prolanx-Frontend/",
+  base: "/",
   // base: "/",
   plugins: [react()],
   resolve: {
