@@ -1,0 +1,20 @@
+@font-face {
+  font-family: "nexa";
+  src: url("../fonts/Nexa-Trial-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "mont";
+  src: url("../fonts/Mont-Regular.ttf") format("truetype");
+}
+
+
+@font-face {
+  font-family: "protest";
+  src: url("../fonts//Protest-Riot-Regular.ttf") format("truetype");
+}
+
+/* @font-face {
+    font-family: 'Lato';
+    src: local('Lato'), url(./fonts/Lato-Regular.otf) format('opentype');
+  } */
