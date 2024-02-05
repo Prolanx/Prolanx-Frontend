@@ -1,6 +1,6 @@
 import React from "react";
 import { colors } from "../../constants/design";
-import { Button, Heading, Box, Text } from "@chakra-ui/react";
+import { Button, Heading, Box, Text, Flex } from "@chakra-ui/react";
 import useResponsive from "../../hooks/useResponsive";
 
 function ServiceItem({ data, isHideBorder, isBorderTop }) {
@@ -14,19 +14,29 @@ function ServiceItem({ data, isHideBorder, isBorderTop }) {
       borderRight={isHideBorder ? "0px" : border}
       borderTop={isBorderTop && border}
       color={colors.black}
-      // bg="red"
       pos="relative"
     >
-      <Heading
-        fontSize={media.isMobile ? "20px" : "28px"}
-        mb="36px"
-        fontWeight="600"
-        color="#2E3133"
-        maxW={media.isDesktop && "127px"}
-        fontFamily="nexa"
-      >
-        {data.title}
-      </Heading>
+      <Flex flexDir={media.isDesktop ? "column" : "row"} mb="36px">
+        <Heading
+          fontSize={media.isMobile ? "20px" : "28px"}
+          fontWeight="600"
+          color="#2E3133"
+          fontFamily="nexa"
+          mb={1}
+          me={!media.isDesktop && 2}
+        >
+          Prolanx
+        </Heading>
+
+        <Heading
+          fontSize={media.isMobile ? "20px" : "28px"}
+          fontWeight="600"
+          color="#2E3133"
+          fontFamily="nexa"
+        >
+          {data.title}
+        </Heading>
+      </Flex>
 
       <Text
         fontSize={media.isMobile ? "14px" : "16px"}

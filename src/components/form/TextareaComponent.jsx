@@ -3,7 +3,7 @@ import { Box, FormControl, FormErrorMessage, FormLabel, Textarea } from "@chakra
 
 import { Field, useField } from "formik";
 
-function TextareaComponent({ label, ...props }) {
+function TextAreaComponent({ label, ...props }) {
   const [field, meta] = useField(props);
   return (
     <FormControl mb={3} isInvalid={meta.error && meta.touched}>
@@ -18,4 +18,4 @@ function TextareaComponent({ label, ...props }) {
   );
 }
 
-export default TextareaComponent;
+export default TextAreaComponent;

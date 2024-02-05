@@ -1,15 +1,15 @@
 import { Box, Button, Center, Heading } from "@chakra-ui/react";
 import React from "react";
-import Footer from "../../components/footer/Footer";
 import FormComponent from "../../components/form/FormComponent";
 import InputComponent from "../../components/form/InputComponent";
-import TextareaComponent from "../../components/form/TextAreaComponent";
 import { useSendEmail } from "./hooks/useSendEmail";
 import Header from "../../components/header/Header";
 import ModalNotify from "../../components/overlay/Modal-Notify";
 import { FiSend } from "react-icons/fi";
 import { colors } from "../../constants/design";
 import useResponsive from "../../hooks/useResponsive";
+
+
 function Email() {
   const emailHook = useSendEmail();
   const { apiState } = emailHook;
@@ -50,13 +50,6 @@ function Email() {
               placeholder="Enter subject"
             />
 
-            <TextareaComponent
-              h="300px"
-              label="Message"
-              name="message"
-              placeholder="Enter message"
-              minH="200px"
-            />
 
             <Button
               type="submit"

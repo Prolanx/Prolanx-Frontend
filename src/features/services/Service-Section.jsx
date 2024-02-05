@@ -17,31 +17,31 @@ function ServiceSection() {
       link: null,
     },
     {
-      title: "Prolanx Academy",
+      title: "Academy",
       message:
         "Specialized training programs in specialized emerging technologies and digital transformation, designed with an AGILE structure to stay current with industry trends",
       link: "link",
     },
     {
-      title: "Prolanx Innovate",
+      title: "Innovate",
       message:
         "Development of innovative digital products to address specific market needs, fostering a collaborative environment for creativity",
       link: "link",
     },
     {
-      title: "Prolanx Hub",
+      title: "Hub",
       message:
         "State-of-the art co-working spaces designed for startups, freelancers and small teams equipped with advanced technology",
       link: "link",
     },
     {
-      title: "Prolanx Talent",
+      title: "Talent",
       message:
         "Expert IT recruitment services to bridge the gap between top-tier digital talent and companies in need",
       link: "link",
     },
     {
-      title: "Prolanx Insights",
+      title: "Insights",
       message:
         "Cutting edge research in tech trends contributing significantly to the global digital transformation discourse",
       link: "link",
