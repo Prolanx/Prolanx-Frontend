@@ -1,6 +1,6 @@
 import React from "react";
 import ChooseUsItem from "./Choose-Us-Item";
-import { Box, Divider, Flex, Heading } from "@chakra-ui/react";
+import { Box, Divider, Flex, Heading, SimpleGrid } from "@chakra-ui/react";
 import { colors } from "../../constants/design";
 
 import innovateIcon from "../../assets/innovation-icon.png";
@@ -47,14 +47,31 @@ function ChooseUsSection() {
 
   return (
     <SectionWrapper bg={colors.primary2}>
-      
-      <SectionTitle name="Why Choose us" pb="8px" mb="60px" />
 
-      <Flex flexDir={media.isDesktop ? "row " : "column"}>
+
+
+      <SectionTitle
+        name="Why Choose us"
+        pb="8px"
+        mb="60px"
+        textAlign="center"
+      />
+
+
+      <SimpleGrid columns={4} bg="red">
         {chooseUsOptions.map((item) => (
           <ChooseUsItem data={item} icons={chooseUsIcons} />
         ))}
-      </Flex>
+      </SimpleGrid>
+
+      {/* <Flex
+        flexDir={media.isDesktop ? "row " : "column"}
+        justifyContent="center"
+      >
+        {chooseUsOptions.map((item) => (
+          <ChooseUsItem data={item} icons={chooseUsIcons} />
+        ))}
+      </Flex> */}
     </SectionWrapper>
   );
 }
