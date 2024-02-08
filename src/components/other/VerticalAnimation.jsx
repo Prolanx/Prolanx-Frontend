@@ -19,7 +19,7 @@ const VerticalAnimation = ({ children, initialPos }) => {
 
       initial={{ opacity: 0 }}
       animate={{ opacity: fadeInComplete ? 1 : 0 }}
-      transition={{ duration: 3 }}
+      transition={{ duration: 2 }}
     >
       {fadeInComplete && (
         <motion.div
@@ -28,7 +28,7 @@ const VerticalAnimation = ({ children, initialPos }) => {
           initial={{ y: 0, }}
           animate={{ y: [0,  15, -30, 0] }}
           // animate={{ y: [0, 0, 1] }}
-          transition={{ duration:5, repeat: Infinity }}
+          transition={{ duration:2, repeat: Infinity }}
         >
           {children}
         </motion.div>

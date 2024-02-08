@@ -5,7 +5,7 @@ import Header from "../header/Header";
 
 function IntroWrapper({ children }) {
   return (
-    <Box height="100vh" bg={colors.primary2} pos="relative" overflow="hidden">
+    <Box height="646px" bg={colors.primaryBg} pos="relative" overflow="hidden">
       <Box pos="absolute" w="100%">
         <Header />
       </Box>

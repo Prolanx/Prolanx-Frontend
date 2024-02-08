@@ -19,7 +19,7 @@ function Home() {
   return (
     <Page>
       <Box overflowX="hidden" position="relative" overflow="hidden">
-        {/* <IntroSection /> */}
+      
         <HomeIntroSection />
         <Image
           src={logoBigRight}
@@ -31,9 +31,7 @@ function Home() {
 
         <AboutSection />
         <ServiceSection />
-
         <ChooseUsSection />
-
         <Box pos="relative" overflow="hidden">
           <Image
             src={logoBigLeft}
@@ -44,6 +42,7 @@ function Home() {
           />
           <LearnSection />
         </Box>
+        
         {/* 
       <Box position="relative">
         <Image

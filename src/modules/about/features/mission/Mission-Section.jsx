@@ -4,11 +4,12 @@ import { Box, Heading, Flex, Text, Image } from "@chakra-ui/react";
 import aboutMission from "assets/about-mission.svg";
 import useResponsive from "../../../../hooks/useResponsive";
 import { colors } from "../../../../constants/design";
+import SectionWrapper2 from "../../../../components/other/SectionWrapper2";
 
 function MissionSection({ data }) {
   const media = useResponsive();
   return (
-    <SectionWrapper bg={colors.accent3}>
+    <SectionWrapper2 bg={colors.accent3}>
       <Flex flexDir={media.isDesktop ? "row" : "column"}>
         <Box maxW="590px">
           <Heading
@@ -27,16 +28,19 @@ function MissionSection({ data }) {
           </Box>
         </Box>
 
-        <Flex justifyContent={!media.isDesktop && "center"}>
+        <Flex
+          justifyContent={!media.isDesktop && "center"}
+          mt={media.isMobile || media.isTablet ? "50px" : "0px"}
+        >
           <Image
             ms={media.isDesktop && "105px"}
             src={aboutMission}
-            h={media.isTablet ? "300px" : media.isMobile ? "230px" : "auto"}
-            w={media.isTablet ? "300px" : media.isMobile ? "230px" : "auto"}
+            h={media.isTablet ? "250px" : media.isMobile ? "230px" : "auto"}
+            w={media.isTablet ? "250px" : media.isMobile ? "230px" : "auto"}
           />
         </Flex>
       </Flex>
-    </SectionWrapper>
+    </SectionWrapper2>
   );
 }
 

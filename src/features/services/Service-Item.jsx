@@ -2,19 +2,33 @@ import React from "react";
 import { colors } from "../../constants/design";
 import { Button, Heading, Box, Text, Flex } from "@chakra-ui/react";
 import useResponsive from "../../hooks/useResponsive";
+import LearnButton from "./LearnButton";
+import { Link } from "react-router-dom";
 
-function ServiceItem({ data, isHideBorder, isBorderTop }) {
+function ServiceItem({ data, isBorderRight, isBorderTop,  }) {
   const media = useResponsive();
-  const border = "1px solid " + colors.primaryGrad + "50";
+  const border = "1px solid " + colors.accent;
+  const borderHover = "1px solid " + colors.secondaryAccent;
   return (
     <Box
       py="36px"
-      px={media.isDesktop && "45px"}
+      px={media.isDesktop ? "45px" : media.isTablet ? "30px": "15px"}
       minH={media.isDesktop && "400px"}
-      borderRight={isHideBorder ? "0px" : border}
-      borderTop={isBorderTop && border}
+      cursor="pointer"
+      borderRight={ media.isDesktop && isBorderRight ? border : "0px"}
+      borderTop={isBorderTop ? border: !media.isDesktop?  border: null}
       color={colors.black}
       pos="relative"
+      transition=".5s"
+      _hover={{
+        // shadow: "xl",
+  
+        boxShadow:"inset 0 0 3px "+colors.accent,
+        
+
+        border: border,
+        // borderLeft: isBorderRight ? "0px" : null,
+      }}
     >
       <Flex flexDir={media.isDesktop ? "column" : "row"} mb="36px">
         <Heading
@@ -43,9 +57,27 @@ function ServiceItem({ data, isHideBorder, isBorderTop }) {
         fontFamily="mont"
         color="#2E3133"
         w={media.isDesktop ? "306px" : "100%"}
+        mb="36px"
       >
         {data.message}
       </Text>
+
+   
+      <LearnButton
+          title="Learn more"
+          pos={media.isDesktop && "absolute"}
+          bottom={media.isDesktop && "44px"}
+          as={Link}
+          to={"/services"}
+         
+          // px="18px"
+          bg="none"
+          border={"1px solid "+ colors.accent}
+          _hover={{
+            bg: colors.accent,
+           
+          }}
+        />
 
       {/* {data.link && (
         <Button

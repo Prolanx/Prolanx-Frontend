@@ -17,6 +17,7 @@ import excellenceIcon from "../../assets/excellence-icon.png";
 import SectionWrapper from "../../components/other/SectionWrapper";
 import useResponsive from "../../hooks/useResponsive";
 import SectionTitle from "../../components/title/Section-Title";
+import SectionWrapper2 from "../../components/other/SectionWrapper2";
 
 function ChooseUsSection() {
   const chooseUsIcons = {
@@ -53,37 +54,35 @@ function ChooseUsSection() {
   const media = useResponsive();
 
   return (
-    <SectionWrapper bg={colors.primary2}>
-      <Center>
-
-
-      <Box flexDir="column" >
-        <Flex justifyContent={media.isLargeScreen && "center"}>
-          <SectionTitle name="Why Choose us" pb="8px" mb="60px" />
+    <SectionWrapper2 background={colors.primaryBg}>
+      <Box >
+        <Flex justifyContent={media.isLargeScreen && "start"}>
+          <SectionTitle
+            name="Why Choose us"
+            mb="60px"
+            color={colors.whiteText}
+            borderBottom="1px solid "
+          />
         </Flex>
 
         {media.isDesktop ? (
-         <SimpleGrid columns={4} >
-         {chooseUsOptions.map((item) => (
-           <ChooseUsItem data={item} icons={chooseUsIcons} />
-         ))}
-       </SimpleGrid>
+          <SimpleGrid columns={4} >
+            {chooseUsOptions.map((item, index) => (
+              <ChooseUsItem data={item} icons={chooseUsIcons} />
+            ))}
+          </SimpleGrid>
         ) : (
           <Flex
             flexDir={media.isDesktop ? "row " : "column"}
             justifyContent="center"
           >
-            {chooseUsOptions.map((item) => (
+            {chooseUsOptions.map((item, index) => (
               <ChooseUsItem data={item} icons={chooseUsIcons} />
             ))}
           </Flex>
         )}
       </Box>
-
-      </Center>
-
-    
-    </SectionWrapper>
+    </SectionWrapper2>
   );
 }
 

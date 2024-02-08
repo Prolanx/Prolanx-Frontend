@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, SimpleGrid } from "@chakra-ui/react";
+import { Box, Center, Flex, Heading, SimpleGrid } from "@chakra-ui/react";
 import React from "react";
 import { colors } from "../../constants/design";
 import ServiceItem from "./Service-Item";
@@ -6,6 +6,7 @@ import ServiceItemIndex from "./Service-Item-Index";
 import SectionTitle from "../../components/title/Section-Title";
 import useResponsive from "../../hooks/useResponsive";
 import SectionWrapper from "../../components/other/SectionWrapper";
+import SectionWrapper2 from "../../components/other/SectionWrapper2";
 // import SectionTitle from "../title/Section-Title";
 
 function ServiceSection() {
@@ -51,51 +52,33 @@ function ServiceSection() {
   const media = useResponsive();
   const checkBorderStatus = (number) => {
     let increment = number + 1;
-    if (increment % 3 === 0) return true;
-    return false;
+    if (increment % 3 === 0) return false;
+    return true;
   };
   return (
-    <SectionWrapper>
-      <React.Fragment>
+    <SectionWrapper2>
+      <Box>
         <Flex justifyContent={media.isDesktop ? "start" : "center"}>
           <SectionTitle name="Our Services" color={colors.black} mb="66px" />
         </Flex>
 
-        {media.isDesktop ? (
-          <SimpleGrid columns={3}>
-            {serviceOptions.map((item, index) => (
-              <React.Fragment>
-                {index === 0 ? (
-                  <ServiceItemIndex data={item} />
-                ) : (
-                  <ServiceItem
-                    data={item}
-                    isHideBorder={checkBorderStatus(index)}
-                    isBorderTop={index > 2 && true}
-                  />
-                )}
-              </React.Fragment>
-            ))}
-          </SimpleGrid>
-        ) : (
-          <React.Fragment>
-            {serviceOptions.map((item, index) => (
-              <React.Fragment>
-                {index === 0 ? (
-                  <ServiceItemIndex data={item} />
-                ) : (
-                  <ServiceItem
-                    data={item}
-                    isHideBorder={checkBorderStatus(index)}
-                    isBorderTop={index > 2 && true}
-                  />
-                )}
-              </React.Fragment>
-            ))}
-          </React.Fragment>
-        )}
-      </React.Fragment>
-    </SectionWrapper>
+        <SimpleGrid columns={!media.isDesktop ? 1 : 3}>
+          {serviceOptions.map((item, index) => (
+            <React.Fragment>
+              {index === 0 ? (
+                <ServiceItemIndex data={item} />
+              ) : (
+                <ServiceItem
+                  data={item}
+                  isBorderRight={checkBorderStatus(index)}
+                  isBorderTop={index > 2 && true}
+                />
+              )}
+            </React.Fragment>
+          ))}
+        </SimpleGrid>
+      </Box>
+    </SectionWrapper2>
   );
 }
 

@@ -9,11 +9,11 @@ function ChooseUsItem({ data, icons, ...props }) {
     <Box
       p={media.isDesktop ? "26px 30px" : "26px 20px"}
       me={media.isDesktop && "24px"}
-      w={media.isDesktop && "283px"}
+      maxW={media.isDesktop && "283px"}
       border=".5px solid"
-      borderColor={colors.secondary + "50"}
-      rounded="md"
-      color={colors.accent2}
+      borderColor={colors.secondaryAccent}
+      rounded="8px"
+      color={colors.whiteText}
       mb={!media.isDesktop && "40px"}
       {...props}
     >
@@ -29,7 +29,6 @@ function ChooseUsItem({ data, icons, ...props }) {
       </Heading>
 
       <Text
-       
         fontSize={media.isDesktop ? "16px" : "14px"}
         fontFamily="mont"
         color={colors.accent2}

@@ -3,21 +3,21 @@ import React from "react";
 import { colors } from "../../constants/design";
 import useResponsive from "../../hooks/useResponsive";
 
-function SectionTitle({ name, ...props }) {
+function SectionTitle({ name, title, ...props }) {
   const media = useResponsive();
+  const border = "1px solid "+ colors.black+"70"
   return (
     <Heading
-      pb="8px"
+      pb="22px"
       display="inline-block"
       fontSize={media.isMobile ? "16px" : "32px"}
-      fontWeight="500"
-      borderBottom="1px solid #000000"
-      color={colors.accent2}
-      borderBottomColor={colors.accent2}
+      fontWeight="700"
+      borderBottom={border}
+      color={colors.black}
       fontFamily="nexa"
       {...props}
     >
-      {name}
+      {name || title}
     </Heading>
   );
 }

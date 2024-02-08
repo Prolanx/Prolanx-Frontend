@@ -6,6 +6,7 @@ import ContactForm from "./Contact-Form";
 import mapIcon from "../../assets/map.png";
 import useResponsive from "../../hooks/useResponsive";
 import SectionWrapper from "../../components/other/SectionWrapper";
+import SectionWrapper2 from "../../components/other/SectionWrapper2";
 function ContactSection() {
   const media = useResponsive();
 
@@ -14,6 +15,7 @@ function ContactSection() {
       <Image
         zIndex="100"
         w="100%"
+        h="100%"
         pos="absolute"
         top="350px"
         objectFit="cover"
@@ -21,13 +23,17 @@ function ContactSection() {
         src={mapIcon}
       />
 
-      <SectionWrapper
-        p={media.isDesktop && "80px 0px"}
+      <SectionWrapper2
+        pb={!media.isDesktop && "0px"}
+        px={!media.isDesktop && "0px"}
         pos="relative"
         zIndex="1000"
       >
+        <Box w="100%">
         <ContactForm />
-      </SectionWrapper>
+        </Box>
+       
+      </SectionWrapper2>
     </Box>
   );
 }
