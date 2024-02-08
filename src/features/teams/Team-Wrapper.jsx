@@ -20,7 +20,9 @@ function TeamWrapper({ heading, message, list }) {
           />
 
           <Text
-            fontSize={media.isDesktop ? "22px" : media.isTablet ? "16px" : "14px"}
+            fontSize={
+              media.isDesktop ? "22px" : media.isTablet ? "16px" : "14px"
+            }
             fontFamily="mont"
             mb={"44px"}
             w={media.isDesktop || media.isTablet ? "70%" : "100%"}
@@ -31,14 +33,17 @@ function TeamWrapper({ heading, message, list }) {
         </Flex>
 
         <Flex
-          overflowX={!media.isLaptop && "scroll"}
+          overflowX={media.isMobile || media.isTablet ? "scroll" : "inherit"}
+          w="100%"
+      
+       
+          // overflowX="inherit"
           justifyContent={
             media.isMobile ? "start" : media.isTablet ? "start" : "center"
           }
         >
           {list.map((item, index) => (
             <TeamCard
-        
               name={item.name}
               role={item.role}
               key={index}
