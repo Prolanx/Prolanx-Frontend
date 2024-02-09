@@ -14,7 +14,7 @@ import scrollLeft from "assets/scroll-left.svg";
 
 import { FiChevronLeft, FiChevronRight, FiChevronsLeft } from "react-icons/fi";
 
-const HorizontalScroll = ({ children }) => {
+const HorizontalScroll = ({ children, ...props }) => {
   const scrollRef = useRef(null);
   const [scrollPosition, setScrollPosition] = useState(0);
   const [scrollableWidth, setScrollableWidth] = useState(0);
@@ -53,7 +53,7 @@ const HorizontalScroll = ({ children }) => {
   };
 
   return (
-    <React.Fragment>
+    <Box>
       <Flex
         ref={scrollRef}
         overflowX="hidden"
@@ -76,7 +76,7 @@ const HorizontalScroll = ({ children }) => {
           cursor="pointer"
         />
       </Flex>
-    </React.Fragment>
+    </Box>
   );
 };
 

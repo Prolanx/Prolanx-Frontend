@@ -10,14 +10,17 @@ function SecondaryIntro({ title, message }) {
   const media = useResponsive();
   return (
     <IntroWrapper>
+
       <Image
         src={introIcon}
         pos="absolute"
         opacity=".35"
         objectFit="cover"
-        top="-110px"
-        right="-340px"
+        h={media.isMobile || media.isTablet ? "100%" : "auto"}
+        top={media.isMobile || media.isTablet ? "0px" : "-110px"}
+        right={media.isMobile || media.isTablet ? "0px" : "-340px"}
       />
+
 
       <Flex
         flexDir="column"

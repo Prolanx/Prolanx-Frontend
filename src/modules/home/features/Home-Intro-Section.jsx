@@ -30,7 +30,7 @@ function HomeIntroSection() {
 
   return (
     <Box
-      height={media.isDesktop ? "646px" : "100vh"}
+      height={media.isDesktop ? "646px" : "90vh"}
       position="relative"
       bg={colors.primaryBg}
     >
@@ -71,6 +71,7 @@ function HomeIntroSection() {
             <Box
               position="absolute"
               top="-100px"
+              zIndex="1000"
               // right="117px"
               right="0px"
             >

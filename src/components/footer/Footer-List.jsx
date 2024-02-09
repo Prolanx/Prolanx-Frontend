@@ -13,15 +13,17 @@ import { Link } from "react-router-dom";
 
 function FooterList({ title, data, ...props }) {
   const media = useResponsive();
+  const border = "1px solid "+ colors.accent+"50"
   return (
     <Box color={colors.whiteText} {...props} w={media.isDesktop ? "90%" : "100%"} me={media.isDesktop && "100px"}>
       <Text
         fontSize={media.isDesktop ? "20px": "18px"}
         mb="22px"
         p="10px 0px"
+        borderBottom={border}
         // borderBottom={"1px solid " + colors.secondary2 + "50"}
         fontFamily="nexa"
-        // display="inline-block"
+        display="inline-block"
       >
         {title}
       </Text>

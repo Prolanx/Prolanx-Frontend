@@ -10,7 +10,7 @@ function FaqComponent({ data }) {
   const media = useResponsive();
   return (
     <Center>
-      <Box maxW="703px" bg={colors.primaryGrad} color={colors.accent2}>
+      <Box maxW="703px" bg={colors.primaryBg} color={colors.whiteText}>
         <AccordionComponent allowToggle={true}>
           {data.map((item) => (
             <AccordionItemComponent title={item.title}>

@@ -4,6 +4,7 @@ import FooterList from "./Footer-List";
 import twitter from "../../assets/x.png";
 import facebook from "../../assets/facebook.png";
 import youtube from "../../assets/youtube.png";
+import logoText from "assets/prolanx-logo.svg";
 import instagram from "../../assets/instagram.png";
 import useResponsive from "../../hooks/useResponsive";
 import SectionWrapper2 from "../other/SectionWrapper2";
@@ -90,16 +91,21 @@ function Footer() {
       <Box w="100%">
         <Flex
           justifyContent="space-between"
-          mb={media.isDesktop ? "52px" : "30px"}
+          mb={media.isDesktop ? "52px" : "50px"}
           color="#E3F3FF"
           borderBottom={media.isDesktop && border}
           flexDir={media.isDesktop ? "row" : "column"}
         >
-          <CustomHeading
-            title="Prolanx"
-            fontSize="24px"
+          <Image
+            src={logoText}
+            w={
+              media.isMobile || media.isTablet || media.isLaptop
+                ? "130px"
+                : null
+            }
             mb={media.isDesktop ? "16px" : "25px"}
           />
+
           <Flex>
             {icons.map((item) => (
               <Image
@@ -128,17 +134,15 @@ function Footer() {
           fontFamily="mont"
           flexDir={"column"}
           mt={"50px"}
-        
-          alignItems="center"
-          justifyContent="center"
-          textAlign="center"
+          // justifyContent="center"
+          // textAlign="center"
         >
           <Text fontSize="12px" pt="30px" mb="24px" borderTop={border}>
             Copyright C 2024 All rights reserved by Prolanx Digital Consulting
             Limited
           </Text>
 
-          <Flex flexWrap="wrap" justifyContent="center" w="100%">
+          <Flex flexWrap="wrap" w="100%">
             {copyrightLinks.map((item) => (
               <Text
                 fontSize="10px"

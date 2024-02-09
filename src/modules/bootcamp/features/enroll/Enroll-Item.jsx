@@ -13,7 +13,7 @@ function EnrollItem({ data }) {
       minH="228px"
       rounded="8px"
       pos="relative"
-      bg={colors.primaryGrad}
+      bg={colors.primaryBg}
       color="#fff"
     >
       <Image

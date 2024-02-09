@@ -1,5 +1,5 @@
-import { Box, Flex, SimpleGrid } from "@chakra-ui/react";
-import React from "react";
+import { Box, Flex, SimpleGrid, Text, Link } from "@chakra-ui/react";
+import React, { useState } from "react";
 import EnrollItem from "./Enroll-Item";
 import CustomHeading from "../../../../components/heading/Custom-Heading";
 
@@ -9,6 +9,7 @@ import agileIcon from "assets/agile.svg";
 import indepthLearnIcon from "assets/indepth-learn.svg";
 import useResponsive from "../../../../hooks/useResponsive";
 import SectionWrapper from "../../../../components/other/SectionWrapper";
+import SectionWrapper2 from "../../../../components/other/SectionWrapper2";
 
 function EnrollSection() {
   const enrollList = [
@@ -38,15 +39,23 @@ function EnrollSection() {
     },
   ];
   const media = useResponsive();
+
   return (
-    <SectionWrapper>
-      <CustomHeading title="Why Enroll with us" mb="40px" textAlign="center"    fontSize={media.isDesktop ? "32px" : media.isTablet ? "30px" : "25px"} />
-      <SimpleGrid columns={media.isDesktop ? 2 : 1} spacing="50px" pt="50px">
-        {enrollList.map((item) => (
-          <EnrollItem data={item} />
-        ))}
-      </SimpleGrid>
-    </SectionWrapper>
+    <SectionWrapper2>
+      <Box>
+        <CustomHeading
+          title="Why Enroll with us"
+          mb="40px"
+          textAlign="center"
+          fontSize={media.isDesktop ? "32px" : media.isTablet ? "30px" : "25px"}
+        />
+        <SimpleGrid columns={media.isDesktop ? 2 : 1} spacing="50px" pt="50px">
+          {enrollList.map((item) => (
+            <EnrollItem data={item} />
+          ))}
+        </SimpleGrid>
+      </Box>
+    </SectionWrapper2>
   );
 }
 

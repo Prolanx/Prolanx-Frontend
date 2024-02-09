@@ -35,8 +35,6 @@ function TeamWrapper({ heading, message, list }) {
         <Flex
           overflowX={media.isMobile || media.isTablet ? "scroll" : "inherit"}
           w="100%"
-      
-       
           // overflowX="inherit"
           justifyContent={
             media.isMobile ? "start" : media.isTablet ? "start" : "center"
