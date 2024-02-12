@@ -5,27 +5,48 @@ import AccordionItemComponent from "../../../components/accordion/Accordion-Item
 import { courseFaqData } from "../constant";
 import { Box, Text } from "@chakra-ui/react";
 import FaqComponent from "../../../features/faqs/Faq-Component";
-
+import FaqSection from "../../../features/faqs/Faq-Section";
 
 function CourseFaqSection() {
+  const data = [
+    {
+      title:
+        "Does it make sense to join if Im already a computer Science student or graduate",
+      message:
+        " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum ipsum dolore nostrum amet labore enim.",
+    },
+    {
+      title:
+        "Does it make sense to join if Im already a computer Science student or graduate",
+      message:
+        " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum ipsum dolore nostrum amet labore enim.",
+    },
+    {
+      title:
+        "Does it make sense to join if Im already a computer Science student or graduate",
+      message:
+        " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum ipsum dolore nostrum amet labore enim.",
+    },
+    {
+      title:
+        "Does it make sense to join if Im already a computer Science student or graduate",
+      message:
+        " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum ipsum dolore nostrum amet labore enim.",
+    },
+    {
+      title:
+        "Does it make sense to join if Im already a computer Science student or graduate",
+      message:
+        " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum ipsum dolore nostrum amet labore enim.",
+    },
+  ];
   return (
     <CourseInfoComponent
       title="FAQs"
       subTitle="Review common questions others also ask"
     >
 
-      <AccordionComponent allowToggle={true}>
-        {courseFaqData.map((item) => (
-
-          <AccordionItemComponent title={item.title}>
-            <Box p="15px">
-            <Text>{item.message}</Text>
-            </Box>
-          
-           
-          </AccordionItemComponent>
-        ))}
-      </AccordionComponent>
+      <FaqComponent data={data}/>
     </CourseInfoComponent>
   );
 }

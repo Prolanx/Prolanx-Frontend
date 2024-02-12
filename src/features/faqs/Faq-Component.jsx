@@ -9,27 +9,25 @@ import AccordionItemComponent from "../../components/accordion/Accordion-Item";
 function FaqComponent({ data }) {
   const media = useResponsive();
   return (
-    <Center>
-      <Box maxW="703px" bg={colors.primaryBg} color={colors.whiteText}>
-        <AccordionComponent allowToggle={true}>
-          {data.map((item) => (
-            <AccordionItemComponent title={item.title}>
-              <Box
-                fontFamily="mont"
-                fontSize={media.isMobile ? "15px" : "20px"}
-                bg="white"
-                color={colors.black}
-                py="20px"
-                pb="50px"
-                px="20px"
-              >
-                {item.message}
-              </Box>
-            </AccordionItemComponent>
-          ))}
-        </AccordionComponent>
-      </Box>
-    </Center>
+    <Box maxW="703px" bg={colors.primaryBg} color={colors.whiteText}>
+    <AccordionComponent allowToggle={true}>
+      {data.map((item) => (
+        <AccordionItemComponent title={item.title}>
+          <Box
+            fontFamily="mont"
+            fontSize={media.isMobile ? "15px" : "20px"}
+            bg="white"
+            color={colors.black}
+            py="20px"
+            pb="50px"
+            px="20px"
+          >
+            {item.message}
+          </Box>
+        </AccordionItemComponent>
+      ))}
+    </AccordionComponent>
+  </Box>
   );
 }
 

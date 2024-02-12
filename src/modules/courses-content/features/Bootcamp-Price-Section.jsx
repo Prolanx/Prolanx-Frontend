@@ -8,6 +8,7 @@ import { Box, Button, Flex, Text } from "@chakra-ui/react";
 
 function BootcampPriceSection({ data }) {
   const media = useResponsive();
+  const border = "1px solid "+colors.primary+"90"
   return (
     <CourseInfoComponent
       title="Pricing"
@@ -15,15 +16,15 @@ function BootcampPriceSection({ data }) {
       message="Our programs provide comprehensive and top-quality tech education at an affordable price, with flexible and convenient payment options to enhance your learning journey"
     >
       <Box
-        w={media.isDesktop  ?"400px" : "100%"}
+        w={media.isDesktop ? "400px" : "100%"}
         p="30px 20px"
         shadow="md"
         rounded="md"
-        border="1px solid #00000050"
+        border={border}
       >
         <Flex fontFamily="mont" alignItems="center" mb="36px">
           <Flex
-            border="1px solid #00000050"
+            border={border}
             p="10px 16px"
             cursor="pointer"
             onClick={() => {
@@ -31,13 +32,13 @@ function BootcampPriceSection({ data }) {
             }}
           >
             <Text>Pay now</Text>
-            <Button size="xs" ms="20px">
+            <Text  ms="20px" fontFamily="mont" bg={colors.accent} px="5px" rounded="md" >
               save
-            </Button>
+            </Text>
           </Flex>
 
           <Text
-            border="1px solid #00000050"
+            border={border}
             p="10px 16px"
             cursor="pointer"
             onClick={() => {
@@ -51,8 +52,8 @@ function BootcampPriceSection({ data }) {
         {/* Discount info */}
         <Box>
           {data.isPayNow && (
-            <Text mb="36px" fontWeight="600">
-              Pay now and save {data.currency} {data.price.discount}
+            <Text mb="36px" fontSize="24px" fontWeight="600" fontFamily="mont">
+              Pay today and save {data.currency} {data.price.discount}
             </Text>
           )}
 
@@ -76,6 +77,13 @@ function BootcampPriceSection({ data }) {
           />
           <PriceSummaryItem
             title="Save Today "
+            titleProps={{
+              fontSize: "16px",
+              bg: colors.accent,
+              p: "2px 4px",
+
+              rounded: "5px",
+            }}
             value={"-" + data.currency + data.price.discount}
           />
           <PriceSummaryItem
@@ -84,7 +92,14 @@ function BootcampPriceSection({ data }) {
           />
         </React.Fragment>
 
-        <Button w="100%" size="lg" mt="36px" mb="36px" bg={colors.accent3}>
+        <Button
+          w="100%"
+          size="lg"
+          mt="36px"
+          mb="36px"
+          fontFamily="mont"
+          bg={colors.accent}
+        >
           Enroll Now
         </Button>
 

@@ -1,9 +1,9 @@
 import { Button } from "@chakra-ui/react";
 import React from "react";
-import { FiLogIn, FiLogOut } from "react-icons/fi";
+import { FiLogIn } from "react-icons/fi";
 import useResponsive from "../../hooks/useResponsive";
 
-function LearnButton({ title, ...props }) {
+function BaseButton({ title, ...props }) {
   const media = useResponsive();
   return (
     <Button
@@ -22,4 +22,4 @@ function LearnButton({ title, ...props }) {
   );
 }
 
-export default LearnButton;
+export default BaseButton;

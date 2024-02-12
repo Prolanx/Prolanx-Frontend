@@ -16,7 +16,7 @@ import FaqSection from "../../features/faqs/Faq-Section";
 
 function Bootcamp() {
   return (
-    <Box bg={colors.accent2} overflow="hidden" >
+    <Box  bg={colors.whiteText} overflow="hidden" >
       <SecondaryIntro
         title="Our Bootcamp"
         message="Empowering your journey through cutting edge technogy and expertise"

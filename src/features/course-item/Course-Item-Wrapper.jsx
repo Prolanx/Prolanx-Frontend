@@ -4,7 +4,14 @@ import CustomHeading from "../../components/heading/Custom-Heading";
 import useResponsive from "../../hooks/useResponsive";
 import { colors } from "../../constants/design";
 
-function CourseItemWrapper({ title, image, data, imageProps, children, ...props }) {
+function CourseItemWrapper({
+  title,
+  image,
+  data,
+  imageProps,
+  children,
+  ...props
+}) {
   const media = useResponsive();
   const borderStyle = ".5px solid" + colors.primary + "90";
 
@@ -12,21 +19,21 @@ function CourseItemWrapper({ title, image, data, imageProps, children, ...props 
     <Box
       border={borderStyle}
       rounded="8px"
-      p={media.isDesktop ? "20px" : media.isTablet ? "20px" : "10px"}
-        w="378px"
+      p={media.isMobile ? "20px 15px" : media.isTablet ? "25px 20px" : "32px"}
+      maxW={media.isMobile ? "100%" : "378px"}
       maxH="450px"
-      mb={!media.isDesktop && "35px"}
+      // mb={!media.isDesktop && "35px"}
       {...props}
     >
       <Image
-        h="215px"
-        // w={media.isDesktop ? "310px" : "100%"}
-        w={"100%"}
+        h={media.isMobile ? "180px": "215px"}
         rounded="8px"
+        w="100%"
         mb="36px"
         bg="purple.400"
         src={data?.image}
         objectFit="cover"
+        objectPosition="center"
         {...imageProps}
       />
       <CustomHeading title={data?.title} fontSize="20px" mb="26px" />

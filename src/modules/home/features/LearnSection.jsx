@@ -4,6 +4,7 @@ import { colors } from "../../../constants/design";
 import showcase from "../../../assets/showcase.png";
 import useResponsive from "../../../hooks/useResponsive";
 import { Link } from "react-router-dom";
+import BorderedButton from "../../../components/button/BorderedButton";
 
 function LearnSection() {
   const media = useResponsive();
@@ -29,11 +30,11 @@ function LearnSection() {
         fontFamily="nexa"
         fontSize={media.isDesktop ? "40px" : "30px"}
       >
-      Get started
+        Ready to learn ?
       </Heading>
 
       <Text
-        fontSize={media.isDesktop ? "20px" : "14.8px"}
+        fontSize={media.isMobile ? "14.5px" : "20px"}
         mb="44px"
         maxW="415px"
         fontFamily="mont"
@@ -42,19 +43,20 @@ function LearnSection() {
         that will enable them to actively shape their own professional journey.
       </Text>
 
-      <Button
+      <BorderedButton
+        title="View our courses"
         w="250px"
         as={Link}
         to={loginLink}
         zIndex="5000"
         size="sm"
+        color={colors.whiteText}
+
         _hover={{
-          background: colors.accent,
-          color: colors.black,
+          color: "black",
+          bg: colors.accent
         }}
-      >
-        View Our Courses
-      </Button>
+      />
     </Flex>
   );
 }

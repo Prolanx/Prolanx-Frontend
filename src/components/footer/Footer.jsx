@@ -134,6 +134,7 @@ function Footer() {
           fontFamily="mont"
           flexDir={"column"}
           mt={"50px"}
+          color={colors.whiteText}
           // justifyContent="center"
           // textAlign="center"
         >

@@ -48,11 +48,10 @@ function VisionSection({ data }) {
           </Flex>
 
           <Flex justifyContent="center">
-            <Box maxW="586px" fontFamily="mont" >
+            <Box maxW="586px" fontFamily="mont">
               {data.message.map((item) => (
                 <Text mb="36px">{item.data}</Text>
               ))}
-
               <Button
                 bg="none"
                 border="1px solid #00000050"

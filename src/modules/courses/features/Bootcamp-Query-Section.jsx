@@ -18,7 +18,8 @@ function BootcampQuerySection({ actions, faculty }) {
   const media = useResponsive();
   return (
     <Flex
-      justifyContent="space-between"
+      justifyContent={media.isMobile || media.isTablet ? "flex-start" : "space-between"}
+      alignItems={media.isTablet && "center"}
       mb={media.isMobile ? "20px" : "50px"}
       flexDir={media.isDesktop ? "row" : "column"}
     >
@@ -37,15 +38,28 @@ function BootcampQuerySection({ actions, faculty }) {
         {!media.isMobile && <Text fontSize="14px">{faculty?.title}</Text>}
       </Flex>
 
-      <Flex justifyContent={media.isTablet && "center"} >
+      <Flex 
+      // justifyContent={media.isTablet && "center"}
+      >
         <InputGroup w="390px" mt={!media.isDesktop && "50px"}>
           <InputLeftElement pointerEvents="none">
             <FiSearch color="gray.300" />
           </InputLeftElement>
-          <Input placeholder="search bootcamp" bg="white" border={borderStyle} />
+          <Input
+            placeholder="search bootcamp"
+            bg="white"
+            border={borderStyle}
+          />
         </InputGroup>
       </Flex>
-      {media.isMobile && <CustomHeading title={faculty?.title} fontWeight="600" mt="30px" fontSize="16px"/>}
+      {media.isMobile && (
+        <CustomHeading
+          title={faculty?.title}
+          fontWeight="600"
+          mt="30px"
+          fontSize="16px"
+        />
+      )}
     </Flex>
   );
 }

@@ -37,11 +37,11 @@ export const servicesSection = {
   hub: "hub",
   talent: "talent",
   insight: "insight",
-  
 };
 
 export const routes = {
   home: "/",
+  home2: "/?/:isContact",
   about: "/about",
   services: "/services?/:section",
   bootcamp: "/bootcamp",
@@ -51,9 +51,6 @@ export const routes = {
   cookie: "/cookie",
   resources: "/resources",
 };
-
-
-
 
 import digitalDesign from "assets/digital-design.svg";
 import cloudComputing from "assets/cloud-computing.svg";

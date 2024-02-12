@@ -61,7 +61,7 @@ function ChooseUsSection() {
             name="Why Choose us"
             mb="60px"
             color={colors.whiteText}
-            borderBottom="1px solid "
+            borderBottom={"1px solid "+ colors.accent+ "50"}
           />
         </Flex>
 

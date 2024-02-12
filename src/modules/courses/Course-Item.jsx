@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import { routesAppend } from "../../constants";
 
 function CourseItem({ data }) {
-  console.log("data ", data)
   return (
     <CourseItemWrapper data={data}>
       {/* this should be wrapped in a link */}

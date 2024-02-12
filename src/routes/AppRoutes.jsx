@@ -23,7 +23,7 @@ function AppRoutes() {
         path={routes.about}
         element={
           <Page>
-            <About />{" "}
+            <About />
           </Page>
         }
       />

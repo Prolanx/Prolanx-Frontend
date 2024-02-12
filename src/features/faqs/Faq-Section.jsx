@@ -6,7 +6,7 @@ import useResponsive from "../../hooks/useResponsive";
 import SectionWrapper from "../../components/other/SectionWrapper";
 import CustomHeading from "../../components/heading/Custom-Heading";
 
-function FaqSection() {
+function FaqSection({ hideTitle, ...props }) {
   const data = [
     {
       title:
@@ -43,13 +43,18 @@ function FaqSection() {
   const media = useResponsive();
   return (
     <SectionWrapper>
-      <CustomHeading
-        title="Frequently Asked Questions"
-        fontSize={media.isDesktop ? "32px": "25px"}
-        textAlign="center"
-        mb="50px"
-      />
-      <FaqComponent data={data} />
+      {!hideTitle && (
+        <CustomHeading
+          title="Frequently Asked Questions"
+          fontSize={media.isDesktop ? "32px" : "25px"}
+          textAlign="center"
+          mb="50px"
+        />
+      )}
+
+      <Center>
+        <FaqComponent data={data} />
+      </Center>
     </SectionWrapper>
   );
 }

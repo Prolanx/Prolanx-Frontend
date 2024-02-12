@@ -14,6 +14,8 @@ import useResponsive from "../../hooks/useResponsive";
 import BootcampPriceSection from "./features/Bootcamp-Price-Section";
 import CoursePlanSection from "./features/Course-Plan-Section";
 import CourseFaqSection from "./features/Course-Faq-Section";
+import SectionWrapper2 from "../../components/other/SectionWrapper2";
+import FaqSection from "../../features/faqs/Faq-Section";
 
 function BootcampInfo() {
   const priceProps = useCoursePrice();
@@ -23,21 +25,27 @@ function BootcampInfo() {
     curriculum: "Curriculum",
     schedule: "Schedule",
     price: "Price",
-    faq: "Faq",
+    faq: "FAQ",
   };
-
-  const borderStyle = ".5px solid " + colors.primary2 + "80";
+  const scrollMenus = Object.values(scrollSections)
+  const borderStyle = ".5px solid " + colors.primary + "80";
   const media = useResponsive();
 
   return (
-    <Box bg={colors.accent2}>
+    <Box bg={colors.whiteText}>
       <SecondaryIntro
         title="Course Content"
         message="Empowering your journey through cutting edge technogy and expertise"
       />
 
-      <SectionWrapper pb="0px">
-        <Flex flexDir={media.isDesktop ? "row" : "column"}>
+      <SectionWrapper2 pb="0px">
+        <Flex
+          flexDir={media.isDesktop ? "row" : "column"}
+          // bg="red"
+          w="100%"
+          // w={media.isMobile || media.isTablet ? "auto" : "100%"}
+          // w="100%"
+        >
           <Box
             maxW="590px"
             me={media.isDesktop && "104px"}
@@ -70,15 +78,15 @@ function BootcampInfo() {
             src={data.bootcamp?.image}
           />
         </Flex>
-      </SectionWrapper>
+      </SectionWrapper2>
 
-      <SectionWrapper>
+      <SectionWrapper2>
         <Flex flexDir={media.isDesktop ? "row" : "column"}>
           <div>
             <Box
               w={media.isDesktop && "278px"}
               border={borderStyle}
-              bg={colors.accent3}
+              bg={colors.primaryAccent}
               position={media.isDesktop && "sticky"}
               top="50px"
               p="36px 30px"
@@ -86,8 +94,8 @@ function BootcampInfo() {
               me={media.isDesktop && "20px"}
               mb={!media.isDesktop && "50px"}
             >
-              <Box w="100%" borderLeft={borderStyle + "80"} ps={3} pt={3}>
-                {Object.values(scrollSections).map((item) => (
+              <Box w="100%" borderLeft={borderStyle} ps={3} pt={3}>
+                {scrollMenus.map((item, index) => (
                   <Link
                     to={item}
                     spy={true}
@@ -95,7 +103,7 @@ function BootcampInfo() {
                     offset={-50}
                     duration={1000}
                   >
-                    <Text mb="30px" fontFamily="mont" cursor="pointer">
+                    <Text mb={index !== scrollMenus.length - 1 && "30px"} fontFamily="mont" cursor="pointer">
                       {item}
                     </Text>
                   </Link>
@@ -105,7 +113,7 @@ function BootcampInfo() {
                 w="100%"
                 mt="36px"
                 minH="50px"
-                bg={colors.primaryGrad}
+                bg={colors.primary}
                 color={colors.accent2}
                 fontFamily="mont"
               >
@@ -126,13 +134,12 @@ function BootcampInfo() {
               <BootcampPriceSection data={priceProps} />
             </Box>
             <Box name={scrollSections.faq}>
+            
               <CourseFaqSection name={scrollSections.faq} />
             </Box>
           </Box>
         </Flex>
-      </SectionWrapper>
-
-
+      </SectionWrapper2>
 
       <Footer />
     </Box>

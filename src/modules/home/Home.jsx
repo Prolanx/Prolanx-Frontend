@@ -1,15 +1,11 @@
 import { Box, Image } from "@chakra-ui/react";
 import React from "react";
-
 import Footer from "../../components/footer/Footer";
-
 import logoBigLeft from "../../assets/logo-big-left.png";
 import logoBigRight from "../../assets/logo-big-right.png";
 import ChooseUsSection from "../../features/choose-us/Choose-Us-Section";
-
 import ContactSection from "../../features/contact-section/Contact-Section";
 import ServiceSection from "../../features/services/Service-Section";
-
 import AboutSection from "./features/AboutSection";
 import LearnSection from "./features/LearnSection";
 import HomeIntroSection from "./features/Home-Intro-Section";
@@ -19,7 +15,6 @@ function Home() {
   return (
     <Page>
       <Box overflowX="hidden" position="relative" overflow="hidden">
-      
         <HomeIntroSection />
         <Image
           src={logoBigRight}
@@ -42,7 +37,7 @@ function Home() {
           />
           <LearnSection />
         </Box>
-        
+
         {/* 
       <Box position="relative">
         <Image

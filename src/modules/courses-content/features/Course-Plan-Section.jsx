@@ -4,6 +4,9 @@ import { colors } from "../../../constants/design";
 import CourseInfoComponent from "../component/Course-Info-Component";
 import AccordionComponent from "../../../components/accordion/Accordion";
 import AccordionItemComponent from "../../../components/accordion/Accordion-Item";
+import { Box, Flex, Heading, Text } from "@chakra-ui/react";
+import CourseTopicSection from "./Course-Topic-Section";
+import CoursePlanAccordionItem from "./Course-Plan-Accordion-Item";
 
 function CoursePlanSection({ data }) {
   const media = useResponsive();
@@ -17,22 +20,29 @@ function CoursePlanSection({ data }) {
       that go beyond theoretical knowledge, preparing participants for
       real-world applications and success."
     >
-      <React.Fragment>
+      <Box>
         <AccordionComponent allowToggle={true}>
-          <AccordionItemComponent
-            title="Month 1: Front-End Foundation and First MVP"
-            mb="36px"
-            border="1px solid #00000050"
-            rounded="md"
-          ></AccordionItemComponent>
 
-          <AccordionItemComponent title="Month 1: Front-End Foundation and First MVP"></AccordionItemComponent>
+          <CoursePlanAccordionItem  title="Month 1: Front-End Foundation and First MVP">
+          <CourseTopicSection/>
+          </CoursePlanAccordionItem>
+          
+          <CoursePlanAccordionItem  title="Month 1: Front-End Foundation and First MVP">
+          <CourseTopicSection/>
+          </CoursePlanAccordionItem>
+          
+          <CoursePlanAccordionItem  title="Month 1: Front-End Foundation and First MVP">
+          <CourseTopicSection/>
+          </CoursePlanAccordionItem>
+          
+          <CoursePlanAccordionItem  title="Month 1: Front-End Foundation and First MVP">
+          <CourseTopicSection/>
+          </CoursePlanAccordionItem>
 
-          <AccordionItemComponent title="Month 1: Front-End Foundation and First MVP"></AccordionItemComponent>
-
-          <AccordionItemComponent title="Month 1: Front-End Foundation and First MVP"></AccordionItemComponent>
+       
+         
         </AccordionComponent>
-      </React.Fragment>
+      </Box>
     </CourseInfoComponent>
   );
 }

@@ -1,33 +1,28 @@
 import React from "react";
 import { colors } from "../../constants/design";
-import { Button, Heading, Box, Text, Flex } from "@chakra-ui/react";
+import { Heading, Box, Text, Flex } from "@chakra-ui/react";
 import useResponsive from "../../hooks/useResponsive";
-import LearnButton from "./LearnButton";
-import { Link } from "react-router-dom";
 
-function ServiceItem({ data, isBorderRight, isBorderTop,  }) {
+import { Link } from "react-router-dom";
+import BorderedButton from "../../components/button/BorderedButton";
+
+function ServiceItem({ data, isBorderRight, isBorderTop }) {
   const media = useResponsive();
-  const border = "1px solid " + colors.accent;
+  const border = "1px solid " + colors.secondary+ "50";
   const borderHover = "1px solid " + colors.secondaryAccent;
   return (
     <Box
       py="36px"
-      px={media.isDesktop ? "45px" : media.isTablet ? "30px": "15px"}
+      px={media.isDesktop ? "45px" : media.isTablet ? "30px" : "15px"}
       minH={media.isDesktop && "400px"}
-      cursor="pointer"
-      borderRight={ media.isDesktop && isBorderRight ? border : "0px"}
-      borderTop={isBorderTop ? border: !media.isDesktop?  border: null}
+      borderRight={media.isDesktop && isBorderRight ? border : "0px"}
+      borderTop={isBorderTop ? border : !media.isDesktop ? border : null}
       color={colors.black}
       pos="relative"
-      transition=".5s"
+      transition=".3s"
       _hover={{
-        // shadow: "xl",
-  
-        boxShadow:"inset 0 0 3px "+colors.accent,
-        
-
+        boxShadow: "0 0 5px " + colors.secondary,
         border: border,
-        // borderLeft: isBorderRight ? "0px" : null,
       }}
     >
       <Flex flexDir={media.isDesktop ? "column" : "row"} mb="36px">
@@ -62,22 +57,14 @@ function ServiceItem({ data, isBorderRight, isBorderTop,  }) {
         {data.message}
       </Text>
 
-   
-      <LearnButton
-          title="Learn more"
-          pos={media.isDesktop && "absolute"}
-          bottom={media.isDesktop && "44px"}
-          as={Link}
-          to={"/services"}
-         
-          // px="18px"
-          bg="none"
-          border={"1px solid "+ colors.accent}
-          _hover={{
-            bg: colors.accent,
-           
-          }}
-        />
+      <BorderedButton
+        title="Learn more"
+        pos={media.isDesktop && "absolute"}
+        bottom={media.isDesktop && "44px"}
+        as={Link}
+        border={border}
+        to={"/services"}
+      />
 
       {/* {data.link && (
         <Button

@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { navLinks, routes } from "../../../constants";
 import SectionWrapper2 from "../../../components/other/SectionWrapper2";
 import SectionTitle from "../../../components/title/Section-Title";
+import BorderedButton from "../../../components/button/BorderedButton";
 function AboutSection() {
   const media = useResponsive();
   return (
@@ -55,17 +56,13 @@ function AboutSection() {
             exception
           </Text>
 
-          <Button
-            size={media.isMobile ? "sm" : "lg"}
-            h="50px"
+          <BorderedButton
+            title="Explore our faculties"
             as={Link}
             to={routes.about}
-            bg="transparent"
-            variant="outline"
-            borderColor="#008DB9"
-          >
-            Learn More About Us
-          </Button>
+            size={media.isMobile ? "sm" : "lg"}
+            maxW={media.isMobile ? "100%" : "279px"}
+          />
         </Flex>
       </Flex>
     </SectionWrapper2>
