@@ -8,7 +8,7 @@ import BorderedButton from "../../components/button/BorderedButton";
 
 function ServiceItem({ data, isBorderRight, isBorderTop }) {
   const media = useResponsive();
-  const border = "1px solid " + colors.secondary+ "50";
+  const border = "1px solid " + colors.secondary+ "90";
   const borderHover = "1px solid " + colors.secondaryAccent;
   return (
     <Box

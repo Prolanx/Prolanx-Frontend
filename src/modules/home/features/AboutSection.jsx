@@ -57,7 +57,7 @@ function AboutSection() {
           </Text>
 
           <BorderedButton
-            title="Explore our faculties"
+            title="Learn more about us"
             as={Link}
             to={routes.about}
             size={media.isMobile ? "sm" : "lg"}

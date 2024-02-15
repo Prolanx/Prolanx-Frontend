@@ -6,7 +6,7 @@ import { colors } from "../constants/design";
 
 function ProgramItem({ data }) {
   const media = useResponsive();
-  const border = "1px solid " + colors.accent + "90";
+  const border = "1px solid " + colors.secondary+"95";
   return (
     <Box
       py="16px"

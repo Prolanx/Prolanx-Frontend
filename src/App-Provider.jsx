@@ -6,10 +6,13 @@ export const AppContext = React.createContext();
 
 function AppProvider({ children }) {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
+  const [isHeaderFixed, setIsHeaderFixed] = useState(false);
   const toggleMobileNav = () => setIsMobileNavOpen(!isMobileNavOpen);
   const data = {
     isMobileNavOpen,
-    toggleMobileNav
+    toggleMobileNav,
+    isHeaderFixed,
+    setIsHeaderFixed
   }
   return (
     <AppContext.Provider value={{...data}}>

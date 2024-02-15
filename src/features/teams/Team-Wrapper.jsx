@@ -1,15 +1,14 @@
-import { Flex, Text, Box, SimpleGrid } from "@chakra-ui/react";
+import { Flex, Text, Box } from "@chakra-ui/react";
 import React from "react";
 import TeamCard from "./TeamCard";
 import CustomHeading from "../../components/heading/Custom-Heading";
-import SectionWrapper from "../../components/other/SectionWrapper";
 import useResponsive from "../../hooks/useResponsive";
 import SectionWrapper2 from "../../components/other/SectionWrapper2";
 
-function TeamWrapper({ heading, message, list }) {
+function TeamWrapper({ heading, message, list, ...props }) {
   const media = useResponsive();
   return (
-    <SectionWrapper2>
+    <SectionWrapper2 {...props}>
       <Box minW="100%">
         <Flex flexDir="column" alignItems="center" textAlign="center">
           <CustomHeading

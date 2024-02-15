@@ -21,7 +21,7 @@ function CourseItemWrapper({
       rounded="8px"
       p={media.isMobile ? "20px 15px" : media.isTablet ? "25px 20px" : "32px"}
       maxW={media.isMobile ? "100%" : "378px"}
-      maxH="450px"
+      // maxH="450px"
       // mb={!media.isDesktop && "35px"}
       {...props}
     >

@@ -26,13 +26,21 @@ export const useCoursesInit = () => {
     });
   };
   const toggleCourse = (option) => {
-    // options is either all or a facultyId
+    console.log("options is ", option)
+    // options is either "all" or a "facultyId"
     setIsFaculty(false);
+    // if option (facultyId) is not set or is == "all" then show all courses
     if (!option || option == "" || option === "all") {
+      console.log("setting all faculties ")
       toggleCurrentFaculty();
       setCurrentCourses(courses);
       return;
     }
+
+
+    console.log("testing the logic")
+    
+
     const list = [];
     courses.map((item) => {
       if (item.facultyId == option) list.push(item);

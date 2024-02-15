@@ -55,7 +55,9 @@ function ChooseUsSection() {
 
   return (
     <SectionWrapper2 background={colors.primaryBg}>
-      <Box >
+      
+      
+      <Box>
         <Flex justifyContent={media.isLargeScreen && "start"}>
           <SectionTitle
             name="Why Choose us"
@@ -66,7 +68,7 @@ function ChooseUsSection() {
         </Flex>
 
         {media.isDesktop ? (
-          <SimpleGrid columns={4} >
+          <SimpleGrid columns={4}>
             {chooseUsOptions.map((item, index) => (
               <ChooseUsItem data={item} icons={chooseUsIcons} />
             ))}

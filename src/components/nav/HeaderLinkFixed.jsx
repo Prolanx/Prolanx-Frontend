@@ -4,7 +4,7 @@ import { colors } from "../../constants/design";
 import CustomLink from "./CustomLink";
 import LinkBorderBottom from "./LinkBorderBottom";
 
-function HeaderLink({ name, link, isHideBorder, isFixed, ...props }) {
+function HeaderLinkFixed({ name, link, isHideBorder, isFixed, ...props }) {
   const location = useLocation();
   const [isCurrent, setIsCurrent] = useState(false);
   useEffect(() => {
@@ -20,28 +20,19 @@ function HeaderLink({ name, link, isHideBorder, isFixed, ...props }) {
   const handleMouseEnter = () => setIsHovered(true);
   const handleMouseLeave = () => setIsHovered(false);
 
-  useEffect(() => {
-    if (isFixed) {
-    
-      // if(isHovered) return setColor()
-      return
-    }
-    
-    
-  }, [isHovered]);
   return (
     <CustomLink
       link={link}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      color={isCurrent ? colors.accent : colors.whiteText}
+      color={isCurrent ? colors.primary : colors.black}
       position="relative"
       {...props}
     >
       {name}
-      {!isHideBorder && <LinkBorderBottom isHovered={isHovered} />}
+      {!isHideBorder && <LinkBorderBottom isHovered={isHovered} bg={colors.primary} />}
     </CustomLink>
   );
 }
 
-export default HeaderLink;
+export default HeaderLinkFixed;

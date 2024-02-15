@@ -39,17 +39,24 @@ export const servicesSection = {
   insight: "insight",
 };
 
-export const routes = {
+export const appLinks = {
   home: "/",
-  home2: "/?/:isContact",
+  home2: "/",
   about: "/about",
-  services: "/services?/:section",
+  services: "/services",
   bootcamp: "/bootcamp",
-  bootcampInfo: "/bootcamp/info/:id",
-  bootcampList: "/bootcamp/list/:facultyId",
+  bootcampInfo: "/bootcamp/info",
+  bootcampList: "/bootcamp/list",
   privacy: "/privacy",
   cookie: "/cookie",
   resources: "/resources",
+};
+
+export const routes = {
+  ...appLinks,
+  services: "/services?/:section",
+  bootcampInfo: "/bootcamp/info/:id?",
+  bootcampList: "/bootcamp/list/:facultyId?",
 };
 
 import digitalDesign from "assets/digital-design.svg";

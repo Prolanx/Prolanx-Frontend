@@ -9,12 +9,14 @@ import useResponsive from "../../../../hooks/useResponsive";
 import SectionWrapper from "../../../../components/other/SectionWrapper";
 import ProgramItem from "../../../../features/Program-Item";
 import SectionWrapper2 from "../../../../components/other/SectionWrapper2";
+import BorderedButton from "../../../../components/button/BorderedButton";
+import BaseButton from "../../../../components/button/BaseButton";
 
 function ProgramSection() {
   const media = useResponsive();
 
   return (
-    <SectionWrapper2>
+    <SectionWrapper2 pb="50px">
       <Box w="100%">
         <Flex
           flexDir={media.isDesktop ? "row" : "column"}
@@ -81,6 +83,10 @@ function ProgramSection() {
             <ProgramItem data={item} />
           ))}
         </SimpleGrid>
+
+        <Flex mt="36px">
+          <BaseButton title="View our courses" />
+        </Flex>
       </Box>
     </SectionWrapper2>
   );

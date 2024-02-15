@@ -3,7 +3,7 @@ import BaseButton from "./BaseButton";
 import { colors } from "../../constants/design";
 
 function BorderedButton({ title, ...props }) {
-  const border = "1px solid " + colors.accent + "50";
+  const border = "1px solid " + colors.accent;
   return (
     <BaseButton
       bg="transparent"

@@ -11,14 +11,14 @@ import SectionWrapper2 from "../../../../components/other/SectionWrapper2";
 function FacultySection() {
   const media = useResponsive();
   return (
-    <SectionWrapper2
+    <SectionWrapper2 pb="50px"
 
     // px={!media.isMobile && "0px"}
     >
       <Box  w="100%">
         <Flex flexDir="column" alignItems="center">
           <CustomHeading
-            title="Explore Our Faculty"
+            title="Explore Our Faculties"
             mb={media.isDesktop ? "44px" : media.isTablet ? "30px" : "20px"}
             fontSize={
               media.isDesktop ? "32px" : media.isTablet ? "30px" : "25px"

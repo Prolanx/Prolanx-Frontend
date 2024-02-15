@@ -1,15 +1,15 @@
-import { Box, Button, Flex, Heading, Text } from "@chakra-ui/react";
+import { Flex, Heading, Text } from "@chakra-ui/react";
 import React from "react";
 import { colors } from "../../../constants/design";
 import showcase from "../../../assets/showcase.png";
 import useResponsive from "../../../hooks/useResponsive";
 import { Link } from "react-router-dom";
 import BorderedButton from "../../../components/button/BorderedButton";
+import { appLinks } from "../../../constants";
 
 function LearnSection() {
   const media = useResponsive();
 
-  const loginLink = "https://academy.prolanx.co/my-dashboard/";
   return (
     <Flex
       flexDir="column"
@@ -47,14 +47,13 @@ function LearnSection() {
         title="View our courses"
         w="250px"
         as={Link}
-        to={loginLink}
+        to={appLinks.bootcampList}
         zIndex="5000"
         size="sm"
         color={colors.whiteText}
-
         _hover={{
           color: "black",
-          bg: colors.accent
+          bg: colors.accent,
         }}
       />
     </Flex>

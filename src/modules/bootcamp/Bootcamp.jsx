@@ -13,31 +13,20 @@ import FacultySection from "./features/faculty/Faculty-Section";
 import TechSection from "./features/tech-stacks/Tech-Section";
 import FaqSection from "../../features/faqs/Faq-Section";
 
-
 function Bootcamp() {
   return (
-    <Box  bg={colors.whiteText} overflow="hidden" >
+    <Box bg={colors.whiteText} overflow="hidden">
       <SecondaryIntro
         title="Our Bootcamp"
         message="Empowering your journey through cutting edge technogy and expertise"
       />
-
       <ProgramSection />
-
       <TechSection />
-
       <FacultySection />
-
       <EnrollSection />
-
       <TutorsSection />
-
-
-<FaqSection/>
-     
-
+      <FaqSection />
       <ContactSection />
-
       <Footer />
     </Box>
   );

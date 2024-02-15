@@ -13,17 +13,38 @@ import CookiePage from "../modules/cookie/Cookie-Page";
 import BootcampInfo from "../modules/courses-content/Bootcamp-Info";
 import { routes } from "../constants";
 import Page from "../Page";
+import PageWrapper from "../components/other/PageWrapper";
 
 function AppRoutes() {
   return (
     <Routes>
-      <Route index element={<Home />} />
-      <Route path="/home" element={<Home />} />
+      <Route
+        index
+        element={
+          <Page>
+            <PageWrapper>
+              <Home />
+            </PageWrapper>
+          </Page>
+        }
+      />
+      <Route
+        path="/home"
+        element={
+          <Page>
+            <PageWrapper>
+              <Home />
+            </PageWrapper>
+          </Page>
+        }
+      />
       <Route
         path={routes.about}
         element={
           <Page>
-            <About />
+            <PageWrapper>
+              <About />
+            </PageWrapper>
           </Page>
         }
       />
@@ -32,7 +53,9 @@ function AppRoutes() {
         path={routes.bootcamp}
         element={
           <Page>
-            <Bootcamp />
+            <PageWrapper>
+              <Bootcamp />
+            </PageWrapper>
           </Page>
         }
       />
@@ -40,7 +63,9 @@ function AppRoutes() {
         path={routes.bootcampList}
         element={
           <Page>
-            <Courses />
+            <PageWrapper>
+              <Courses />
+            </PageWrapper>
           </Page>
         }
       />
@@ -48,7 +73,9 @@ function AppRoutes() {
         path={routes.bootcampInfo}
         element={
           <Page>
-            <BootcampInfo />
+            <PageWrapper>
+              <BootcampInfo />
+            </PageWrapper>
           </Page>
         }
       />
@@ -56,7 +83,9 @@ function AppRoutes() {
         path={routes.privacy}
         element={
           <Page>
-            <Privacy />
+            <PageWrapper>
+              <Privacy />
+            </PageWrapper>
           </Page>
         }
       />
@@ -64,7 +93,9 @@ function AppRoutes() {
         path={routes.cookie}
         element={
           <Page>
-            <CookiePage />
+            <PageWrapper>
+              <CookiePage />
+            </PageWrapper>
           </Page>
         }
       />

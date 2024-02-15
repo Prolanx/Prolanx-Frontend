@@ -41,7 +41,7 @@ function EnrollSection() {
   const media = useResponsive();
 
   return (
-    <SectionWrapper2>
+    <SectionWrapper2 pb="50px">
       <Box>
         <CustomHeading
           title="Why Enroll with us"

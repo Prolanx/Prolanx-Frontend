@@ -45,7 +45,7 @@ function FaqSection({ hideTitle, ...props }) {
     <SectionWrapper>
       {!hideTitle && (
         <CustomHeading
-          title="Frequently Asked Questions"
+          title="FAQ"
           fontSize={media.isDesktop ? "32px" : "25px"}
           textAlign="center"
           mb="50px"

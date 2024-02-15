@@ -11,14 +11,14 @@ import {
 import React from "react";
 import { colors } from "../../constants/design";
 import useResponsive from "../../hooks/useResponsive";
-import SectionWrapper2 from "../../components/other/SectionWrapper2";
+import SectionTitle from "../../components/title/Section-Title";
 
 function ContactForm() {
   const media = useResponsive();
   const data = [
     {
       title: "Email us at:",
-      message: "enquiry@prolanxdigital.co",
+      message: "enquiry@mail.prolanx.co",
     },
     {
       title: "Address",
@@ -29,38 +29,43 @@ function ContactForm() {
       message: "+44 (0) 773 372 4979",
     },
   ];
+
+  const border = "1px solid " + colors.whiteText + "80";
   return (
     <Box
       // minH="693px"
       py="50px"
-      px={media.isLargeScreen ? "50px": media.isDesktop ? "50px" : "20px"}
+      px={media.isLargeScreen ? "50px" : media.isDesktop ? "50px" : "20px"}
       bg={colors.primaryBg}
       borderRadius={media.isMobile || media.isTablet ? "0px" : "8px"}
       pt="35px"
       zIndex="4000"
       pos="relative"
-    
     >
-      <Box w="100%" >
-        <Heading
-          mb="68px"
-          fontSize={media.isDesktop ? "32px" : "22px"}
-          fontWeight="600"
-          color={colors.accent2}
+      <Box w="100%">
+        <SectionTitle
+          name="Get in touch"
+          mb="60px"
+          pb="20px"
+          color={colors.whiteText}
+          borderBottom={border}
           fontFamily="nexa"
-        >
-          Get in touch
-        </Heading>
+          fontSize={media.isDesktop ? "32px" : "22px"}
+        />
 
         <SimpleGrid
-        columns={3}
-        spacingX={5}
+          columns={3}
+          spacingX={5}
           mb="40px"
           justifyContent={media.isDesktop && "space-between"}
           flexDir={media.isDesktop ? "row" : "column"}
         >
           {data.map((item) => (
-            <Box color={colors.accent2} mb={!media.isDesktop && "10px"} maxw="300px">
+            <Box
+              color={colors.whiteText}
+              mb={!media.isDesktop && "10px"}
+              maxw="300px"
+            >
               <Heading
                 mb={media.isDesktop ? "15px" : "5px"}
                 fontSize={media.isDesktop ? "28px" : "20px"}
@@ -89,6 +94,7 @@ function ContactForm() {
           size="xs"
           rounded="4px"
           py="15px"
+          px={15}
         />
         <Textarea
           bg="white"
