@@ -5,8 +5,6 @@ import SecondaryIntro from "../../components/intro/Secondary-Intro";
 import Footer from "../../components/footer/Footer";
 import { useCoursesInit } from "./hooks/useCoursesInit";
 import CourseItem from "./Course-Item";
-import SectionWrapper from "../../components/other/SectionWrapper";
-import CourseFacultyItem from "./Course-Faculty-Item";
 import BootcampQuerySection from "./features/Bootcamp-Query-Section";
 import BootcampDisplayWrapper from "./features/Bootcamp-Display-Wrapper";
 import NoBootcampSection from "./features/No-Bootcamp-Section";
@@ -14,18 +12,24 @@ import FaqSection from "../../features/faqs/Faq-Section";
 import SectionWrapper2 from "../../components/other/SectionWrapper2";
 
 function Courses() {
-  const { data, faculty, actions, isFaculty } = useCoursesInit();
+  const { data, faculty, faculties, actions, search } =
+    useCoursesInit();
 
   return (
     <Box bg={colors.accent2}>
       <SecondaryIntro
-        title="Courses"
-        message="Empowering your journey through cutting edge technogy and expertise"
+        title={faculty ? faculty.title : "All Faculties"}
+        message="Browse throuh our bootcamps available and filter them by their respective faculties"
       />
 
       <SectionWrapper2>
         <Box w="100%">
-          <BootcampQuerySection faculty={faculty} actions={actions} />
+          <BootcampQuerySection
+            faculty={faculty}
+            actions={actions}
+            search={search}
+            faculties={faculties}
+          />
 
           <React.Fragment>
             {/* check if data is empty or not */}
@@ -34,16 +38,8 @@ function Courses() {
             ) : (
               <BootcampDisplayWrapper>
                 {data.map((item) => (
-                  <React.Fragment>
-                    {isFaculty ? (
-                      <CourseFacultyItem
-                        data={item}
-                        toggleCourses={actions.toggleCourse}
-                      />
-                    ) : (
-                      <CourseItem data={item} />
-                    )}
-                  </React.Fragment>
+                   <CourseItem data={item} />
+                
                 ))}
               </BootcampDisplayWrapper>
             )}

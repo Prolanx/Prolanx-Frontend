@@ -62,7 +62,7 @@ function ServiceSection() {
           <SectionTitle name="Our Services" color={colors.black} mb="66px" />
         </Flex>
 
-        <SimpleGrid columns={!media.isDesktop ? 1 : 3}>
+        <SimpleGrid columns={media.isMobile ? 1 : media.isTablet || media.isLaptop ? 2 : 3}>
           {serviceOptions.map((item, index) => (
             <React.Fragment>
               {index === 0 ? (

@@ -17,10 +17,15 @@ import HeaderContent from "./HeaderContent";
 
 function Header({ ...props }) {
   const media = useResponsive();
-  const { toggleMobileNav, isHeaderFixed } = useContext(AppContext);
-  const scroll = useScrollPosition();
+  const { isHeaderFixed } = useContext(AppContext);
   const border = "1px solid " + colors.whiteText + "60";
   const borderFixed = "1px solid " + colors.primary + "30";
+
+  useScrollPosition()
+
+  useEffect(()=> {
+console.log('isHeader fixed ', isHeaderFixed)
+  }, [isHeaderFixed])
 
   return (
     <Box
@@ -29,7 +34,7 @@ function Header({ ...props }) {
       w="100%"
       bg={isHeaderFixed ? colors.whiteText : "transparent"}
       position={isHeaderFixed ? "fixed" : "relative"}
-      zIndex="1000"
+      zIndex="5000"
       transition=".5s"
       {...props}
     >
@@ -38,9 +43,7 @@ function Header({ ...props }) {
           py={media.isMobile || media.isTablet ? "20px" : "10px"}
         />
       ) : (
-        <HeaderContent
-    
-        />
+        <HeaderContent />
       )}
     </Box>
   );

@@ -1,19 +1,20 @@
-import { Route, Routes } from "react-router";
+import { Route, Routes, Navigate } from "react-router";
 import About from "../modules/about/About";
 import Bootcamp from "../modules/bootcamp/Bootcamp";
 import Home from "../modules/home/Home";
 import Resources from "../modules/resources/Resources";
 import Services from "../modules/services/Services";
-import Courses from "../modules/courses/Courses";
+import Collection from "../modules/bootcamp-collection/Collection";
 import Email from "../modules/Email/Email";
 import Auth from "../modules/auth/Auth";
 import AuthGuard from "./guard/AuthGuard";
 import Privacy from "../modules/privacy/Privacy";
 import CookiePage from "../modules/cookie/Cookie-Page";
-import BootcampInfo from "../modules/courses-content/Bootcamp-Info";
+import BootcampInfo from "../modules/bootcamp-info/Bootcamp-Info";
 import { routes } from "../constants";
 import Page from "../Page";
 import PageWrapper from "../components/other/PageWrapper";
+import NotFound from "../modules/notFound/NotFound";
 
 function AppRoutes() {
   return (
@@ -29,7 +30,7 @@ function AppRoutes() {
         }
       />
       <Route
-        path="/home"
+        path={routes.home}
         element={
           <Page>
             <PageWrapper>
@@ -64,7 +65,7 @@ function AppRoutes() {
         element={
           <Page>
             <PageWrapper>
-              <Courses />
+              <Collection />
             </PageWrapper>
           </Page>
         }
@@ -99,6 +100,18 @@ function AppRoutes() {
           </Page>
         }
       />
+
+      <Route
+        path="/not-found"
+        element={
+          <Page>
+            <PageWrapper>
+              <NotFound />
+            </PageWrapper>
+          </Page>
+        }
+      ></Route>
+
       <Route
         path={routes.resources}
         element={
@@ -108,10 +121,11 @@ function AppRoutes() {
         }
       />
       <Route path="/auth" element={<Auth />} />
-
       <Route element={<AuthGuard />}>
         <Route path="/send-mail/" element={<Email />} />
       </Route>
+
+      <Route path="*" element={<Navigate to="/not-found" replace />} />
     </Routes>
   );
 }

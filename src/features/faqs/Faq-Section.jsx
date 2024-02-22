@@ -5,41 +5,10 @@ import FaqComponent from "./Faq-Component";
 import useResponsive from "../../hooks/useResponsive";
 import SectionWrapper from "../../components/other/SectionWrapper";
 import CustomHeading from "../../components/heading/Custom-Heading";
+import { faqData } from "../../constants";
+
 
 function FaqSection({ hideTitle, ...props }) {
-  const data = [
-    {
-      title:
-        "Does it make sense to join if Im already a computer Science student or graduate",
-      message:
-        " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum ipsum dolore nostrum amet labore enim.",
-    },
-    {
-      title:
-        "Does it make sense to join if Im already a computer Science student or graduate",
-      message:
-        " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum ipsum dolore nostrum amet labore enim.",
-    },
-    {
-      title:
-        "Does it make sense to join if Im already a computer Science student or graduate",
-      message:
-        " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum ipsum dolore nostrum amet labore enim.",
-    },
-    {
-      title:
-        "Does it make sense to join if Im already a computer Science student or graduate",
-      message:
-        " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum ipsum dolore nostrum amet labore enim.",
-    },
-    {
-      title:
-        "Does it make sense to join if Im already a computer Science student or graduate",
-      message:
-        " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum ipsum dolore nostrum amet labore enim.",
-    },
-  ];
-
   const media = useResponsive();
   return (
     <SectionWrapper>
@@ -53,7 +22,7 @@ function FaqSection({ hideTitle, ...props }) {
       )}
 
       <Center>
-        <FaqComponent data={data} />
+        <FaqComponent data={faqData} />
       </Center>
     </SectionWrapper>
   );

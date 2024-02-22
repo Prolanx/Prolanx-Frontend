@@ -6,7 +6,8 @@ import { colors } from "../constants/design";
 
 function ProgramItem({ data }) {
   const media = useResponsive();
-  const border = "1px solid " + colors.secondary+"95";
+  const border = "1px solid " + colors.secondary + "90";
+
   return (
     <Box
       py="16px"
@@ -15,6 +16,11 @@ function ProgramItem({ data }) {
       mb={!media.isDesktop && "30px"}
       textAlign={media.isMobile || media.isTablet ? "center" : "start"}
       borderRight={media.isMobile | media.isTablet ? "0px" : border}
+      transition=".3s"
+      _hover={{
+        boxShadow: "0 0 5px " + colors.secondary,
+        border: border,
+      }}
     >
       <Flex
         mb="20px"
@@ -25,11 +31,11 @@ function ProgramItem({ data }) {
           src={data.image}
           me="16px"
           objectFit="center"
-          w="56px"
-          h="56px"
+          w="46px"
+          h="46px"
           mb={!media.isDesktop && "20px"}
         />
-        <CustomHeading fontSize="20px" fontWeight="500" title={data.title} />
+        <CustomHeading fontSize="17px" fontWeight="500" title={data.title} />
       </Flex>
       <Text fontSize="14.5px" fontFamily="mont">
         {data.message}

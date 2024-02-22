@@ -2,7 +2,6 @@ import { useLocation, useNavigate } from "react-router";
 
 function useCustomRouter() {
   const navigate = useNavigate();
-
   const location = useLocation();
 
   const redirect = (url, replace = false) => {

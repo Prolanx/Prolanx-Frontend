@@ -1,17 +1,15 @@
-import { Box, Flex, Image, SimpleGrid, Text } from "@chakra-ui/react";
+import { Box, Flex, Icon, Image, SimpleGrid, Text } from "@chakra-ui/react";
 import React from "react";
 import FooterList from "./Footer-List";
-import twitter from "../../assets/x.png";
-import facebook from "../../assets/facebook.png";
-import youtube from "../../assets/youtube.png";
 import logoText from "assets/prolanx-logo.svg";
-import instagram from "../../assets/instagram.png";
 import useResponsive from "../../hooks/useResponsive";
 import SectionWrapper2 from "../other/SectionWrapper2";
 import { routes, servicesSection } from "../../constants";
 import { colors } from "../../constants/design";
 import { Link } from "react-router-dom";
-import CustomHeading from "../heading/Custom-Heading";
+
+import { FaXTwitter, FaYoutube, FaInstagram } from "react-icons/fa6";
+import { FaFacebook } from "react-icons/fa6";
 
 function Footer() {
   const list = [
@@ -63,13 +61,10 @@ function Footer() {
     },
   ];
   const icons = [
-    { src: twitter, link: "/" },
-    { src: facebook, link: "/" },
-    // { src: behance, link: "/" },
-    // { src: dribble, link: "/" },
-    { src: youtube, link: "/" },
-    { src: instagram, link: "/" },
-    // { src: github, link: "/" },
+    { src: FaXTwitter, link: "/" },
+    { src: FaFacebook, link: "/" },
+    { src: FaYoutube, link: "/" },
+    { src: FaInstagram, link: "/" },
   ];
 
   const copyrightLinks = [
@@ -108,11 +103,13 @@ function Footer() {
 
           <Flex>
             {icons.map((item) => (
-              <Image
-                src={item.src}
+              <Icon
+                // src={item.src}
+                as={item.src}
+                fontSize="24px"
                 cursor="pointer"
-                h="24px"
-                w="24px"
+                // h="24px"
+                // w="24px"
                 me={media.isDesktop ? "18px" : "25px"}
               />
             ))}

@@ -1,16 +1,19 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { courses } from "constants";
+import useCustomRouter from "../../../hooks/useCustomRouter";
+import { appLinks } from "../../../constants";
 
 export const useInitBootcampInfo = () => {
   const urlParams = useParams();
+  const router = useCustomRouter();
   const id = urlParams.id;
-  const [bootcamp, setBootcamp] =  useState(null);
+  const [bootcamp, setBootcamp] = useState(null);
 
   const initPage = () => {
     // if id doesnt exist then redirect back to where they were coming from or home page
-    // if (!id || id === "") return setCurrentCourses(courses);
-    courses.map((item) =>  item.id == id && setBootcamp(item))
+    if (!id || id === "") return router.navigate(appLinks.bootcampList, true);
+    courses.map((item) => item.id == id && setBootcamp(item));
   };
 
   useEffect(() => {
@@ -18,6 +21,6 @@ export const useInitBootcampInfo = () => {
   }, [id]);
 
   return {
-    bootcamp, 
-    };
+    bootcamp,
+  };
 };

@@ -1,16 +1,19 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
-export const useSearchCourse = (courses, setCurrentCourses) => {
-
-  const [query, setQuery] = useState(null);
+export const useSearchCourse = (courses, updateCouses) => {
+  const [query, setQuery] = useState("");
+  const reset = () => {
+    if (!query || query === "") return;
+    onQueryChanged("");
+  };
   const onQueryChanged = (value) => {
     setQuery(value);
     const result = querySearch(value);
-    console.log("search result");
-    setCurrentCourses(result);
+    updateCouses(result);
   };
 
   const querySearch = (query) => {
+    if (!query || query === "") return courses;
     const regex = new RegExp(query, "i");
     const result = courses.filter((item) => regex.test(item.title));
     return result;
@@ -18,7 +21,7 @@ export const useSearchCourse = (courses, setCurrentCourses) => {
 
   return {
     query,
-    // querySearch,
     onQueryChanged,
+    reset,
   };
 };

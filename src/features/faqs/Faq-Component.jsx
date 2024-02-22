@@ -12,11 +12,11 @@ function FaqComponent({ data }) {
     <Box maxW="703px" bg={colors.primaryBg} color={colors.whiteText}>
     <AccordionComponent allowToggle={true}>
       {data.map((item) => (
-        <AccordionItemComponent title={item.title}>
+        <AccordionItemComponent title={item.title} bg={colors.whiteText} color={colors.black}>
           <Box
             fontFamily="mont"
-            fontSize={media.isMobile ? "15px" : "20px"}
-            bg="white"
+            fontSize={media.isMobile ? "15px" : "15px"}
+            bg={colors.whiteText}
             color={colors.black}
             py="20px"
             pb="50px"

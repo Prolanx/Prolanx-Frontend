@@ -8,7 +8,6 @@ function ChooseUsItem({ data, icons, ...props }) {
   return (
     <Box
       p={media.isDesktop ? "26px 30px" : "26px 20px"}
-      me={media.isDesktop && "24px"}
       maxW={media.isDesktop && "283px"}
       border=".5px solid"
       borderColor={colors.secondaryAccent}

@@ -20,7 +20,9 @@ function CourseScheduleSection() {
     theoretical knowledge and practical application, culminating in a
     professional portfolio."
     >
-      <Flex flexDir={media.isDesktop ? "row" : "column"}>
+      <Flex
+      
+      flexDir={media.isDesktop ? "row" : "column"}>
         {programList.map((item, index) => (
           <React.Fragment key={index}>
             {index !== programList.length - 1 && <ProgramItem data={item} />}

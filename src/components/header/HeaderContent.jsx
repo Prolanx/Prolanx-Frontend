@@ -20,7 +20,7 @@ function HeaderContent({ ...props }) {
 
   return (
     <SectionWrapper2
-        py={media.isMobile || media.isTablet ? "20px" : "16px"}
+      py={media.isMobile || media.isTablet ? "20px" : "16px"}
       {...props}
     >
       <Flex w="100%" justifyContent="space-between" alignItems="center">

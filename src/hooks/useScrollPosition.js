@@ -19,13 +19,13 @@ const useScrollPosition = () => {
 
   const handleHiddenState = (position) => {
     if (position <= 200) setHeaderHidden(false);
-    if (position > 200)  setHeaderHidden(true);
-    if (position > 581)setHeaderHidden(false);
+    if (position > 200) setHeaderHidden(true);
+    if (position > 581) setHeaderHidden(false);
   };
 
-  useEffect(() => {
-    console.log("scroll position ", scrollPosition);
-  }, [scrollPosition]);
+  // useEffect(() => {
+  //   console.log("scroll position ", scrollPosition);
+  // }, [scrollPosition]);
   useEffect(() => {
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => {

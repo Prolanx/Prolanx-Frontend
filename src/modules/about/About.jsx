@@ -41,7 +41,7 @@ function About() {
     <Box>
       <SecondaryIntro
         title="About Us"
-        message="Empowering your journey through cutting edge technogy and expertise"
+        message="Crafted with passion, powered by innovation. Discover who we are, what drives us, and how we're making a difference"
       />
 
       <VisionSection data={vision} />

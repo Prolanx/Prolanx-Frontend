@@ -8,9 +8,9 @@ function TutorsSection() {
     { name: "Isreal Adebayo", role: "Graphics Design" },
     // { name: "Ifeoluwa Adniji", role: "Motion Graphics & After-effects" },
   ];
-  const title = "Learn live from experienced tutors";
+  const title = "Learn Live From Experienced Tutors";
   const message =
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam dolores veritatis accusamus rerum doloribus quae";
+    " Elevate your learning with real-time guidance from expert tutors offering personalized support every step of the way.";
   return (
     <TeamWrapper heading={title} message={message} list={tutors} pb="50px" />
   );

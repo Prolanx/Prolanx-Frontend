@@ -8,8 +8,8 @@ function TeamCard({ name, role, ...props }) {
   return (
     <Box {...props}>
       <Image
-        h={media.isDesktop ? "360px" : "200px"}
-        minW={media.isDesktop ? "283px" : "220px"}
+        h={media.isMobile || media.isTablet ? "210px" : "360px"}
+        minW={media.isMobile || media.isTablet ? "220px" : "283px"}
         objectFit="cover"
         bg="purple.400"
         mb="36px"

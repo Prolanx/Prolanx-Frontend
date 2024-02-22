@@ -5,12 +5,10 @@ import IntroWrapper from "./Intro-Wrapper";
 import useResponsive from "../../hooks/useResponsive";
 import introIcon from "assets/intro-icon.svg";
 
-
 function SecondaryIntro({ title, message }) {
   const media = useResponsive();
   return (
     <IntroWrapper>
-
       <Image
         src={introIcon}
         pos="absolute"
@@ -20,7 +18,6 @@ function SecondaryIntro({ title, message }) {
         top={media.isMobile || media.isTablet ? "0px" : "-110px"}
         right={media.isMobile || media.isTablet ? "0px" : "-340px"}
       />
-
 
       <Flex
         flexDir="column"
@@ -34,6 +31,7 @@ function SecondaryIntro({ title, message }) {
           fontFamily="nexa"
           fontWeight="700"
           fontSize={media.isDesktop ? "60px" : "25px"}
+          w={media.isMobile || media.isTablet ? "100%" : "60%"}
           mb={media.isDesktop ? "50px" : "30px"}
           mt={media.isDesktop ? "100px" : "30px"}
         >

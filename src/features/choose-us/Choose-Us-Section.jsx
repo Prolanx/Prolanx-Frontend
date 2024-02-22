@@ -55,34 +55,25 @@ function ChooseUsSection() {
 
   return (
     <SectionWrapper2 background={colors.primaryBg}>
-      
-      
       <Box>
         <Flex justifyContent={media.isLargeScreen && "start"}>
           <SectionTitle
             name="Why Choose us"
             mb="60px"
             color={colors.whiteText}
-            borderBottom={"1px solid "+ colors.accent+ "50"}
+            borderBottom={"1px solid " + colors.accent + "50"}
           />
         </Flex>
-
-        {media.isDesktop ? (
-          <SimpleGrid columns={4}>
-            {chooseUsOptions.map((item, index) => (
-              <ChooseUsItem data={item} icons={chooseUsIcons} />
-            ))}
-          </SimpleGrid>
-        ) : (
-          <Flex
-            flexDir={media.isDesktop ? "row " : "column"}
-            justifyContent="center"
-          >
-            {chooseUsOptions.map((item, index) => (
-              <ChooseUsItem data={item} icons={chooseUsIcons} />
-            ))}
-          </Flex>
-        )}
+        <SimpleGrid
+          spacing={5}
+          columns={
+            media.isMobile ? 1 : media.isTablet ? 2 : media.isLaptop ? 3 : 4
+          }
+        >
+          {chooseUsOptions.map((item, index) => (
+            <ChooseUsItem data={item} icons={chooseUsIcons} />
+          ))}
+        </SimpleGrid>
       </Box>
     </SectionWrapper2>
   );

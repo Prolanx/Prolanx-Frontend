@@ -22,25 +22,21 @@ function CoursePlanSection({ data }) {
     >
       <Box>
         <AccordionComponent allowToggle={true}>
-
-          <CoursePlanAccordionItem  title="Month 1: Front-End Foundation and First MVP">
-          <CourseTopicSection/>
-          </CoursePlanAccordionItem>
-          
-          <CoursePlanAccordionItem  title="Month 1: Front-End Foundation and First MVP">
-          <CourseTopicSection/>
-          </CoursePlanAccordionItem>
-          
-          <CoursePlanAccordionItem  title="Month 1: Front-End Foundation and First MVP">
-          <CourseTopicSection/>
-          </CoursePlanAccordionItem>
-          
-          <CoursePlanAccordionItem  title="Month 1: Front-End Foundation and First MVP">
-          <CourseTopicSection/>
+          <CoursePlanAccordionItem title="Month 1: Front-End Foundation and First MVP">
+            <CourseTopicSection />
           </CoursePlanAccordionItem>
 
-       
-         
+          <CoursePlanAccordionItem title="Month 1: Front-End Foundation and First MVP">
+            <CourseTopicSection />
+          </CoursePlanAccordionItem>
+
+          <CoursePlanAccordionItem title="Month 1: Front-End Foundation and First MVP">
+            <CourseTopicSection />
+          </CoursePlanAccordionItem>
+
+          <CoursePlanAccordionItem title="Month 1: Front-End Foundation and First MVP">
+            <CourseTopicSection />
+          </CoursePlanAccordionItem>
         </AccordionComponent>
       </Box>
     </CourseInfoComponent>

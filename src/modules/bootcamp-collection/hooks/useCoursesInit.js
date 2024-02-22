@@ -1,10 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
-
 import { faculty, courses } from "../../../constants";
 import { useSearchCourse } from "./useSearchCourse";
-
-// import the courses list
 
 export const useCoursesInit = () => {
   const urlParams = useParams();
@@ -12,35 +9,28 @@ export const useCoursesInit = () => {
   const [currentCourses, setCurrentCourses] = useState([]);
   const [currentFaculty, setCurrentFaculty] = useState(null);
   const [isFaculty, setIsFaculty] = useState(false);
-
-  const initPage = () => {
-    toggleCourse(facultyId);
-  };
+  const search = useSearchCourse(courses, setCurrentCourses);
+  const initPage = () => toggleCourse(facultyId);
 
   const toggleCurrentFaculty = (id) => {
     if (!id) return setCurrentFaculty(null);
     Object.keys(faculty).map((item) => {
-      if (faculty[item].id == facultyId) {
+      if (faculty[item].id == id) {
         setCurrentFaculty(faculty[item]);
       }
     });
   };
   const toggleCourse = (option) => {
-    console.log("options is ", option)
-    // options is either "all" or a "facultyId"
-    setIsFaculty(false);
+    // reset the search qurery if it exists
+    search.reset();
+    // setIsFaculty(false);
     // if option (facultyId) is not set or is == "all" then show all courses
     if (!option || option == "" || option === "all") {
-      console.log("setting all faculties ")
+      console.log("setting all courses ");
       toggleCurrentFaculty();
       setCurrentCourses(courses);
       return;
     }
-
-
-    console.log("testing the logic")
-    
-
     const list = [];
     courses.map((item) => {
       if (item.facultyId == option) list.push(item);
@@ -48,21 +38,10 @@ export const useCoursesInit = () => {
     setCurrentCourses(list);
     toggleCurrentFaculty(option);
   };
+  useEffect(() => {
+    if (search.query) toggleCurrentFaculty();
+  }, [search.query]);
 
-  const toggleFaculties = () => {
-    toggleCurrentFaculty();
-    const list = [];
-    Object.keys(faculty).map((item) => list.push(faculty[item]));
-    setCurrentCourses(list);
-    setIsFaculty(true);
-  };
-
-
-  // const search = useSearchCourse(courses)
-  // const toggleSearch = (query)=> {
-  //  const result =  search.query(query)
-  //  setCurrentCourses(result);
-  // }
   useEffect(() => {
     initPage();
   }, [facultyId]);
@@ -70,10 +49,11 @@ export const useCoursesInit = () => {
   return {
     data: currentCourses,
     faculty: currentFaculty,
+    faculties: faculty,
     isFaculty,
     actions: {
-      toggleFaculties,
       toggleCourse,
     },
+    search,
   };
 };

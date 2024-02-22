@@ -11,11 +11,12 @@ import SectionWrapper2 from "../../../../components/other/SectionWrapper2";
 function FacultySection() {
   const media = useResponsive();
   return (
-    <SectionWrapper2 pb="50px"
+    <SectionWrapper2
+      pb="50px"
 
-    // px={!media.isMobile && "0px"}
+      // px={!media.isMobile && "0px"}
     >
-      <Box  w="100%">
+      <Box w="100%">
         <Flex flexDir="column" alignItems="center">
           <CustomHeading
             title="Explore Our Faculties"
@@ -34,9 +35,9 @@ function FacultySection() {
             textAlign="center"
             maxW={media.isMobile ? "100%" : media.isTablet ? "80%" : "900px"}
           >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim
+            Dive into the specialized tracks that define our bootcamps, each
+            offering a unique pathway to success in today's dynamic tech
+            landscape
           </Text>
         </Flex>
 
@@ -48,7 +49,6 @@ function FacultySection() {
           </React.Fragment>
         ) : (
           <HorizontalScroll>
-           
             {Object.keys(faculty).map((item, index) => (
               <FacultyItem
                 data={faculty[item]}

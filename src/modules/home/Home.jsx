@@ -1,5 +1,5 @@
-import { Box, Heading, Image } from "@chakra-ui/react";
-import React, { useContext, useEffect, useRef, useState } from "react";
+import { Box, Image } from "@chakra-ui/react";
+import React, { useEffect } from "react";
 import Footer from "../../components/footer/Footer";
 import logoBigLeft from "../../assets/logo-big-left.png";
 import logoBigRight from "../../assets/logo-big-right.png";
@@ -9,11 +9,28 @@ import ServiceSection from "../../features/services/Service-Section";
 import AboutSection from "./features/AboutSection";
 import LearnSection from "./features/LearnSection";
 import HomeIntroSection from "./features/Home-Intro-Section";
-
+import { scroller } from "react-scroll";
+import { useParams } from "react-router";
 
 function Home() {
+  const params = useParams();
+  const handleScroll = (section) => {
+    const options = {
+      duration: 1200,
+      delay: 800,
+      smooth: true,
+      offset: 50, // Scrolls to section + 50 pixels down the page
+    };
+    scroller.scrollTo(section, options);
+  };
+  useEffect(() => {
+    if (params?.section && params?.section !== "") {
+      handleScroll(params?.section);
+    }
+  }, [params?.section]);
+
   return (
-    <Box overflowX="hidden" >
+    <Box overflowX="hidden">
       <HomeIntroSection />
       <Image
         src={logoBigRight}
@@ -47,10 +64,11 @@ function Home() {
           top="314px"
           zIndex="1500"
         />
-     
       </Box> */}
 
-      <ContactSection />
+      <div name={"contact"}>
+        <ContactSection />
+      </div>
 
       <Footer />
     </Box>

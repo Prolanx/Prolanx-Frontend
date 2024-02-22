@@ -1,9 +1,7 @@
-import { Box, Flex } from "@chakra-ui/react";
-import React from "react";
-import useResponsive from "../../hooks/useResponsive";
+import { Box } from "@chakra-ui/react";
 import { useMediaQuery } from "react-responsive";
 
-function SectionWrapper2({ children, ...props }) {
+const SectionWrapper3 = ({ children, ...props }) => {
   const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
   const isTablet = useMediaQuery({
     query: "(min-width: 768px) and (max-width: 1023px)",
@@ -21,11 +19,11 @@ function SectionWrapper2({ children, ...props }) {
   } else if (isTablet) {
     padding = "50px"; // Padding for small laptop
   } else if (isSmallLaptop) {
-    padding = "50px"; // Padding for small laptop
+    padding = "30px"; // Padding for small laptop
   } else if (isMediumLaptop) {
-    padding = "100px"; // Padding for medium laptop 40 before
+    padding = "40px"; // Padding for medium laptop
   } else {
-    padding = "100px"; // No padding for large screens
+    padding = "0px"; // No padding for large screens
   }
 
   return (
@@ -36,31 +34,11 @@ function SectionWrapper2({ children, ...props }) {
       //   alignItems={isTablet || isMobile ? "center" : "flex-start"}
       {...props}
     >
-      <Box maxWidth="1320px" width="100%" px={padding}>
+      <Box maxWidth="1320px" width="100%" px={padding} bg="green">
         {children}
       </Box>
     </Box>
   );
-}
+};
 
-export default SectionWrapper2;
-
-// <Flex
-//       p={
-//         media.isMobile
-//           ? "80px 20px"
-//           : media.isTablet
-//           ? "80px 50px"
-//           : media.is2xl
-//           ? "80px 400px"
-//           : media.is3Xl?
-//           "80px 650px":
-//           media.is4k ? "0px"
-
-//           : "80px 120px"
-//       }
-//       justifyContent="center"
-//       {...props}
-//     >
-//       {children}
-//     </Flex>
+export default SectionWrapper3;

@@ -17,8 +17,8 @@ function Bootcamp() {
   return (
     <Box bg={colors.whiteText} overflow="hidden">
       <SecondaryIntro
-        title="Our Bootcamp"
-        message="Empowering your journey through cutting edge technogy and expertise"
+        title="Bootcamp"
+        message="Dive into our transformative programs designed to elevate your career. Join a community of driven individuals and unlock your full potential with us"
       />
       <ProgramSection />
       <TechSection />

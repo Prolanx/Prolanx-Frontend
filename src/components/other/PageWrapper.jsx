@@ -4,7 +4,7 @@ import { colors } from "../../constants/design";
 
 function PageWrapper({ children, ...props }) {
   return (
-    <Box bg={colors.whiteText} {...props}>
+    <Box bg={colors.whiteText} minW="100%" {...props}>
       {children}
     </Box>
   );

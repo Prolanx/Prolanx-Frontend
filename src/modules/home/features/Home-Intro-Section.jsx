@@ -37,12 +37,12 @@ function HomeIntroSection() {
       <Header />
 
       <SectionWrapper2 h="100%">
-        <Flex w="100%" pos="relative">
-          <Flex
+        <Flex pos="relative" minH="100%" alignItems="center">
+          <Box
             flexDir={"column"}
             w="100%"
             textAlign={!media.isDesktop && "center"}
-            justifyContent="center"
+            // justifyContent="center"
             px={media.isTablet ? "50px" : media.isMobile ? "12px" : null}
           >
             <Heading
@@ -65,7 +65,7 @@ function HomeIntroSection() {
               Empowering your journey through cutting edge technogly and
               expertise
             </Text>
-          </Flex>
+          </Box>
 
           {media.isDesktop && (
             <Box
