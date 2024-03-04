@@ -34,6 +34,7 @@ function ContactFields() {
           rounded="4px"
           py="15px"
           px={15}
+          errorColor={colors.errorColor}
         />
         <InputComponent
           name="email"
@@ -46,6 +47,7 @@ function ContactFields() {
           rounded="4px"
           py="15px"
           px={15}
+          errorColor={colors.errorColor}
         />
 
         <TextAreaComponent
@@ -56,6 +58,7 @@ function ContactFields() {
           fontSize="14px"
           rounded="4px"
           py="15px"
+          errorColor={colors.errorColor}
         />
 
         <Button

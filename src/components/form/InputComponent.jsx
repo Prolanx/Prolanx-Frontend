@@ -1,9 +1,9 @@
 import React from "react";
-import { Box, FormControl, FormErrorMessage, Input, FormLabel } from "@chakra-ui/react";
+import { Box, FormControl, FormErrorMessage, Input, FormLabel, Text } from "@chakra-ui/react";
 
 import { Field, useField } from "formik";
 
-function InputComponent({ label, ...props }) {
+function InputComponent({ label, errorColor, ...props }) {
   const [field, meta] = useField(props);
 
   return (
@@ -14,7 +14,10 @@ function InputComponent({ label, ...props }) {
         </Box>
       )}
       <Field as={Input} bg="white"  fontFamily="mont"  {...field} {...props} />
-      <FormErrorMessage>{meta.error}</FormErrorMessage>
+      {meta.error && (
+        <Text color={errorColor} mt={2}>{meta.error}</Text>
+      )}
+      {/* <FormErrorMessage>{meta.error}</FormErrorMessage> */}
     </FormControl>
   );
 }

@@ -3,6 +3,7 @@ export const colors = {
     primaryGrad: "#35BCBE",
     primaryBg: `linear-gradient(to right, #35BCBE -95%, #04619B 100%)`,
     primaryAccent: "#E3F3FF",
+    errorColor: "white",
     
     secondary: "#4AB556",
     secondaryAccent: "#C2FFBD",
