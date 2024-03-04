@@ -4,7 +4,7 @@ import Header from "../../../components/header/Header";
 // import { colors } from "../../constants/design";
 
 import introIcon from "assets/intro-icon.svg";
-import homeIntroIcon from "assets/home-intro-icon.svg";
+import homeIntroIcon from "assets/home-intro-image.png";
 import VerticalAnimation from "../../../components/other/VerticalAnimation";
 import { useEffect } from "react";
 import useResponsive from "../../../hooks/useResponsive";

@@ -9,7 +9,6 @@ import { FiSend } from "react-icons/fi";
 import { colors } from "../../constants/design";
 import useResponsive from "../../hooks/useResponsive";
 
-
 function Email() {
   const emailHook = useSendEmail();
   const { apiState } = emailHook;

@@ -1,40 +1,20 @@
-import {
-  Box,
-  Button,
-  Flex,
-  Heading,
-  Input,
-  SimpleGrid,
-  Text,
-  Textarea,
-} from "@chakra-ui/react";
+import { Box, Heading, SimpleGrid, Text } from "@chakra-ui/react";
 import React from "react";
 import { colors } from "../../constants/design";
 import useResponsive from "../../hooks/useResponsive";
 import SectionTitle from "../../components/title/Section-Title";
+import SectionWrapper2 from "../../components/other/SectionWrapper2";
+import ContactFields from "./Contact-Fields";
+import { data } from "./constants";
+
 
 function ContactForm({ ...props }) {
   const media = useResponsive();
-  const data = [
-    {
-      title: "Email us at:",
-      message: "enquiry@mail.prolanx.co",
-    },
-    {
-      title: "Address",
-      message: "4 cecil Street, Scholes Wigan, WN13JL, Greater Manchester Uk",
-    },
-    {
-      title: "Phone Number",
-      message: "+44 (0) 773 372 4979",
-    },
-  ];
-
   const border = "1px solid " + colors.whiteText + "80";
   return (
-    <Box
+    <SectionWrapper2
       py="50px"
-      px={media.isLargeScreen ? "50px" : media.isDesktop ? "50px" : "20px"}
+      // px={media.isLargeScreen ? "50px" : media.isDesktop ? "50px" : "20px"}
       bg={colors.primaryBg}
       borderRadius={media.isMobile || media.isTablet ? "0px" : "8px"}
       pt="35px"
@@ -42,6 +22,7 @@ function ContactForm({ ...props }) {
       pos="relative"
       {...props}
     >
+   
       <SectionTitle
         name="Get in touch"
         mb="60px"
@@ -84,40 +65,8 @@ function ContactForm({ ...props }) {
           </Box>
         ))}
       </SimpleGrid>
-
-      <Input
-        mb="36px"
-        bg="white"
-        placeholder="Email"
-        h="56px"
-        fontSize="14px"
-        size="xs"
-        rounded="4px"
-        py="15px"
-        px={15}
-      />
-      <Textarea
-        bg="white"
-        placeholder="Message"
-        height="120px"
-        fontSize="14px"
-        rounded="4px"
-        py="15px"
-        mb="36px"
-      />
-
-      <Button
-        minH={!media.isMobile && "56px"}
-        w="100%"
-        fontSize={media.isMobile ? "14px" : media.isTablet ? "20px" : "20px"}
-        bg={colors.accent}
-        rounded="4px"
-        fontFamily="nexa"
-        color={colors.black}
-      >
-        Submit
-      </Button>
-    </Box>
+      <ContactFields />
+    </SectionWrapper2>
   );
 }
 

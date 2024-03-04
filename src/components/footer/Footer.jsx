@@ -7,7 +7,6 @@ import SectionWrapper2 from "../other/SectionWrapper2";
 import { routes, servicesSection } from "../../constants";
 import { colors } from "../../constants/design";
 import { Link } from "react-router-dom";
-
 import { FaXTwitter, FaYoutube, FaInstagram } from "react-icons/fa6";
 import { FaFacebook } from "react-icons/fa6";
 
@@ -77,19 +76,14 @@ function Footer() {
   const media = useResponsive();
 
   return (
-    <SectionWrapper2
-      bg="#2E3133"
-      zIndex="5000"
-      pos="relative"
-      color={colors.accent3}
-    >
+    <SectionWrapper2 bg={colors.black} zIndex="1000" pos="relative">
       <Box w="100%">
-        <Flex
-          justifyContent="space-between"
+        <SimpleGrid
+          columns={media.isMobile ? 1 : 2}
+          spacingX={media.isMobile ? 3 : media.isTablet ? "105px" : 3}
           mb={media.isDesktop ? "52px" : "50px"}
           color="#E3F3FF"
-          borderBottom={media.isDesktop && border}
-          flexDir={media.isDesktop ? "row" : "column"}
+          borderBottom={media.isMobile ? "0px" : border}
         >
           <Image
             src={logoText}
@@ -98,28 +92,26 @@ function Footer() {
                 ? "130px"
                 : null
             }
-            mb={media.isDesktop ? "16px" : "25px"}
+            mb={media.isMobile || media.isTablet ? "50px" : "20px"}
           />
 
-          <Flex>
+          <Flex justifyContent={media.isMobile ? "flex-start" : "flex-end"}>
             {icons.map((item) => (
               <Icon
                 // src={item.src}
                 as={item.src}
                 fontSize="24px"
                 cursor="pointer"
-                // h="24px"
-                // w="24px"
                 me={media.isDesktop ? "18px" : "25px"}
               />
             ))}
           </Flex>
-        </Flex>
+        </SimpleGrid>
 
         <SimpleGrid
           columns={media.isDesktop ? 4 : media.isTablet ? 2 : 1}
           flexWrap="wrap"
-          spacingX={media.isDesktop ? 5 : 3}
+          spacingX={media.isMobile ? 3 : media.isTablet ? "105px" : 3}
           mb={media.isDesktop ? "0px" : "20px"}
         >
           {list.map((item) => (
@@ -132,8 +124,6 @@ function Footer() {
           flexDir={"column"}
           mt={"50px"}
           color={colors.whiteText}
-          // justifyContent="center"
-          // textAlign="center"
         >
           <Text fontSize="12px" pt="30px" mb="24px" borderTop={border}>
             Copyright C 2024 All rights reserved by Prolanx Digital Consulting

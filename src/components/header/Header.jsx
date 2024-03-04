@@ -1,18 +1,9 @@
-import React, { useContext, useEffect } from "react";
-import { HStack, Image, Flex, Box, IconButton } from "@chakra-ui/react";
-
-import logoText from "assets/prolanx-logo.svg";
-import logoTextColored from "assets/prolanx-logo-colored.png";
-import { FiMenu } from "react-icons/fi";
-import { appLinks, navLinks } from "../../constants";
+import React, { useContext } from "react";
+import { Box } from "@chakra-ui/react";
 import { colors } from "../../constants/design";
 import useResponsive from "../../hooks/useResponsive";
 import { AppContext } from "../../App-Provider";
-import SectionWrapper2 from "../other/SectionWrapper2";
-import HeaderLink from "../nav/HeaderLink";
-import CustomLink from "../nav/CustomLink";
 import useScrollPosition from "../../hooks/useScrollPosition";
-import HeaderLinkFixed from "../nav/HeaderLinkFixed";
 import HeaderContent from "./HeaderContent";
 
 function Header({ ...props }) {
@@ -22,11 +13,6 @@ function Header({ ...props }) {
   const borderFixed = "1px solid " + colors.primary + "30";
 
   useScrollPosition()
-
-  useEffect(()=> {
-console.log('isHeader fixed ', isHeaderFixed)
-  }, [isHeaderFixed])
-
   return (
     <Box
       borderBottom={isHeaderFixed ? borderFixed : border}
@@ -34,7 +20,7 @@ console.log('isHeader fixed ', isHeaderFixed)
       w="100%"
       bg={isHeaderFixed ? colors.whiteText : "transparent"}
       position={isHeaderFixed ? "fixed" : "relative"}
-      zIndex="5000"
+      zIndex="1000"
       transition=".5s"
       {...props}
     >

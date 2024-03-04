@@ -10,46 +10,54 @@ import BootcampDisplayWrapper from "./features/Bootcamp-Display-Wrapper";
 import NoBootcampSection from "./features/No-Bootcamp-Section";
 import FaqSection from "../../features/faqs/Faq-Section";
 import SectionWrapper2 from "../../components/other/SectionWrapper2";
+import RelativeWrapper from "../../components/other/RelativeWrapper";
+import CurvyBackground from "../../components/other/CurvyBackground";
 
 function Courses() {
-  const { data, faculty, faculties, actions, search } =
-    useCoursesInit();
+  const { data, faculty, faculties, actions, search } = useCoursesInit();
 
   return (
-    <Box bg={colors.accent2}>
+    <RelativeWrapper bg={colors.accent2}>
+      <CurvyBackground top="125px" />
+      <CurvyBackground top="204px" isRight={true} />
+
       <SecondaryIntro
         title={faculty ? faculty.title : "All Faculties"}
-        message="Browse throuh our bootcamps available and filter them by their respective faculties"
+        message="Browse through our bootcamps and filter them by their respective faculties"
       />
 
-      <SectionWrapper2>
-        <Box w="100%">
-          <BootcampQuerySection
-            faculty={faculty}
-            actions={actions}
-            search={search}
-            faculties={faculties}
-          />
+      <RelativeWrapper>
+        <CurvyBackground top="769px" />
+        <CurvyBackground top="1000px" isRight={true} />
 
-          <React.Fragment>
-            {/* check if data is empty or not */}
-            {data.length < 1 ? (
-              <NoBootcampSection />
-            ) : (
-              <BootcampDisplayWrapper>
-                {data.map((item) => (
-                   <CourseItem data={item} />
-                
-                ))}
-              </BootcampDisplayWrapper>
-            )}
-          </React.Fragment>
-        </Box>
-      </SectionWrapper2>
+        <SectionWrapper2>
+          <Box w="100%">
+            <BootcampQuerySection
+              faculty={faculty}
+              actions={actions}
+              search={search}
+              faculties={faculties}
+            />
 
-      <FaqSection />
-      <Footer />
-    </Box>
+            <React.Fragment>
+              {/* check if data is empty or not */}
+              {data.length < 1 ? (
+                <NoBootcampSection />
+              ) : (
+                <BootcampDisplayWrapper>
+                  {data.map((item) => (
+                    <CourseItem data={item} />
+                  ))}
+                </BootcampDisplayWrapper>
+              )}
+            </React.Fragment>
+          </Box>
+        </SectionWrapper2>
+
+        <FaqSection />
+        <Footer />
+      </RelativeWrapper>
+    </RelativeWrapper>
   );
 }
 

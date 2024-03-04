@@ -3,36 +3,26 @@ import {
   Flex,
   Input,
   InputGroup,
-  InputRightElement,
   InputLeftElement,
   Text,
   Box,
   Icon,
-  Select,
   Menu,
   MenuButton,
   MenuList,
   MenuItem,
 } from "@chakra-ui/react";
 import React from "react";
-import { FiChevronDown, FiChevronRight, FiSearch, FiX } from "react-icons/fi";
+import { FiChevronDown, FiSearch, FiX } from "react-icons/fi";
 import useResponsive from "../../../hooks/useResponsive";
 import { colors } from "../../../constants/design";
 import CustomHeading from "../../../components/heading/Custom-Heading";
+import BaseButton from "../../../components/button/BaseButton";
 
 function BootcampQuerySection({ actions, faculty, faculties, search }) {
   const borderStyle = "1px solid " + colors.primaryGrad + "50";
   const media = useResponsive();
 
-  const customStyles = {
-    // Style the dropdown container
-    control: (provided) => ({
-      ...provided,
-      borderRadius: "8px",
-      boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
-      border: "1px solid #E2E8F0",
-    }),
-  };
   return (
     <Flex
       justifyContent={
@@ -43,9 +33,17 @@ function BootcampQuerySection({ actions, faculty, faculties, search }) {
       flexDir={media.isDesktop ? "row" : "column"}
     >
       <Flex alignItems="center" fontFamily="mont">
-        <Button me="36px" size="sm" onClick={() => actions.toggleCourse()}>
-          All Courses
-        </Button>
+        <BaseButton
+          rightIcon={null}
+          title="All Courses"
+          me="36px"
+          bg={colors.accent}
+          size="md"
+          rounded="5px"
+          fontSize="14px"
+          minH="0px"
+          onClick={() => actions.toggleCourse()}
+        />
 
         <Box me="15px">
           <Menu>
@@ -54,12 +52,14 @@ function BootcampQuerySection({ actions, faculty, faculties, search }) {
               rightIcon={<FiChevronDown />}
               bg="white"
               border={borderStyle}
+              fontSize="14px"
             >
               Faculties
             </MenuButton>
             <MenuList>
               {Object.keys(faculties).map((item) => (
                 <MenuItem
+                fontSize="14px"
                   onClick={() => actions.toggleCourse(faculties[item].id)}
                 >
                   {faculties[item].title}
@@ -74,32 +74,34 @@ function BootcampQuerySection({ actions, faculty, faculties, search }) {
         )}
       </Flex>
 
-      <Flex>
-        <Flex
-          alignItems="center"
-          border={borderStyle}
-          rounded={5}
-          bg="white"
-          pe={5}
-          w="390px"
-        >
-          <InputGroup mt={!media.isDesktop && "50px"}>
-            <InputLeftElement pointerEvents="none">
-              <FiSearch color="gray.300" />
-            </InputLeftElement>
-            <Input
-              placeholder="Search course"
-              bg="white"
-              focusBorderColor="transparent"
-              border={"none"}
-              onChange={(e) => search.onQueryChanged(e.target.value)}
-              value={search.query}
-            />
-          </InputGroup>
+      <Flex
+        alignItems="center"
+        border={borderStyle}
+        rounded={5}
+        bg="white"
+        pe={media.isMobile || media.isTablet ? "10px" : 5}
+        w={media.isMobile || media.isTablet || media.isLaptop ? "100%" : "390px"}
+        mt={media.isMobile || media.isTablet || media.isLaptop  ? "50px" : null}
+      >
+        <InputGroup>
+          <InputLeftElement pointerEvents="none">
+            <FiSearch color="gray.300" />
+          </InputLeftElement>
+          <Input
+            placeholder="Search course"
+            bg="transparent"
+            focusBorderColor="transparent"
+            border={"none"}
+            onChange={(e) => search.onQueryChanged(e.target.value)}
+            fontSize="14px"
+            fontFamily="mont"
+            value={search.query}
+          />
+        </InputGroup>
 
-          <Icon as={FiX} cursor="pointer" onClick={search.reset} />
-        </Flex>
+        <Icon as={FiX} cursor="pointer" onClick={search.reset} />
       </Flex>
+
       {media.isMobile && (
         <CustomHeading
           title={faculty?.title}

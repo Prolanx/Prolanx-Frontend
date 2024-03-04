@@ -1,20 +1,12 @@
 import React from "react";
 import ChooseUsItem from "./Choose-Us-Item";
-import {
-  Box,
-  Center,
-  Divider,
-  Flex,
-  Heading,
-  SimpleGrid,
-} from "@chakra-ui/react";
+import { Box, Flex, SimpleGrid } from "@chakra-ui/react";
 import { colors } from "../../constants/design";
 
 import innovateIcon from "../../assets/innovation-icon.png";
 import knowledgeIcon from "../../assets/knowledge-icon.png";
 import solutionsIcon from "../../assets/solutions-icon.png";
 import excellenceIcon from "../../assets/excellence-icon.png";
-import SectionWrapper from "../../components/other/SectionWrapper";
 import useResponsive from "../../hooks/useResponsive";
 import SectionTitle from "../../components/title/Section-Title";
 import SectionWrapper2 from "../../components/other/SectionWrapper2";
@@ -54,7 +46,11 @@ function ChooseUsSection() {
   const media = useResponsive();
 
   return (
-    <SectionWrapper2 background={colors.primaryBg}>
+    <SectionWrapper2
+      background={colors.primaryBg}
+
+      // zIndex="300" pos="relative"
+    >
       <Box>
         <Flex justifyContent={media.isLargeScreen && "start"}>
           <SectionTitle
@@ -70,7 +66,7 @@ function ChooseUsSection() {
             media.isMobile ? 1 : media.isTablet ? 2 : media.isLaptop ? 3 : 4
           }
         >
-          {chooseUsOptions.map((item, index) => (
+          {chooseUsOptions.map((item) => (
             <ChooseUsItem data={item} icons={chooseUsIcons} />
           ))}
         </SimpleGrid>

@@ -10,21 +10,19 @@ import SectionWrapper2 from "../../../components/other/SectionWrapper2";
 
 function LearnSection() {
   const media = useResponsive();
-
   return (
     <Box
       backgroundImage={showcase}
       backgroundSize="cover"
       backgroundPosition="center"
       backgroundRepeat="no-repeat"
+      zIndex="300"
+      pos="relative"
     >
-      <SectionWrapper2>
-        <Flex
-          flexDir="column"
-          justifyContent="center"
-          color={colors.accent2}
-          pos="relative"
-        >
+
+      <Box bg="#00000050" w="100%" h="100%" pos="absolute"></Box>
+      <SectionWrapper2 zIndex="500" pos="relative">
+        <Flex flexDir="column" justifyContent="center" color={colors.accent2}>
           <Heading
             fontWeight="600"
             mb="44px"
@@ -47,11 +45,9 @@ function LearnSection() {
 
           <BorderedButton
             title="View our courses"
-            w="250px"
+            w={media.isMobile ? "100%" : "250px"}
             as={Link}
             to={appLinks.bootcampList}
-            zIndex="5000"
-            size="sm"
             color={colors.whiteText}
             _hover={{
               color: "black",

@@ -2,17 +2,30 @@ import { Drawer as ChakraDrawer, DrawerBody } from "@chakra-ui/react";
 import { DrawerContent, DrawerCloseButton } from "@chakra-ui/react";
 import { DrawerHeader, DrawerOverlay, DrawerFooter } from "@chakra-ui/react";
 
-function Drawer({ title, size, isShowFooter, children, controls, bodyPadding }) {
-  const { isOpen, onOpen, onClose } = controls;
+function Drawer({
+  title,
+  size,
+  isShowFooter,
+  children,
+  controls,
+  bodyPadding,
+}) {
+  const { isOpen, onClose } = controls;
 
   return (
-    <ChakraDrawer isOpen={isOpen} placement="left" onClose={onClose} size={size ||  "lg"}>
+    <ChakraDrawer
+      isOpen={isOpen}
+      placement="left"
+      onClose={onClose}
+      size={size || "lg"}
+    >
       <DrawerOverlay />
       <DrawerContent>
-        <DrawerCloseButton />
-        <DrawerHeader>{title}</DrawerHeader>
 
-        <DrawerBody px="15px">{children}</DrawerBody>
+        {onClose && <DrawerCloseButton />}
+        {title && <DrawerHeader>{title}</DrawerHeader>}
+
+        <DrawerBody px="0px">{children}</DrawerBody>
 
         {isShowFooter && (
           <DrawerFooter>

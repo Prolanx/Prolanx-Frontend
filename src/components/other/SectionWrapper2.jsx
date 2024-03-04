@@ -36,7 +36,7 @@ function SectionWrapper2({ children, ...props }) {
       //   alignItems={isTablet || isMobile ? "center" : "flex-start"}
       {...props}
     >
-      <Box maxWidth="1320px" width="100%" px={padding}>
+      <Box maxWidth="1320px"  width="100%" px={padding}>
         {children}
       </Box>
     </Box>

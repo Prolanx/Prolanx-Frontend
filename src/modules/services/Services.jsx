@@ -8,8 +8,8 @@ import serviceHub from "assets/service-hub.svg";
 import serviceInsight from "assets/service-insight.svg";
 import serviceInnovate from "assets/service-innovate.svg";
 import serviceTalent from "assets/service-talent.svg";
-import ServiceInfoSectionRegular from "./features/Service-Info-Section-Regular";
-import ServiceInfoSectionAlternate from "./features/Service-Info-Section-Alternate";
+import ServiceInfoRegular from "./features/Service-Info-Regular";
+import ServiceInfoAlternate from "./features/Service-Info-Alternate";
 import { colors } from "../../constants/design";
 import ChooseUsSection from "../../features/choose-us/Choose-Us-Section";
 import useCustomRouter from "../../hooks/useCustomRouter";
@@ -17,8 +17,12 @@ import { useParams } from "react-router";
 import { scroller } from "react-scroll";
 import Page from "../../Page";
 
+import SectionWrapper2 from "../../components/other/SectionWrapper2";
+import CurvyBackground from "../../components/other/CurvyBackground";
+import RelativeWrapper from "../../components/other/RelativeWrapper";
+import { servicesContent } from "./constants";
+
 function Services() {
-  const router = useCustomRouter();
   const params = useParams();
 
   const handleScroll = (section) => {
@@ -40,51 +44,65 @@ function Services() {
 
   return (
     <Page>
-      <Box fontFamily="mont">
+      <Box fontFamily="mont" pos="relative">
         <SecondaryIntro
           title="Services"
           message="Empowering your journey through cutting edge technogy and expertise"
           fontFamily="nexa"
         />
 
+        <CurvyBackground isRight={true} top="345px" />
         <div name={"academy"}>
-          <SectionWrapper>
-            <ServiceInfoSectionRegular
-              title="Prolanx Academy"
-              image={serviceAcademy}
-            />
-          </SectionWrapper>
+          <RelativeWrapper>
+            <CurvyBackground top="326px" />
+            <ServiceInfoRegular
+                heading="Prolanx Academy"
+                data={servicesContent.academy}
+                image={serviceAcademy}
+              />
+          </RelativeWrapper>
         </div>
 
         <div name={"innovate"}>
-          <ServiceInfoSectionAlternate
-            title="Prolanx Innovate"
+          <ServiceInfoAlternate
+            heading="Prolanx Innovate"
+            data={servicesContent.innovate}
             image={serviceInnovate}
             sideOverlayBg={colors.secondary3}
           />
         </div>
 
         <div name={"hub"}>
-          <SectionWrapper>
-            <ServiceInfoSectionRegular title="Prolanx Hub" image={serviceHub} />
-          </SectionWrapper>
+          <RelativeWrapper>
+            <CurvyBackground isRight={true} top="0px" />
+            <CurvyBackground top="483px" />
+            <ServiceInfoRegular
+                heading="Prolanx Hub"
+                data={servicesContent.hub}
+                image={serviceHub}
+              />
+          </RelativeWrapper>
         </div>
 
         <div name={"talent"}>
-          <ServiceInfoSectionAlternate
-            title="Prolanx Talent"
+          <ServiceInfoAlternate
+            heading="Prolanx Talent"
+            data={servicesContent.talent}
             image={serviceTalent}
-            sideOverlayBg={colors.primary2}
+            sideOverlayBg={colors.primary}
           />
         </div>
 
         <div name={"insight"}>
-          <SectionWrapper>
-            <ServiceInfoSectionRegular
-              title="Prolanx Insight"
-              image={serviceInsight}
-            />
-          </SectionWrapper>
+          <RelativeWrapper>
+            <CurvyBackground top="495px" />
+            <CurvyBackground isRight={true} top="0px" />
+            <ServiceInfoRegular
+                heading="Prolanx Insight"
+                data={servicesContent.insight}
+                image={serviceInsight}
+              />
+          </RelativeWrapper>
         </div>
 
         <ChooseUsSection />

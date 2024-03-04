@@ -20,22 +20,22 @@ function FacultyItemWrapper({
       rounded="8px"
       p={media.isDesktop ? "35px" : media.isTablet ? "25px" : "18px"}
       minW={media.isMobile ? "100%" : "467px"}
-      mb={!media.isDesktop && "35px"}
+      mb={media.isMobile || media.isTablet ? "35px" : "0px"}
       {...props}
     >
       <Image
-        h={media.isMobile ? "200px" : media.isTablet ? "248px" : "248px"}
+        h={media.isMobile ? "200px" : "248px"}
         w="100%"
         rounded="8px"
-        mb="16px"
-        bg="purple.400"
+        mb="36px"
         src={data?.image}
         objectFit="cover"
+        objectPosition="center"
       />
       <CustomHeading
         title={data?.title}
-        fontSize={media.isDesktop ? "20px" : media.isTablet ? "20px" : "18px"}
-        mb="27px"
+        fontSize={media.isMobile ? "18px" : "20px"}
+        mb="26px"
       />
 
       {children}

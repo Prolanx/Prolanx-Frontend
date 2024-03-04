@@ -25,7 +25,7 @@ export const appLinks = {
   services: "/services",
   bootcamp: "/bootcamp",
   bootcampInfo: "/bootcamp/info",
-  bootcampList: "/bootcamp/faculty",
+  bootcampList: "/bootcamp/collection",
   privacy: "/privacy",
   cookie: "/cookie",
   resources: "/resources",

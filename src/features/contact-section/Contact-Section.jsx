@@ -8,7 +8,9 @@ function ContactSection() {
   const media = useResponsive();
 
   return (
-    <Box pos="relative">
+    <Box pos="relative" zIndex="300">
+
+      
       <Image
         zIndex="100"
         w="100%"

@@ -1,15 +1,14 @@
 import { Box } from "@chakra-ui/react";
 import React from "react";
-
 import SecondaryIntro from "../../components/intro/Secondary-Intro";
-// import ContactSection from "../../components/contact-section/Contact-Section";
-
+import RelativeWrapper from "../../components/other/RelativeWrapper";
+import CurvyBackground from "../../components/other/CurvyBackground";
 import ContactSection from "../../features/contact-section/Contact-Section";
 import Footer from "../../components/footer/Footer";
 import TeamSection from "../../features/teams/TeamSection";
 import VisionSection from "./features/vision/VisionSection";
 import MissionSection from "./features/mission/Mission-Section";
-import useResponsive from "../../hooks/useResponsive";
+import IndexWrapper from "../../components/other/IndexWrapper";
 function About() {
   const vision = {
     title: "Our Vision",
@@ -36,7 +35,6 @@ function About() {
     ],
   };
 
-  const media = useResponsive();
   return (
     <Box>
       <SecondaryIntro
@@ -44,11 +42,31 @@ function About() {
         message="Crafted with passion, powered by innovation. Discover who we are, what drives us, and how we're making a difference"
       />
 
-      <VisionSection data={vision} />
+      <RelativeWrapper>
+        <CurvyBackground isRight={true} top="-170px" />
+        <IndexWrapper>
+          <VisionSection data={vision} />
+        </IndexWrapper>
+      </RelativeWrapper>
 
-      <MissionSection data={mission} />
-      <TeamSection />
-      <ContactSection />
+      <RelativeWrapper>
+        <CurvyBackground top="-300px" />
+        <MissionSection data={mission} />
+      </RelativeWrapper>
+
+      <RelativeWrapper>
+        <CurvyBackground isRight={true} top="-170px" />
+        <IndexWrapper>
+          <TeamSection />
+        </IndexWrapper>
+      </RelativeWrapper>
+
+      <RelativeWrapper>
+        <CurvyBackground top="-300px" />
+        <IndexWrapper>
+          <ContactSection />
+        </IndexWrapper>
+      </RelativeWrapper>
       <Footer />
     </Box>
   );

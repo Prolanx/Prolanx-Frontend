@@ -13,13 +13,12 @@ function BaseButton({ title, ...props }) {
       iconSpacing="30px"
       rightIcon={<FiLogIn />}
       fontFamily="mont"
-      size={media.isDesktop ? "md" : "sm"}
+      fontSize={media.isMobile || media.isTablet ? "16px": "20px"}
+      size={media.isMobile ? "md" : "lg"}
       bg={colors.accent}
       _hover={{
         bg: colors.accent,
       }}
-      //   fontSize="18px"
-      //   alignItems="center"
       {...props}
     >
       {title}

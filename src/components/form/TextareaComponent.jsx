@@ -6,13 +6,13 @@ import { Field, useField } from "formik";
 function TextAreaComponent({ label, ...props }) {
   const [field, meta] = useField(props);
   return (
-    <FormControl mb={3} isInvalid={meta.error && meta.touched}>
+    <FormControl mb={4} isInvalid={meta.error && meta.touched}>
       {label && (
         <Box mb={2}>
           <FormLabel fontWeight="500">{label}</FormLabel>
         </Box>
       )}
-      <Field as={Textarea} bg="white" minH="120px" maxH="120px" {...field} {...props} />
+      <Field as={Textarea} bg="white"  fontFamily="mont" minH="120px" maxH="120px" {...field} {...props} />
       <FormErrorMessage>{meta.error}</FormErrorMessage>
     </FormControl>
   );

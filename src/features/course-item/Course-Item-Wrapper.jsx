@@ -17,16 +17,17 @@ function CourseItemWrapper({
 
   return (
     <Box
+      pos="relative"
       border={borderStyle}
       rounded="8px"
       p={media.isMobile ? "20px 15px" : media.isTablet ? "25px 20px" : "32px"}
-      maxW={media.isMobile ? "100%" : "378px"}
-      // maxH="450px"
-      // mb={!media.isDesktop && "35px"}
+      pb="80px"
+      maxW={media.isMobile || media.isTablet ? "100%"  : "100%"}
+      minH="250px"
       {...props}
     >
       <Image
-        h={media.isMobile ? "180px": "215px"}
+        h={media.isMobile ? "180px" : "215px"}
         rounded="8px"
         w="100%"
         mb="36px"
@@ -37,8 +38,9 @@ function CourseItemWrapper({
         {...imageProps}
       />
       <CustomHeading title={data?.title} fontSize="20px" mb="26px" />
-
-      {children}
+      <Box pos="absolute" bottom="30px">
+        {children}
+      </Box>
     </Box>
   );
 }

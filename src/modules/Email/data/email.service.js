@@ -1,7 +1,4 @@
-import axios from "axios";
-let BASE_URL = "http://localhost:5000/";
-const index = BASE_URL + "send-email/";
-const route = { index, singleRecepient: index + "single" };
+import { api as apiInstance } from "../../../config/axios";
 
 const token = localStorage.getItem("token");
 const headers = {
@@ -9,10 +6,15 @@ const headers = {
   Authorization: "Bearer " + token, // Example authorization header, adjust as needed
   // Add any other headers you require
 };
+
+const BASE_URL = ""/// Need to change the base url
+const index = BASE_URL + "send-email/";
+const route = { singleRecepient: index + "single" };
+
 export const sendMail = async (payload) => {
   try {
-    let result = await axios.post(route.singleRecepient, payload, { headers });
-    console.log("result ", result);
+    let result = await apiInstance.post(route.singleRecepient, payload, { headers });
+    // console.log("result ", result);
     return {
       status: "success",
       message: "Email has been sent successfully.",
@@ -20,7 +22,7 @@ export const sendMail = async (payload) => {
     };
     // return validateResponse(result);
   } catch (error) {
-    console.log("error ", error);
+    // console.log("error ", error);
     return {
       status: "error",
       message: "There was an error sending the mail",

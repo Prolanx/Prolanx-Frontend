@@ -1,6 +1,6 @@
 import { Box, Button, Flex, Image, Text } from "@chakra-ui/react";
 import React from "react";
-import homeAboutImage from "../../../assets/home-about-image.svg";
+import homeAboutImage from "assets/home-about.svg";
 import useResponsive from "../../../hooks/useResponsive";
 import { Link } from "react-router-dom";
 import { navLinks, routes } from "../../../constants";
@@ -16,8 +16,8 @@ function AboutSection() {
           <Image
             src={homeAboutImage}
             me={media.isDesktop && "144px"}
-            h={media.isTablet ? "350px" : media.isMobile ? "200px" : "auto"}
-            w={media.isTablet ? "350px" : media.isMobile ? "200px" : "auto"}
+            h={media.isTablet ? "350px" : media.isMobile ? "200px" : "495px"}
+            w={media.isTablet ? "350px" : media.isMobile ? "200px" : "495px"}
           />
         </Flex>
 
@@ -60,8 +60,9 @@ function AboutSection() {
             title="Learn more about us"
             as={Link}
             to={routes.about}
-            size={media.isMobile ? "sm" : "lg"}
+            // size={media.isMobile ? "lg" : "lg"}
             maxW={media.isMobile ? "100%" : "279px"}
+
           />
         </Flex>
       </Flex>

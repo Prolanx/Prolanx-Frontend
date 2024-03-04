@@ -44,16 +44,7 @@ function Home() {
 
       <ServiceSection />
       <ChooseUsSection />
-      <Box pos="relative" overflow="hidden">
-        <Image
-          src={logoBigLeft}
-          pos="absolute"
-          left="0px"
-          top="110px"
-          zIndex="1500"
-        />
-        <LearnSection />
-      </Box>
+      <LearnSection />
 
       {/* 
       <Box position="relative">
