@@ -19,7 +19,7 @@ function Header({ ...props }) {
     w="100%"
     bg={isHeaderFixed ? colors.whiteText : "transparent"}
     position={isHeaderFixed ? "fixed" : "relative"}
-    zIndex="2500"
+    zIndex="1000"
     transition=".5s"
     {...props}
   >
