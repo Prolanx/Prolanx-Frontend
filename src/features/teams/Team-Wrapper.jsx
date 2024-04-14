@@ -34,19 +34,38 @@ function TeamWrapper({ heading, message, list, ...props }) {
         <Flex
           overflowX={media.isMobile || media.isTablet ? "scroll" : "inherit"}
           w="100%"
-     
+          pos="relative"
+          zIndex="500"
           justifyContent={
-            media.isMobile ? "start" : media.isTablet ? "start" : "center"
+            media.isMobile ? "start" : media.isTablet ? "center" : "center"
           }
         >
-          {list.map((item, index) => (
-            <TeamCard
-              name={item.name}
-              role={item.role}
-              key={index}
-              me={index !== list.length - 1 && "20px"}
-            />
-          ))}
+          {media.isMobile ? (
+            <React.Fragment>
+              {list.map((item, index) => (
+                <TeamCard
+                  name={item.name}
+                  role={item.role}
+                  image={item.image}
+                  key={index}
+                  me={index !== list.length - 1 ? "20px" : "50px"}
+                  ms={index !== list.length - 1 && "50px"}
+                />
+              ))}
+            </React.Fragment>
+          ) : (
+            <React.Fragment>
+              {list.map((item, index) => (
+                <TeamCard
+                  name={item.name}
+                  role={item.role}
+                  image={item.image}
+                  key={index}
+                  me={index !== list.length - 1 && "20px"}
+                />
+              ))}
+            </React.Fragment>
+          )}
         </Flex>
       </Box>
     </SectionWrapper2>

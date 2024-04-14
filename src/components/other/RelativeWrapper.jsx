@@ -3,7 +3,7 @@ import React from "react";
 
 function RelativeWrapper({ children, ...props }) {
   return (
-    <Box pos="relative" {...props} >
+    <Box pos="relative" zIndex="200"{...props} >
       {children}
     </Box>
   );

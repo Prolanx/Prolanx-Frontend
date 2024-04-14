@@ -49,7 +49,16 @@ function AppRoutes() {
           </Page>
         }
       />
-      <Route path={routes.services} element={<Services />} />
+      <Route
+        path={routes.services}
+        element={
+          <Page>
+            <PageWrapper>
+              <Services />
+            </PageWrapper>
+          </Page>
+        }
+      />
       <Route
         path={routes.bootcamp}
         element={

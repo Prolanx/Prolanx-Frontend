@@ -20,7 +20,7 @@ function MobileNav() {
     isOpen: isMobileNavOpen,
   };
   return (
-    <Box pos="relative" zIndex="2000">
+    <Box pos="relative" zIndex="1500">
       <Drawer controls={controls} size="full">
         <SectionWrapper2 p="0px">
           <Flex

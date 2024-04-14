@@ -12,26 +12,25 @@ function Header({ ...props }) {
   const border = "1px solid " + colors.whiteText + "60";
   const borderFixed = "1px solid " + colors.primary + "30";
 
-  useScrollPosition()
+  useScrollPosition();
   return (
     <Box
-      borderBottom={isHeaderFixed ? borderFixed : border}
-      pos="relative"
-      w="100%"
-      bg={isHeaderFixed ? colors.whiteText : "transparent"}
-      position={isHeaderFixed ? "fixed" : "relative"}
-      zIndex="1000"
-      transition=".5s"
-      {...props}
-    >
-      {isHeaderFixed ? (
-        <HeaderContent
-          py={media.isMobile || media.isTablet ? "20px" : "10px"}
-        />
-      ) : (
-        <HeaderContent />
-      )}
-    </Box>
+    borderBottom={isHeaderFixed ? borderFixed : border}
+    w="100%"
+    bg={isHeaderFixed ? colors.whiteText : "transparent"}
+    position={isHeaderFixed ? "fixed" : "relative"}
+    zIndex="2500"
+    transition=".5s"
+    {...props}
+  >
+    {isHeaderFixed ? (
+      <HeaderContent
+        py={media.isMobile || media.isTablet ? "20px" : "10px"}
+      />
+    ) : (
+      <HeaderContent />
+    )}
+  </Box>
   );
 }
 

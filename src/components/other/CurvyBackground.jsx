@@ -12,6 +12,7 @@ function CurvyBackground({ isRight = false, top, ...props }) {
       left={!isRight && "0px"}
       top={top}
       zIndex="0"
+      opacity="0.8"
       {...props}
     />
   );

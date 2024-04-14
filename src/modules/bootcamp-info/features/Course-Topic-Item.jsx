@@ -2,13 +2,13 @@ import React from "react";
 import { Box, Flex, Heading, Text } from "@chakra-ui/react";
 import useResponsive from "../../../hooks/useResponsive";
 
-function CourseTopicItem({ data }) {
+function CourseTopicItem({ title, week }) {
   const media = useResponsive();
   return (
     <Flex
       flexDir={media.isMobile || media.isTablet ? "column" : "row"}
-      alignItems={media.isMobile || media.isTablet ? "flex-start": "center"}
-      p="12px 0px"
+      alignItems={media.isMobile || media.isTablet ? "flex-start" : "center"}
+      p="15px 0px"
       borderTop="1px solid #00000020"
     >
       <Heading
@@ -16,12 +16,16 @@ function CourseTopicItem({ data }) {
         fontWeight="700"
         fontFamily="nexa"
         minW="fit-content"
-        me={5}
         mb={media.isMobile || media.isTablet ? "10px" : "0px"}
       >
-        Week One
+        {"Week " + week}
       </Heading>
-      <Text>Lorem ipsum dolor sit amet consectetur adipisicing elit.</Text>
+      <Text
+        ms={media.isMobile || media.isTablet ? "0px" : "50px"}
+        fontFamily="mont"
+      >
+        {title}
+      </Text>
     </Flex>
   );
 }

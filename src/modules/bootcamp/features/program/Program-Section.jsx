@@ -76,7 +76,7 @@ function ProgramSection() {
       </SimpleGrid>
 
       <Flex justifyContent={media.isMobile || media.isTablet ? "center" : "flex-start"}>
-        <LinkButton title="View our courses" mt="36px" to={appLinks.bootcampList} pos="relative" />
+        <LinkButton title="View our courses" mt="36px" to={appLinks.bootcampList} />
       </Flex>
 
       {/* <BaseButton title={"jdgbjk"}/> */}

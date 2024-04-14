@@ -35,6 +35,7 @@ function SecondaryIntro({ title, message }) {
           fontSize={media.isDesktop ? "60px" : "25px"}
           w={media.isMobile || media.isTablet ? "100%" : "60%"}
           mb={media.isDesktop ? "50px" : "30px"}
+          lineHeight="50px"
           // mt={media.isMo ? "100px" : "30px"}
         >
           {title}

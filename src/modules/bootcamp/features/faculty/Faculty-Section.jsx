@@ -4,7 +4,7 @@ import FacultyItem from "./Faculty-Item";
 import CustomHeading from "../../../../components/heading/Custom-Heading";
 import HorizontalScroll from "../../../../components/other/HorizontalScroll";
 import SectionWrapper from "../../../../components/other/SectionWrapper";
-import { faculty } from "../../../../constants";
+import { faculty } from "constants";
 import useResponsive from "../../../../hooks/useResponsive";
 import SectionWrapper2 from "../../../../components/other/SectionWrapper2";
 

@@ -20,6 +20,7 @@ function BootcampInfo() {
   const priceProps = useCoursePrice();
 
   const data = useInitBootcampInfo();
+
   const scrollSections = {
     curriculum: "Curriculum",
     schedule: "Schedule",
@@ -122,9 +123,9 @@ function BootcampInfo() {
             </Box>
           </div>
 
-          <Box>
+          <div>
             <Box name={scrollSections.curriculum}>
-              <CoursePlanSection />
+              <CoursePlanSection data={  data.bootcamp} />
             </Box>
             <Box name={scrollSections.schedule}>
               <CourseScheduleSection />
@@ -136,7 +137,7 @@ function BootcampInfo() {
             <Box name={scrollSections.faq}>
               <CourseFaqSection name={scrollSections.faq} />
             </Box>
-          </Box>
+          </div>
         </Flex>
       </SectionWrapper2>
 

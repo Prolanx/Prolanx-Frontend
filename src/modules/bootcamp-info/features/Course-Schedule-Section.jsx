@@ -11,10 +11,10 @@ function CourseScheduleSection() {
     <CourseInfoComponent
       title="Schedule"
       subTitle="Live Classes and Mentorship"
-      message="The Full Stack Web Development course at Prolanx Academy spans 6 months,
+      message="Our bootcamps at Prolanx Academy spans 6 months,
     starting with 3 months of intensive training followed by 3 months of
     mentor-led project work. Initial training includes weekly sprints and
-    live sessions, focusing on core web development skills. In the latter
+    live sessions, focusing on core skills. In the latter
     half, students undertake capstone projects, fostering team collaboration
     and individual expertise. This structure ensures a balance of
     theoretical knowledge and practical application, culminating in a

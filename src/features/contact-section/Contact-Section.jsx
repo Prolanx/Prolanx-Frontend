@@ -9,8 +9,6 @@ function ContactSection() {
 
   return (
     <Box pos="relative" zIndex="300">
-
-      
       <Image
         zIndex="100"
         w="100%"

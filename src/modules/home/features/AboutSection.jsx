@@ -11,7 +11,7 @@ function AboutSection() {
   const media = useResponsive();
   return (
     <SectionWrapper2>
-      <Flex flexDir={media.isDesktop ? "row" : "column"} position="relative">
+      <Flex flexDir={media.isDesktop ? "row" : "column"}>
         <Flex justifyContent={!media.isDesktop && "center"}>
           <Image
             src={homeAboutImage}

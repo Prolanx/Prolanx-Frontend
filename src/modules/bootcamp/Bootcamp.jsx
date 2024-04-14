@@ -13,7 +13,7 @@ import FacultySection from "./features/faculty/Faculty-Section";
 import TechSection from "./features/tech-stacks/Tech-Section";
 import FaqSection from "../../features/faqs/Faq-Section";
 import RelativeWrapper from "../../components/other/RelativeWrapper";
-import IndexWrapper from "../../components/other/IndexWrapper";
+
 import CurvyBackground from "../../components/other/CurvyBackground";
 
 function Bootcamp() {
@@ -47,17 +47,17 @@ function Bootcamp() {
 
       <RelativeWrapper>
         <CurvyBackground top="24px" />
-        <IndexWrapper>
-        <TutorsSection />
-        </IndexWrapper>
+        {/* <IndexWrapper>
+     
+        </IndexWrapper> */}
+           <TutorsSection />
       
       </RelativeWrapper>
 
       <RelativeWrapper>
         <CurvyBackground isRight={true} top="66px" />
-        <IndexWrapper>
-          <FaqSection />
-        </IndexWrapper>
+        <FaqSection />
+       
       </RelativeWrapper>
 
       <Footer />

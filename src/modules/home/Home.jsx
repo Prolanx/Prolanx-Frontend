@@ -11,13 +11,15 @@ import LearnSection from "./features/LearnSection";
 import HomeIntroSection from "./features/Home-Intro-Section";
 import { scroller } from "react-scroll";
 import { useParams } from "react-router";
+import RelativeWrapper from "../../components/other/RelativeWrapper";
+import CurvyBackground from "../../components/other/CurvyBackground";
 
 function Home() {
   const params = useParams();
   const handleScroll = (section) => {
     const options = {
-      duration: 1200,
-      delay: 800,
+      duration: 700,
+      // delay: 800,
       smooth: true,
       offset: 50, // Scrolls to section + 50 pixels down the page
     };
@@ -32,33 +34,29 @@ function Home() {
   return (
     <Box overflowX="hidden">
       <HomeIntroSection />
-      <Image
-        src={logoBigRight}
-        pos="absolute"
-        right="0px"
-        top="476px"
-        zIndex="500"
-      />
 
-      <AboutSection />
+      <RelativeWrapper>
+        <CurvyBackground isRight={true} />
+        <AboutSection />
+      </RelativeWrapper>
 
-      <ServiceSection />
-      <ChooseUsSection />
+      <RelativeWrapper>
+        <CurvyBackground />
+        <ServiceSection />
+      </RelativeWrapper>
+
+      <RelativeWrapper>
+        <CurvyBackground isRight={true} />
+        <ChooseUsSection />
+      </RelativeWrapper>
+
       <LearnSection />
 
-      {/* 
-      <Box position="relative">
-        <Image
-          src={logoBigRight}
-          pos="absolute"
-          right="0px"
-          top="314px"
-          zIndex="1500"
-        />
-      </Box> */}
-
       <div name={"contact"}>
-        <ContactSection />
+        <RelativeWrapper>
+          <CurvyBackground />
+          <ContactSection />
+        </RelativeWrapper>
       </div>
 
       <Footer />

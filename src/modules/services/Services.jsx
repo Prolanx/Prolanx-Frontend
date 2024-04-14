@@ -51,53 +51,67 @@ function Services() {
           fontFamily="nexa"
         />
 
-        <CurvyBackground isRight={true} top="345px" />
+        {/* <CurvyBackground isRight={true} top="345px" /> */}
         <div name={"academy"}>
           <RelativeWrapper>
-            <CurvyBackground top="326px" />
+            {/* <CurvyBackground /> */}
+
+                <CurvyBackground isRight={true}  />
+
             <ServiceInfoRegular
-                heading="Prolanx Academy"
-                data={servicesContent.academy}
-                image={serviceAcademy}
-              />
+              heading="Prolanx Academy"
+              data={servicesContent.academy}
+              image={serviceAcademy}
+            />
           </RelativeWrapper>
         </div>
 
         <div name={"innovate"}>
-          <ServiceInfoAlternate
+
+
+        <RelativeWrapper>
+            <CurvyBackground  />
+        
+          
+
+<ServiceInfoAlternate
             heading="Prolanx Innovate"
             data={servicesContent.innovate}
             image={serviceInnovate}
             sideOverlayBg={colors.secondary3}
           />
+          </RelativeWrapper>
+       
         </div>
 
         <div name={"hub"}>
           <RelativeWrapper>
-            <CurvyBackground isRight={true} top="0px" />
-            <CurvyBackground top="483px" />
+            <CurvyBackground isRight={true} />
+        
             <ServiceInfoRegular
-                heading="Prolanx Hub"
-                data={servicesContent.hub}
-                image={serviceHub}
-              />
+              heading="Prolanx Hub"
+              data={servicesContent.hub}
+              image={serviceHub}
+            />
           </RelativeWrapper>
         </div>
 
         <div name={"talent"}>
-          <ServiceInfoAlternate
-            heading="Prolanx Talent"
-            data={servicesContent.talent}
-            image={serviceTalent}
-            sideOverlayBg={colors.primary}
-          />
+          <RelativeWrapper>
+            <CurvyBackground />
+            <ServiceInfoAlternate
+              heading="Prolanx Talent"
+              data={servicesContent.talent}
+              image={serviceTalent}
+              sideOverlayBg={colors.primary}
+            />
+          </RelativeWrapper>
         </div>
 
         <div name={"insight"}>
           <RelativeWrapper>
-            <CurvyBackground top="495px" />
-            <CurvyBackground isRight={true} top="0px" />
-            <ServiceInfoRegular
+            <CurvyBackground isRight={true} />
+              <ServiceInfoRegular
                 heading="Prolanx Insight"
                 data={servicesContent.insight}
                 image={serviceInsight}
@@ -105,7 +119,10 @@ function Services() {
           </RelativeWrapper>
         </div>
 
-        <ChooseUsSection />
+        <RelativeWrapper>
+          <CurvyBackground top="-200px" />
+          <ChooseUsSection />
+        </RelativeWrapper>
 
         <Footer />
       </Box>

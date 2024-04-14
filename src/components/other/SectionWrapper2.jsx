@@ -33,7 +33,8 @@ function SectionWrapper2({ children, ...props }) {
       display="flex"
       justifyContent="center"
       py="70px"
-      //   alignItems={isTablet || isMobile ? "center" : "flex-start"}
+      pos="relative"
+      zIndex="300"
       {...props}
     >
       <Box maxWidth="1320px"  width="100%" px={padding}>
@@ -44,23 +45,3 @@ function SectionWrapper2({ children, ...props }) {
 }
 
 export default SectionWrapper2;
-
-// <Flex
-//       p={
-//         media.isMobile
-//           ? "80px 20px"
-//           : media.isTablet
-//           ? "80px 50px"
-//           : media.is2xl
-//           ? "80px 400px"
-//           : media.is3Xl?
-//           "80px 650px":
-//           media.is4k ? "0px"
-
-//           : "80px 120px"
-//       }
-//       justifyContent="center"
-//       {...props}
-//     >
-//       {children}
-//     </Flex>

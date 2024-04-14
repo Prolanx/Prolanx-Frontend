@@ -3,8 +3,6 @@ import {
   AccordionButton,
   AccordionPanel,
   AccordionIcon,
-  Box,
-  Divider,
   Spacer,
 } from "@chakra-ui/react";
 

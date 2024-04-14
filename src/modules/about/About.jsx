@@ -8,8 +8,18 @@ import Footer from "../../components/footer/Footer";
 import TeamSection from "../../features/teams/TeamSection";
 import VisionSection from "./features/vision/VisionSection";
 import MissionSection from "./features/mission/Mission-Section";
-import IndexWrapper from "../../components/other/IndexWrapper";
+import { scroller } from "react-scroll";
+
 function About() {
+  const handleScroll = (section) => {
+    const options = {
+      duration: 600,
+      // delay: 100,
+      smooth: true,
+      offset: 50, // Scrolls to section + 50 pixels down the page
+    };
+    scroller.scrollTo(section, options);
+  };
   const vision = {
     title: "Our Vision",
     subTitle: "We aspire to be global leader in the IT Industry",
@@ -36,7 +46,7 @@ function About() {
   };
 
   return (
-    <Box>
+    <Box overflowX="hidden">
       <SecondaryIntro
         title="About Us"
         message="Crafted with passion, powered by innovation. Discover who we are, what drives us, and how we're making a difference"
@@ -44,9 +54,7 @@ function About() {
 
       <RelativeWrapper>
         <CurvyBackground isRight={true} top="-170px" />
-        <IndexWrapper>
-          <VisionSection data={vision} />
-        </IndexWrapper>
+        <VisionSection data={vision} handleScroll={handleScroll} />
       </RelativeWrapper>
 
       <RelativeWrapper>
@@ -55,18 +63,21 @@ function About() {
       </RelativeWrapper>
 
       <RelativeWrapper>
-        <CurvyBackground isRight={true} top="-170px" />
-        <IndexWrapper>
-          <TeamSection />
-        </IndexWrapper>
+
+      <TeamSection />
+        <CurvyBackground isRight={true} top="0px" />
+
       </RelativeWrapper>
 
-      <RelativeWrapper>
+      <div name="contact-section">
+        <RelativeWrapper>
+          
+        <ContactSection />
         <CurvyBackground top="-300px" />
-        <IndexWrapper>
-          <ContactSection />
-        </IndexWrapper>
-      </RelativeWrapper>
+          
+        </RelativeWrapper>
+      </div>
+
       <Footer />
     </Box>
   );

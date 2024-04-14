@@ -7,21 +7,17 @@ import AccordionItemComponent from "../../../components/accordion/Accordion-Item
 import { Box, Flex, Heading, Text } from "@chakra-ui/react";
 import CourseTopicItem from "./Course-Topic-Item";
 
-function CourseTopicSection({ data }) {
-  const media = useResponsive();
+function CourseTopicSection({ weeks, message }) {
+  // const media = useResponsive();
   return (
-    <Box px={"20px"} py="20px"  >
+    <Box px={"20px"} py="20px">
       <Text fontSize="16px" fontFamily="mont" mb={"30px"}>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
-        error iure natus mollitia beatae fugit aut recusandae eveniet
-        exercitationem. Minima.
+        {message}
       </Text>
 
-      <CourseTopicItem />
-      <CourseTopicItem />
-      <CourseTopicItem />
-      <CourseTopicItem />
-
+      {Object.keys(weeks).map((item) => (
+        <CourseTopicItem week={item} title={weeks[item]} />
+      ))}
     </Box>
   );
 }

@@ -9,7 +9,7 @@ import {
   ModalCloseButton,
 } from "@chakra-ui/react";
 
-function Modal({ isOverlayClose, isHideCloseButton, size, isOpen, reset, children }) {
+function Modal({ isOverlayClose, isHideCloseButton, isCentered, size, isOpen, reset, children }) {
   // const { isOverlayClose, isHideCloseButton, size, isCentered } = config;
 
   return (
@@ -19,13 +19,15 @@ function Modal({ isOverlayClose, isHideCloseButton, size, isOpen, reset, childre
       onClose={reset}
       blockScrollOnMount={true} /// blocks background scrolling
       scrollBehavior="outside" // inside
-      isCentered={true}
-      closeOnOverlayClick={isOverlayClose}
+      isCentered={isCentered || true}
+      closeOnOverlayClick={isOverlayClose || true}
       motionPreset="slideInBottom" //scale slideInBotttom
     >
       <ChakraModalOverlay backdropFilter="blur(5px) hue-rotate(10deg)" />
 
-      <ModalContent>
+      {children}
+
+      {/* <ModalContent>
         <ModalHeader mb={3}>
           {!isHideCloseButton && <ModalCloseButton onClick={reset} />}
         </ModalHeader>
@@ -33,7 +35,7 @@ function Modal({ isOverlayClose, isHideCloseButton, size, isOpen, reset, childre
         <ModalBody>{children}</ModalBody>
 
         <ModalFooter></ModalFooter>
-      </ModalContent>
+      </ModalContent> */}
     </ChakraModal>
   );
 }

@@ -7,8 +7,11 @@ import { FiLogIn } from "react-icons/fi";
 import useResponsive from "../../../../hooks/useResponsive";
 import SectionWrapper2 from "../../../../components/other/SectionWrapper2";
 
-function VisionSection({ data }) {
+import { scroller } from "react-scroll";
+
+function VisionSection({ data, handleScroll }) {
   const media = useResponsive();
+
   return (
     <SectionWrapper2>
       <Flex
@@ -56,6 +59,7 @@ function VisionSection({ data }) {
               h="51px"
               mt={media.isDesktop && "30px"}
               rightIcon={<FiLogIn />}
+              onClick={()=> handleScroll("contact-section")}
             >
               Get in touch with us
             </Button>
