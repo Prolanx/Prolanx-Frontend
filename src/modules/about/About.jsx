@@ -2,7 +2,7 @@ import { Box } from "@chakra-ui/react";
 import React from "react";
 import SecondaryIntro from "../../components/intro/Secondary-Intro";
 import RelativeWrapper from "../../components/other/RelativeWrapper";
-import CurvyBackground from "../../components/other/CurvyBackground";
+// import CurvyBackground from "../../components/other/CurvyBackground";
 import ContactSection from "../../features/contact-section/Contact-Section";
 import Footer from "../../components/footer/Footer";
 import TeamSection from "../../features/teams/TeamSection";
@@ -53,19 +53,21 @@ function About() {
       />
 
       <RelativeWrapper>
-        <CurvyBackground isRight={true} top="-170px" />
+    
         <VisionSection data={vision} handleScroll={handleScroll} />
+        {/* <CurvyBackground isRight={true} top="-170px" /> */}
       </RelativeWrapper>
 
       <RelativeWrapper>
-        <CurvyBackground top="-300px" />
+   
         <MissionSection data={mission} />
+             {/* <CurvyBackground top="-300px" /> */}
       </RelativeWrapper>
 
       <RelativeWrapper>
 
       <TeamSection />
-        <CurvyBackground isRight={true} top="0px" />
+        {/* <CurvyBackground isRight={true} top="0px" /> */}
 
       </RelativeWrapper>
 
@@ -73,7 +75,7 @@ function About() {
         <RelativeWrapper>
           
         <ContactSection />
-        <CurvyBackground top="-300px" />
+        {/* <CurvyBackground top="-300px" /> */}
           
         </RelativeWrapper>
       </div>

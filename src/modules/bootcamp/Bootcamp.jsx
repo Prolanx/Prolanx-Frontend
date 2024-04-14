@@ -26,27 +26,27 @@ function Bootcamp() {
     <Box bg={colors.whiteText} overflow="hidden">
       <SecondaryIntro title={intro.title} message={intro.message} />
       <RelativeWrapper>
-        <CurvyBackground top="-60px" />
+        {/* <CurvyBackground top="-60px" /> */}
         <ProgramSection />
       </RelativeWrapper>
 
       <RelativeWrapper>
-        <CurvyBackground isRight={true} top="-347px" />
+        {/* <CurvyBackground isRight={true} top="-347px" /> */}
         <TechSection />
       </RelativeWrapper>
 
       <RelativeWrapper>
-        <CurvyBackground />
+        {/* <CurvyBackground /> */}
         <FacultySection />
       </RelativeWrapper>
 
       <RelativeWrapper>
-        <CurvyBackground isRight={true} top="100px" />
+        {/* <CurvyBackground isRight={true} top="100px" /> */}
         <EnrollSection />
       </RelativeWrapper>
 
       <RelativeWrapper>
-        <CurvyBackground top="24px" />
+        {/* <CurvyBackground top="24px" /> */}
         {/* <IndexWrapper>
      
         </IndexWrapper> */}
@@ -55,7 +55,7 @@ function Bootcamp() {
       </RelativeWrapper>
 
       <RelativeWrapper>
-        <CurvyBackground isRight={true} top="66px" />
+        {/* <CurvyBackground isRight={true} top="66px" /> */}
         <FaqSection />
        
       </RelativeWrapper>

@@ -17,7 +17,7 @@ function TeamSection({ name, role, ...props }) {
     "Meet the minds driving our mission forward. Our team brings a wealth of experience, passion & unique talents that make us a powerhouse of creativity and collaboration";
     // Our diverse team of innovative thinkers 
 
-  return <TeamWrapper heading={title} message={message} list={members} zIndex="200" />;
+  return <TeamWrapper heading={title} message={message} list={members} />;
 }
 
 export default TeamSection;

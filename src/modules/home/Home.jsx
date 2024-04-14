@@ -12,7 +12,7 @@ import HomeIntroSection from "./features/Home-Intro-Section";
 import { scroller } from "react-scroll";
 import { useParams } from "react-router";
 import RelativeWrapper from "../../components/other/RelativeWrapper";
-import CurvyBackground from "../../components/other/CurvyBackground";
+// import CurvyBackground from "../../components/other/CurvyBackground";
 
 function Home() {
   const params = useParams();
@@ -36,17 +36,17 @@ function Home() {
       <HomeIntroSection />
 
       <RelativeWrapper>
-        <CurvyBackground isRight={true} />
+        {/* <CurvyBackground isRight={true} /> */}
         <AboutSection />
       </RelativeWrapper>
 
       <RelativeWrapper>
-        <CurvyBackground />
+        {/* <CurvyBackground /> */}
         <ServiceSection />
       </RelativeWrapper>
 
       <RelativeWrapper>
-        <CurvyBackground isRight={true} />
+        {/* <CurvyBackground isRight={true} /> */}
         <ChooseUsSection />
       </RelativeWrapper>
 
@@ -54,7 +54,7 @@ function Home() {
 
       <div name={"contact"}>
         <RelativeWrapper>
-          <CurvyBackground />
+          {/* <CurvyBackground /> */}
           <ContactSection />
         </RelativeWrapper>
       </div>

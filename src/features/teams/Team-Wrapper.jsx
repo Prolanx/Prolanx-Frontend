@@ -9,7 +9,7 @@ function TeamWrapper({ heading, message, list, ...props }) {
   const media = useResponsive();
   return (
     <SectionWrapper2 {...props}>
-      <Box minW="100%">
+      <Box minW="100%" >
         <Flex flexDir="column" alignItems="center" textAlign="center">
           <CustomHeading
             title={heading}

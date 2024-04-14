@@ -18,7 +18,7 @@ import { scroller } from "react-scroll";
 import Page from "../../Page";
 
 import SectionWrapper2 from "../../components/other/SectionWrapper2";
-import CurvyBackground from "../../components/other/CurvyBackground";
+// import CurvyBackground from "../../components/other/CurvyBackground";
 import RelativeWrapper from "../../components/other/RelativeWrapper";
 import { servicesContent } from "./constants";
 
@@ -54,9 +54,9 @@ function Services() {
         {/* <CurvyBackground isRight={true} top="345px" /> */}
         <div name={"academy"}>
           <RelativeWrapper>
-            {/* <CurvyBackground /> */}
+        
 
-                <CurvyBackground isRight={true}  />
+                {/* <CurvyBackground isRight={true}  /> */}
 
             <ServiceInfoRegular
               heading="Prolanx Academy"
@@ -70,7 +70,7 @@ function Services() {
 
 
         <RelativeWrapper>
-            <CurvyBackground  />
+            {/* <CurvyBackground  /> */}
         
           
 
@@ -86,7 +86,7 @@ function Services() {
 
         <div name={"hub"}>
           <RelativeWrapper>
-            <CurvyBackground isRight={true} />
+            {/* <CurvyBackground isRight={true} /> */}
         
             <ServiceInfoRegular
               heading="Prolanx Hub"
@@ -98,7 +98,7 @@ function Services() {
 
         <div name={"talent"}>
           <RelativeWrapper>
-            <CurvyBackground />
+            {/* <CurvyBackground /> */}
             <ServiceInfoAlternate
               heading="Prolanx Talent"
               data={servicesContent.talent}
@@ -110,7 +110,7 @@ function Services() {
 
         <div name={"insight"}>
           <RelativeWrapper>
-            <CurvyBackground isRight={true} />
+            {/* <CurvyBackground isRight={true} /> */}
               <ServiceInfoRegular
                 heading="Prolanx Insight"
                 data={servicesContent.insight}
@@ -120,7 +120,7 @@ function Services() {
         </div>
 
         <RelativeWrapper>
-          <CurvyBackground top="-200px" />
+          {/* <CurvyBackground top="-200px" /> */}
           <ChooseUsSection />
         </RelativeWrapper>
 

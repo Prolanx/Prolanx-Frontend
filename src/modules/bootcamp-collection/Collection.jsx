@@ -18,8 +18,8 @@ function Courses() {
 
   return (
     <RelativeWrapper bg={colors.accent2}>
-      <CurvyBackground top="125px" />
-      <CurvyBackground top="204px" isRight={true} />
+      {/* <CurvyBackground top="125px" />
+      <CurvyBackground top="204px" isRight={true} /> */}
 
       <SecondaryIntro
         title={faculty ? faculty.title : "All Faculties"}
@@ -27,8 +27,8 @@ function Courses() {
       />
 
       <RelativeWrapper>
-        <CurvyBackground top="769px" />
-        <CurvyBackground top="1000px" isRight={true} />
+        {/* <CurvyBackground top="769px" />
+        <CurvyBackground top="1000px" isRight={true} /> */}
 
         <SectionWrapper2>
           <Box w="100%">

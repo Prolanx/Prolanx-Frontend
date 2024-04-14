@@ -34,7 +34,7 @@ function SectionWrapper2({ children, ...props }) {
       justifyContent="center"
       py="70px"
       pos="relative"
-      zIndex="300"
+      zIndex="500"
       {...props}
     >
       <Box maxWidth="1320px"  width="100%" px={padding}>
