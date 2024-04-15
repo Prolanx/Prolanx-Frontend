@@ -6,7 +6,7 @@ import { colors } from "../../../constants/design";
 import CourseInfoComponent from "../component/Course-Info-Component";
 import { Box, Button, Flex, Text } from "@chakra-ui/react";
 
-function BootcampPriceSection({ data }) {
+function BootcampPriceSection({ data, showAlert }) {
   const media = useResponsive();
   const border = "1px solid "+colors.primary+"90"
   return (
@@ -22,24 +22,24 @@ function BootcampPriceSection({ data }) {
         rounded="md"
         border={border}
       >
-        <Flex fontFamily="mont" alignItems="center" mb="36px">
+        <Flex fontFamily="mont" alignItems="center" mb="36px" fontSize={media.isMobile ? "12px" : "16px"}>
           <Flex
             border={border}
-            p="10px 16px"
+            p={media.isMobile ? "10px 8px" : "10px 16px"}
             cursor="pointer"
             onClick={() => {
               data.togglePayment(data.priceType.paynow);
             }}
           >
             <Text>Pay now</Text>
-            <Text  ms="20px" fontFamily="mont" bg={colors.accent} px="5px" rounded="md" >
-              save
+            <Text ms="10px" fontFamily="mont" h="fit-content" textAlign="center" bg={colors.accent} px="2px" rounded="md" >
+              save -100
             </Text>
           </Flex>
 
           <Text
             border={border}
-            p="10px 16px"
+            p={media.isMobile ? "10px 8px" : "10px 16px"}
             cursor="pointer"
             onClick={() => {
               data.togglePayment(data.priceType.monthly);
@@ -99,6 +99,7 @@ function BootcampPriceSection({ data }) {
           mb="36px"
           fontFamily="mont"
           bg={colors.accent}
+          onClick={showAlert}
         >
           Enroll Now
         </Button>

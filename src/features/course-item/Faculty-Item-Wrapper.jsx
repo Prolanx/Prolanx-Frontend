@@ -27,6 +27,7 @@ function FacultyItemWrapper({
         h={media.isMobile ? "200px" : "248px"}
         w="100%"
         rounded="8px"
+        bg="gray.100"
         mb="36px"
         src={data?.image}
         objectFit="cover"

@@ -31,6 +31,11 @@ function BootcampInfo() {
   const borderStyle = ".5px solid " + colors.primary + "80";
   const media = useResponsive();
 
+
+  const showAlert = () => {
+    alert("Enrollment is not opened yet. Please stay tuned")
+  }
+
   return (
     <Box bg={colors.whiteText}>
       
@@ -60,7 +65,7 @@ function BootcampInfo() {
               {data.bootcamp?.desc}
             </Text>
 
-            <Button size="md" h="50px" rightIcon={<FiLogOut />}>
+            <Button size="md" h="50px" rightIcon={<FiLogOut />} onClick={()=> showAlert()}>
               Enroll
             </Button>
           </Box>
@@ -117,6 +122,7 @@ function BootcampInfo() {
                 bg={colors.primary}
                 color={colors.accent2}
                 fontFamily="mont"
+                onClick={showAlert}
               >
                 Enroll
               </Button>
@@ -132,7 +138,7 @@ function BootcampInfo() {
             </Box>
 
             <Box name={scrollSections.price}>
-              <BootcampPriceSection data={priceProps} />
+              <BootcampPriceSection data={priceProps}  showAlert={showAlert}/>
             </Box>
             <Box name={scrollSections.faq}>
               <CourseFaqSection name={scrollSections.faq} />

@@ -31,7 +31,7 @@ function CourseItemWrapper({
         rounded="8px"
         w="100%"
         mb="36px"
-        bg="purple.400"
+        bg="gray.100"
         src={data?.image}
         objectFit="cover"
         objectPosition="center"
