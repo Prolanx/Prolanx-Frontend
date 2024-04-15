@@ -32,7 +32,7 @@ function EnrollSection() {
       image: agileIcon,
     },
     {
-      title: "Portfolion and CV Building",
+      title: "Portfolio and CV Building",
       message:
         "The mentorship session guide students in creating a professional portfolio and CV, essential tools for their career search",
       image: portfolioIcon,

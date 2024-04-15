@@ -5,7 +5,7 @@ import teamTobi from "assets/team-tobi.png"
 
 function TutorsSection() {
   const tutors = [
-    { name: "Oluwatobi Akinwande", role: "Data Analytics",  image: teamTobi  },
+    { name: "Oluwatobi Akinwande", role: "Agile Training",  image: teamTobi  },
     { name: "Isreal Adebayo", role: "Graphics Design",  image: teamIsreal },
     // { name: "Temitope Daramola", role: "Fullstack Web Development",  image: teamTobi },
     // { name: "Ifeoluwa Adniji", role: "Motion Graphics & After-effects" },
