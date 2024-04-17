@@ -7,6 +7,21 @@ export const data = {
   facultyId,
   image:
     "https://images.pexels.com/photos/414974/pexels-photo-414974.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  price: {
+    dollar: {
+      fixed: 300,
+      plan: [150, 75, 75],
+      discount: 240,
+      save: 60
+    },
+    naira: {
+      fixed: "100 000",
+      plan: ["40, 000", "30, 000", "'30, 000"],
+      discount: "80, 000",
+      save: "20, 000"
+    },
+  },
+
   overview: {
     month1: {
       title: "Fundamentals of Graphic Design",

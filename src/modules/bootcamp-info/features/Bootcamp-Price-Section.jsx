@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import useResponsive from "../../../hooks/useResponsive";
 import PriceSummaryItem from "../component/Price-Summary-Item";
 import CourseBenefitItem from "../component/Course-Benefit-Item";
@@ -6,9 +6,67 @@ import { colors } from "../../../constants/design";
 import CourseInfoComponent from "../component/Course-Info-Component";
 import { Box, Button, Flex, Text } from "@chakra-ui/react";
 
-function BootcampPriceSection({ data, showAlert }) {
+function BootcampPriceSection({ data, price, bootcamp, isLocal, showAlert }) {
+  const currency = {
+    naira: "\u20A6",
+    dollar: "\u0024",
+  };
+
+  console.log("price ", price);
+  // if(!price?.dollar?.fixed) return
+
+  const dollar = price?.dollar;
+  const naira = price?.naira;
   const media = useResponsive();
-  const border = "1px solid "+colors.primary+"90"
+  const border = "1px solid " + colors.primary + "90";
+  console.log("price data", price);
+
+  const currentItem = {
+    fixed: null,
+    plan: null,
+    discount: null,
+    currency: null,
+    save: null,
+  };
+  const [current, setCurrent] = useState({ ...currentItem });
+
+  const handleCurrent = () => {
+    let item = { ...currentItem };
+    console.log("bootcamp state ", bootcamp);
+    const price = bootcamp?.price;
+    console.log("price state ", price);
+    if (isLocal) {
+      // set the local price data
+
+      item = {
+        fixed: price?.naira?.fixed,
+        plan: price?.naira?.plan,
+        discount: price?.naira?.discount,
+        currency: currency.naira,
+        save: price?.naira.save,
+      };
+    } else {
+      // set the foreign price data
+      item = {
+        fixed: price?.dollar?.fixed,
+        plan: price?.dollar?.plan,
+        discount: dollar?.discount,
+        currency: currency.dollar,
+        save: price?.dollar.save,
+      };
+    }
+
+    console.log("current item state ", item);
+    setCurrent(item);
+  };
+
+  useEffect(() => {
+    console.log("current changed ", current);
+  }, [current]);
+  useEffect(() => {
+    handleCurrent();
+  }, [bootcamp]);
+
   return (
     <CourseInfoComponent
       title="Pricing"
@@ -22,7 +80,12 @@ function BootcampPriceSection({ data, showAlert }) {
         rounded="md"
         border={border}
       >
-        <Flex fontFamily="mont" alignItems="center" mb="36px" fontSize={media.isMobile ? "12px" : "16px"}>
+        <Flex
+          fontFamily="mont"
+          alignItems="center"
+          mb="36px"
+          fontSize={media.isMobile ? "12px" : "16px"}
+        >
           <Flex
             border={border}
             p={media.isMobile ? "10px 8px" : "10px 16px"}
@@ -32,8 +95,16 @@ function BootcampPriceSection({ data, showAlert }) {
             }}
           >
             <Text>Pay now</Text>
-            <Text ms="10px" fontFamily="mont" h="fit-content" textAlign="center" bg={colors.accent} px="2px" rounded="md" >
-              save -100
+            <Text
+              ms="10px"
+              fontFamily="mont"
+              h="fit-content"
+              textAlign="center"
+              bg={colors.accent}
+              px="2px"
+              rounded="md"
+            >
+              save 20%
             </Text>
           </Flex>
 
@@ -53,19 +124,27 @@ function BootcampPriceSection({ data, showAlert }) {
         <Box>
           {data.isPayNow && (
             <Text mb="36px" fontSize="24px" fontWeight="600" fontFamily="mont">
-              Pay today and save {data.currency} {data.price.discount}
+              Pay today and save {current.currency} {current.save}
             </Text>
           )}
 
           <Flex fontSize="28px" fontFamily="mont" mb="36px" alignItems="center">
-            {data.isPayNow && (
-              <Text textDecor="line-through" me={5}>
-                {data.currency} {data.price.initial}
-              </Text>
+            {data.isPayNow ? (
+              <React.Fragment>
+                <Text textDecor="line-through" me={5}>
+                  {current.currency} {current.fixed}
+                </Text>
+                <Text>
+                  {current.currency} {current.discount}
+                </Text>
+              </React.Fragment>
+            ) : (
+              <React.Fragment>
+                <Text>
+                  {current.currency} {current.fixed}
+                </Text>
+              </React.Fragment>
             )}
-            <Text>
-              {data.currency} {data.price.total}
-            </Text>
           </Flex>
         </Box>
 
@@ -73,23 +152,45 @@ function BootcampPriceSection({ data, showAlert }) {
         <React.Fragment>
           <PriceSummaryItem
             title="12 weeks Bootcamp "
-            value={data.currency + data.price.initial}
+            value={current.currency + current.fixed}
           />
-          <PriceSummaryItem
-            title="Save Today "
-            titleProps={{
-              fontSize: "16px",
-              bg: colors.accent,
-              p: "2px 4px",
+       
+          {data.isPayNow ? (
+            <PriceSummaryItem
+              title="Save Today "
+              titleProps={{
+                fontSize: "16px",
+                bg: colors.accent,
+                p: "2px 4px",
 
-              rounded: "5px",
-            }}
-            value={"-" + data.currency + data.price.discount}
-          />
-          <PriceSummaryItem
-            title="Total "
-            value={data.currency + data.price.total}
-          />
+                rounded: "5px",
+              }}
+              value={"-" + current.currency + current.save}
+            />
+          ) : (
+            <PriceSummaryItem
+              title="Save Today "
+              titleProps={{
+                fontSize: "16px",
+                bg: colors.accent,
+                p: "2px 4px",
+
+                rounded: "5px",
+              }}
+              value={"-" + current.currency + "0"}
+            />
+          )}
+          {data.isPayNow ? (
+            <PriceSummaryItem
+              title="Total "
+              value={current.currency + current.discount}
+            />
+          ) : (
+            <PriceSummaryItem
+              title="Total "
+              value={current.currency + current.fixed}
+            />
+          )}
         </React.Fragment>
 
         <Button

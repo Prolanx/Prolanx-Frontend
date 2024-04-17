@@ -6,6 +6,20 @@ export const data = {
   facultyId,
   image:
     "https://images.unsplash.com/photo-1587440871875-191322ee64b0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dWklMjB1eCUyMGRlc2lnbnxlbnwwfHwwfHx8MA%3D%3D",
+
+  price: {
+    dollars: {
+      fixed: 300,
+      plan: [150, 75, 75],
+      discount: 240,
+    },
+    naira: {
+      fixed: 100,
+      plan: [40, 30, 30],
+      discount: 80,
+    },
+  },
+
   overview: {
     month1: {
       title: "Fundamentals of UI/UX and Agile Practices",

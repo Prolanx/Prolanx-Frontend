@@ -12,13 +12,21 @@ export const useInitBootcampInfo = () => {
 
   const initPage = () => {
     // if id doesnt exist then redirect back to where they were coming from or home page
-    if (!id || id === "") return router.navigate(appLinks.bootcampList, true);
-    courses.map((item) => item.id == id && setBootcamp(item));
+    if (!id || id === "") {
+      return router.navigate(appLinks.bootcampList, true);
+    }
+    courses.map((item, index) => {
+      item.id === id && setBootcamp(item);
+    });
   };
 
   useEffect(() => {
     initPage();
-  }, [id]);
+  }, []);
+
+  useEffect(() => {
+    console.log("bootcamp changed", bootcamp);
+  }, [bootcamp]);
 
   return {
     bootcamp,

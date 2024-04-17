@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import MobileNav from "./components/nav/Mobile-Nav";
-import AppRoutes from "./routes/AppRoutes"
-import useLocationHook from "./hooks/useLocationHook";
+import AppRoutes from "./routes/AppRoutes";
+
 function AppLayout() {
 
-  useLocationHook();
+  
   return (
     <React.Fragment>
       <MobileNav />

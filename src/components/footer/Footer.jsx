@@ -9,6 +9,7 @@ import { colors } from "../../constants/design";
 import { Link } from "react-router-dom";
 import { FaXTwitter, FaYoutube, FaInstagram } from "react-icons/fa6";
 import { FaFacebook } from "react-icons/fa6";
+import { FiLinkedin } from "react-icons/fi";
 
 function Footer() {
   const list = [
@@ -60,10 +61,11 @@ function Footer() {
     },
   ];
   const icons = [
-    { src: FaXTwitter, link: "/" },
+    { src: FaXTwitter, link: "https://x.com/Prolanxdigital" },
     { src: FaFacebook, link: "/" },
     { src: FaYoutube, link: "/" },
-    { src: FaInstagram, link: "/" },
+    { src: FiLinkedin, link: "https://www.linkedin.com/company/prolanx/" },
+    { src: FaInstagram, link: "https://www.instagram.com/prolanx_digital/" },
   ];
 
   const copyrightLinks = [
@@ -97,13 +99,18 @@ function Footer() {
 
           <Flex justifyContent={media.isMobile ? "flex-start" : "flex-end"}>
             {icons.map((item) => (
-              <Icon
+
+              <Link to={item.link}>
+     <Icon
                 // src={item.src}
+              
                 as={item.src}
                 fontSize="24px"
                 cursor="pointer"
                 me={media.isDesktop ? "18px" : "25px"}
               />
+              </Link>
+         
             ))}
           </Flex>
         </SimpleGrid>

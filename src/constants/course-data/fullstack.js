@@ -4,6 +4,20 @@ export const data = {
   title: "Full Stack Web Development Bootcamp",
   desc: "Delve into the dynamic world of full-stack web development with our immersive bootcamp. In the program, you'll dive deep into both front-end & back-end technologies, mastering languages such as HTML, CSS, JavaScript, and frameworks like React and Nodejs. Through hands-on projects and real-world scenarios, you'll gain practical experience in building responsive and scalable web applications using industry standard technologies",
   facultyId: facultyId,
+  price: {
+    dollar: {
+      fixed: 600,
+      plan: [300, 150, 150],
+      discount: 480,
+      save: 120
+    },
+    naira: {
+      fixed: "250, 000",
+      plan: ["100, 000", "75, 000", "75, 000"],
+      discount: "200, 000",
+      save: "50,000"
+    }
+  }, 
   image:
     "https://images.unsplash.com/photo-1603969072881-b0fc7f3d77d7?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   overview: {

@@ -62,7 +62,7 @@ function HomeIntroSection() {
               fontFamily="mont"
               mb="70px"
             >
-              Empowering your journey through cutting edge technogly and
+              Empowering your journey through cutting edge technology and
               expertise
             </Text>
           </Box>

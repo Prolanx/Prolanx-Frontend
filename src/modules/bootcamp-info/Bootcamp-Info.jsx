@@ -1,5 +1,5 @@
 import { Flex, Text, Box, Image, Button } from "@chakra-ui/react";
-import React from "react";
+import React, { useContext } from "react";
 import { colors } from "../../constants/design";
 import SecondaryIntro from "../../components/intro/Secondary-Intro";
 import Footer from "../../components/footer/Footer";
@@ -15,11 +15,18 @@ import CoursePlanSection from "./features/Course-Plan-Section";
 import CourseFaqSection from "./features/Course-Faq-Section";
 import SectionWrapper2 from "../../components/other/SectionWrapper2";
 import FaqSection from "../../features/faqs/Faq-Section";
+import { AppContext } from "../../App-Provider";
 
 function BootcampInfo() {
   const priceProps = useCoursePrice();
 
+  
+
+  const {isLocal} = useContext(AppContext)
+
   const data = useInitBootcampInfo();
+
+  console.log("bootcamp data ", data);
 
   const scrollSections = {
     curriculum: "Curriculum",
@@ -31,14 +38,12 @@ function BootcampInfo() {
   const borderStyle = ".5px solid " + colors.primary + "80";
   const media = useResponsive();
 
-
   const showAlert = () => {
-    alert("Enrollment is not opened yet. Please stay tuned")
-  }
+    alert("Enrollment is not opened yet. Please stay tuned");
+  };
 
   return (
     <Box bg={colors.whiteText}>
-      
       <SecondaryIntro
         title={data.bootcamp?.title}
         // message="Empowering your journey through cutting edge technogy and expertise"
@@ -65,7 +70,12 @@ function BootcampInfo() {
               {data.bootcamp?.desc}
             </Text>
 
-            <Button size="md" h="50px" rightIcon={<FiLogOut />} onClick={()=> showAlert()}>
+            <Button
+              size="md"
+              h="50px"
+              rightIcon={<FiLogOut />}
+              onClick={() => showAlert()}
+            >
               Enroll
             </Button>
           </Box>
@@ -131,14 +141,26 @@ function BootcampInfo() {
 
           <div>
             <Box name={scrollSections.curriculum}>
-              <CoursePlanSection data={  data.bootcamp} />
+              <CoursePlanSection data={data.bootcamp} />
             </Box>
             <Box name={scrollSections.schedule}>
               <CourseScheduleSection />
             </Box>
 
             <Box name={scrollSections.price}>
-              <BootcampPriceSection data={priceProps}  showAlert={showAlert}/>
+              {/* {data.bootcamp && (
+ <BootcampPriceSection data={priceProps} price={data.bootcamp?.price}  showAlert={showAlert}/>
+              )} */}
+
+              <BootcampPriceSection
+                data={priceProps}
+                price={data.bootcamp?.price}
+                bootcamp={data.bootcamp}
+                showAlert={showAlert}
+                isLocal={isLocal}
+              />
+
+              
             </Box>
             <Box name={scrollSections.faq}>
               <CourseFaqSection name={scrollSections.faq} />

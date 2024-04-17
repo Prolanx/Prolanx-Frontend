@@ -15,6 +15,6 @@ export const courses = [
   { ...graphicsData },
 
   { ...fullstack },
-  { ...ui },
+  // { ...ui },
   // { ...dataAnalytics },
 ];

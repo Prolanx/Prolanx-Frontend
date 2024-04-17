@@ -2,12 +2,13 @@ import React from "react";
 import TeamWrapper from "../../../../features/teams/Team-Wrapper";
 import teamIsreal from "assets/team-israel.webp"
 import teamTobi from "assets/team-tobi.png"
+import teamTope from "assets/team-tope.jpg"
 
 function TutorsSection() {
   const tutors = [
     { name: "Oluwatobi Akinwande", role: "Agile Training",  image: teamTobi  },
-    { name: "Isreal Adebayo", role: "Graphics Design",  image: teamIsreal },
-    // { name: "Temitope Daramola", role: "Fullstack Web Development",  image: teamTobi },
+    { name: "Israel Adebayo", role: "Graphics Design",  image: teamIsreal },
+    { name: "Temitope Daramola", role: "Fullstack Web Development",  image: teamTope },
     // { name: "Ifeoluwa Adniji", role: "Motion Graphics & After-effects" },
   ];
   const title = "Learn Live From Experienced Tutors";
