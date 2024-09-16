@@ -29,6 +29,7 @@ export const appLinks = {
   privacy: "/privacy",
   cookie: "/cookie",
   resources: "/resources",
+  survey: "/survey"
 };
 
 export const routes = {

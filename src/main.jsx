@@ -6,8 +6,6 @@ import AppLayout from "./AppLayout.jsx";
 import AppProvider from "./App-Provider.jsx";
 import "./styles/main.css";
 
-
-
 ReactDOM.createRoot(document.getElementById("root")).render(
   <ChakraProvider>
     <HashRouter>

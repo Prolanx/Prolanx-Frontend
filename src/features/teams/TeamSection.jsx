@@ -7,10 +7,9 @@ import teamTope from "assets/team-tope.jpg"
 
 function TeamSection({ name, role, ...props }) {
   const members = [
-    { name: "Oluwatobi Akinwande", role: "Founder, Strategy Team Lead", image: teamTobi},
-    { name: "Isreal Adebayo", role: "Legal, Designs & Marketing", image: teamIsreal },
+    { name: "Oluwatobi Akinwande", role: "Business Analyst", image: teamTobi},
+    { name: "Israel Adebayo", role: "Legal, Designs & Marketing", image: teamIsreal },
     { name: "Temitope Daramola", role: "Fullstack Developer", image: teamTope },
-
   ];
 
   const title = "Our Team";

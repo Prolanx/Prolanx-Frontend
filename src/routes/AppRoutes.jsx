@@ -15,10 +15,21 @@ import { routes } from "../constants";
 import Page from "../Page";
 import PageWrapper from "../components/other/PageWrapper";
 import NotFound from "../modules/notFound/NotFound";
+import Survey from '../modules/survey/Survey';
 
 function AppRoutes() {
   return (
     <Routes>
+       <Route
+        path={routes.survey}
+        element={
+          <Page>
+            <PageWrapper>
+             <Survey/>
+            </PageWrapper>
+          </Page>
+        }
+      />
       <Route
         index
         element={
