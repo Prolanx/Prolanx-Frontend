@@ -10,7 +10,7 @@ function BaseButton({ title, ...props }) {
     <Button
       minH={media.isDesktop ? "51px" : "auto"}
       rounded="3px"
-      iconSpacing="30px"
+      // iconSpacing="30px"
       rightIcon={<FiLogIn />}
       fontFamily="mont"
       fontSize={media.isMobile || media.isTablet ? "16px": "20px"}

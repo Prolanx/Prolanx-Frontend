@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import BorderedButton from "../../../components/button/BorderedButton";
 import { appLinks, internshipLink } from "../../../constants";
 import SectionWrapper2 from "../../../components/other/SectionWrapper2";
+import LinkButton from '../../../components/button/LinkButton';
 
 function LearnSection() {
   const media = useResponsive();
@@ -48,18 +49,37 @@ function LearnSection() {
             journey. */}
           </Text>
 
-          <BorderedButton
-            title="Enroll Now"
-            w={media.isMobile ? "100%" : "250px"}
+
+<Flex>
+<BorderedButton
+            title="Learn More"
+            // w={media.isMobile ? "100%" : "250px"}
+            me="20px"
             as={Link}
             // to={appLinks.bootcampList}
-            to={internshipLink}
+            to={"/internship"}
             color={colors.whiteText}
             _hover={{
               color: "black",
               bg: colors.accent,
             }}
           />
+           <LinkButton title="Enroll Now"  to={internshipLink} />
+
+{/* <BorderedButton
+            title="Enroll Now"
+            w={media.isMobile ? "100%" : "250px"}
+            as={Link}
+          
+            to={internshipLink}
+            color={colors.whiteText}
+            _hover={{
+              color: "black",
+              bg: colors.accent,
+            }}
+          /> */}
+</Flex>
+        
         </Flex>
       </SectionWrapper2>
     </Box>
