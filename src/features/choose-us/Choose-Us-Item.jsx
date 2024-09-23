@@ -7,7 +7,7 @@ function ChooseUsItem({ data, icons, ...props }) {
   const media = useResponsive();
   return (
     <Box
-      p={media.isDesktop ? "26px 30px" : "26px 20px"}
+      p={media.isDesktop ? "30px 24px" : "26px 20px"}
       maxW={media.isDesktop && "283px"}
       border=".5px solid"
       borderColor={colors.secondaryAccent}
@@ -19,8 +19,9 @@ function ChooseUsItem({ data, icons, ...props }) {
       <Image src={icons[data.key]} mb="36px" h="50px" w="50px" />
 
       <Heading
-        mb="36px"
-        fontSize={media.isDesktop ? "28px" : "22px"}
+        minH="60px"
+        fontSize={media.isDesktop ? "23px" : "20px"}
+        w="100%"
         fontWeight="500"
         fontFamily="nexa"
       >
@@ -28,9 +29,10 @@ function ChooseUsItem({ data, icons, ...props }) {
       </Heading>
 
       <Text
-        fontSize={media.isDesktop ? "16px" : "14px"}
+        fontSize={media.isDesktop ? "14.5px" : "14px"}
         fontFamily="mont"
         color={colors.accent2}
+        mt="35px"
       >
         {data.message}
       </Text>

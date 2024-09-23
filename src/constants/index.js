@@ -67,6 +67,7 @@ import cloudComputing from "assets/cloud-computing.svg";
 import dataScience from "assets/data-science.svg";
 import { courses as courseData } from "./course-data";
 export { data as faqData } from "./faq.data";
+export { internshipFaq } from "./faq.data";
 // export { data } from './data';
 
 export const faculty = {
@@ -93,6 +94,18 @@ export const faculty = {
 
 
 export const courses = courseData 
+
+export const internshipSummary = [
+  { "message": "Core web development fundamentals (HTML5, CSS3, JavaScript basics)." },
+  { "message": "Advanced JavaScript, DOM manipulation, and Git for collaboration." },
+  { "message": "React fundamentals including component-based architecture, hooks, and state management." },
+  { "message": "Advanced React concepts like Context API, routing, and performance optimization." },
+  { "message": "Node.js and Express.js for building RESTful APIs." },
+  { "message": "MongoDB and Mongoose for database operations and relationships." },
+  { "message": "Fullstack integration with React and Node.js, and real-time applications using WebSockets." },
+  { "message": "Advanced authentication, web security, and testing practices." },
+  { "message": "DevOps essentials, including CI/CD, Docker, and cloud deployment." }
+]
 
 // export const courses = [
 //   {

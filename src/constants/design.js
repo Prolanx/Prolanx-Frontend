@@ -10,6 +10,8 @@ export const colors = {
     accent: "#48E1E5",
     black: "#2E3133",
     whiteText: "#F4FAFF",
+
+
     
   
     // others not tested yet

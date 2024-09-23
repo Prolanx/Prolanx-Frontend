@@ -8,7 +8,7 @@ import Header from '../../components/header/Header';
 import Form from './Form';
 import SectionWrapper2 from '../../components/other/SectionWrapper2';
 
-const Survey = () => {
+const Internship = () => {
 
   const iframeUrl = "https://tally.so/embed/wv4vXg?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
   // useEffect(() => {
@@ -61,4 +61,4 @@ const Survey = () => {
   );
 };
 
-export default Survey;
+export default Internship;

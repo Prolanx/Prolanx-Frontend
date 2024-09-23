@@ -27,4 +27,42 @@ export const data = [
   },
 ];
 
+
+
+
+export const internshipFaq = [
+  {
+    title: "What is the focus of this internship program?",
+    message: "The program focuses on fullstack web development, covering both frontend and backend technologies. Students will gain expertise in HTML, CSS, JavaScript, React, Node.js, Express, MongoDB, API design, and DevOps practices."
+  },
+  {
+    title: "Who is this program designed for?",
+    message: "This program is ideal for beginners who want to become fullstack developers, as well as intermediate learners looking to solidify their skills in modern web technologies."
+  },
+  {
+    title: "What is the duration of the program?",
+    message: "The program runs for 10 weeks, with each week focusing on a different set of core web development skills."
+  },
+  {
+    title: "What will I learn by the end of this program?",
+    message: "By the end of the program, you will be able to build fully responsive websites, dynamic web applications, secure APIs, and real-time features. You will also gain experience in deploying and managing applications in production environments."
+  },
+  {
+    title: "What equipment or software will I need?",
+    message: "You’ll need a computer with internet access. We recommend a machine capable of running a code editor (like VS Code) and a browser (preferably Chrome). All other software (like Node.js, Git, etc.) will be installed during the program."
+  },
+  {
+    title: "How much time should I dedicate to the course each week?",
+    message: "We recommend spending at least 10-15 hours per week on coursework, including watching tutorials, practicing coding exercises, and working on projects."
+  },
+  {
+    title: "Will I receive a certificate upon completion?",
+    message: "Yes, you will receive a certificate of completion, which you can showcase to potential employers or add to your LinkedIn profile and resume."
+  },
+  {
+    title: "Does this program prepare me for a job in web development?",
+    message: "Absolutely. The program is designed to give you practical, job-ready skills. You’ll work on real-world projects, develop a portfolio, and gain hands-on experience with industry-standard tools and practices."
+  }
+];
+
 // export default { data };

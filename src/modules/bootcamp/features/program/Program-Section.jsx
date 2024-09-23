@@ -12,7 +12,6 @@ import { appLinks } from "../../../../constants";
 
 function ProgramSection() {
   const media = useResponsive();
-
   return (
     <SectionWrapper2 pb="50px" pos="relative" zIndex="200">
       <Flex

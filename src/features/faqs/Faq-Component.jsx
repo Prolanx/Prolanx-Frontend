@@ -6,10 +6,10 @@ import AccordionComponent from "../../components/accordion/Accordion";
 import AccordionItemComponent from "../../components/accordion/Accordion-Item";
 
 
-function FaqComponent({ data }) {
+function FaqComponent({ data, ...props }) {
   const media = useResponsive();
   return (
-    <Box maxW="703px" bg={colors.primaryBg} color={colors.whiteText}>
+    <Box bg={colors.primaryBg} color={colors.whiteText} {...props}>
     <AccordionComponent allowToggle={true}>
       {data.map((item) => (
         <AccordionItemComponent title={item.title} bg={colors.whiteText} color={colors.black}>
@@ -18,8 +18,7 @@ function FaqComponent({ data }) {
             fontSize={media.isMobile ? "15px" : "15px"}
             bg={colors.whiteText}
             color={colors.black}
-            py="20px"
-            pb="50px"
+            py="15px"
             px="20px"
           >
             {item.message}

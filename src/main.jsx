@@ -8,12 +8,12 @@ import "./styles/main.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <ChakraProvider>
-    <HashRouter>
+    <BrowserRouter>
       <div className="App">
         <AppProvider>
           <AppLayout />
         </AppProvider>
       </div>
-    </HashRouter>
+    </BrowserRouter>
   </ChakraProvider>
 );

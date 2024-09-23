@@ -32,7 +32,7 @@ function SectionWrapper2({ children, ...props }) {
     <Box
       display="flex"
       justifyContent="center"
-      py="70px"
+      py="80px"
       pos="relative"
       zIndex="200"
       {...props}

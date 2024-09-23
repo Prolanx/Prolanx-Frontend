@@ -15,17 +15,18 @@ import { routes } from "../constants";
 import Page from "../Page";
 import PageWrapper from "../components/other/PageWrapper";
 import NotFound from "../modules/notFound/NotFound";
-import Survey from '../modules/survey/Survey';
+import Survey from "../modules/survey/Internship";
+import Internship from "../modules/internship/Internship";
 
 function AppRoutes() {
   return (
     <Routes>
-       <Route
+      <Route
         path={routes.survey}
         element={
           <Page>
             <PageWrapper>
-             <Survey/>
+              <Survey />
             </PageWrapper>
           </Page>
         }
@@ -116,6 +117,17 @@ function AppRoutes() {
           <Page>
             <PageWrapper>
               <CookiePage />
+            </PageWrapper>
+          </Page>
+        }
+      />
+
+      <Route
+        path={"internship"}
+        element={
+          <Page>
+            <PageWrapper>
+              <Internship />
             </PageWrapper>
           </Page>
         }
