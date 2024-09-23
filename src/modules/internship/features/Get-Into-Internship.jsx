@@ -7,11 +7,9 @@ import { colors } from "../../../constants/design";
 import womanOnLaptop from "assets/woman-on-laptop.png";
 import getIntoProgram1 from "assets/get-into-program-1.png";
 import getIntoProgram2 from "assets/get-into-program-2.png";
-import useResponsive from '../../../hooks/useResponsive';
+import useResponsive from "../../../hooks/useResponsive";
 
 function GetIntoInternship() {
-
-
   const media = useResponsive();
   const stages = [
     {
@@ -85,8 +83,9 @@ function GetIntoInternship() {
 
     return (
       <Flex
-        p="20px"
-        alignItems="center"
+        p={media.isMobile  ? "20px 15px" : "20px"}
+        alignItems={media.isMobile ? "flex-start" : "center"}
+        flexDir={media.isMobile ? "column" : "row"}
         borderBottom={!isLast && bb}
         fontFamily="mont"
         bg={isEven ? colorEven : colorOdd}
@@ -96,9 +95,16 @@ function GetIntoInternship() {
         borderBottomLeftRadius={isLast && "8px"}
         {...props}
       >
-        <Box>
-          <Center me="20px" bg={colors.accent} h="56px" w="56px" rounded="full">
-            <Text fontFamily="mont" fontSize="24px" m="20px">
+        <Box mb={media.isMobile && "20px"}>
+          <Center
+            me="20px"
+            bg={colors.accent}
+            h={media.isMobile || media.isTablet ? "40px" : "56px"}
+            w={media.isMobile || media.isTablet ? "40px" : "56px"}
+            rounded="full"
+
+          >
+            <Text fontFamily="mont" fontSize={media.isMobile ? "16px" : "24px"} m="20px" >
               {count}
             </Text>
           </Center>
@@ -127,16 +133,24 @@ function GetIntoInternship() {
 
   return (
     <SectionWrapper2 py="90px">
-
       <SectionTitle
         name="How to get into the programme"
-        w="30%"
+        w={
+          media.isMobile || media.isTablet
+            ? "100%"
+            : media.isLaptop
+            ? "50%"
+            : "30%"
+        }
         lineHeight="50px"
         borderBottom={"0px"}
       />
 
       <Flex alignItems="flex-end">
-        <Box me="49px" w="50%">
+        <Box
+          me={media.isMobile || media.isTablet ? "0px" : "49px"}
+          w={media.isMobile || media.isTablet ? "100%" : "50%"}
+        >
           {stages.map((item, index) => (
             <GetIntoItem
               count={index + 1}
@@ -149,17 +163,15 @@ function GetIntoInternship() {
           ))}
         </Box>
 
-
-{(!media.isMobile && !media.isTablet) && (
-   <SimpleGrid columns={2} spacingX="6px" w="50%">
-   <Box>
-     <SmallImage mb="5px" src={getIntoProgram1} />
-     <SmallImage src={getIntoProgram2} />
-   </Box>
-   <LargeImage src={womanOnLaptop} />
- </SimpleGrid>
-) }
-     
+        {!media.isMobile && !media.isTablet && (
+          <SimpleGrid columns={2} spacingX="6px" w="50%">
+            <Box>
+              <SmallImage mb="5px" src={getIntoProgram1} />
+              <SmallImage src={getIntoProgram2} />
+            </Box>
+            <LargeImage src={womanOnLaptop} />
+          </SimpleGrid>
+        )}
       </Flex>
     </SectionWrapper2>
   );

@@ -9,7 +9,7 @@ import AccordionItemComponent from "../../components/accordion/Accordion-Item";
 function FaqComponent({ data, ...props }) {
   const media = useResponsive();
   return (
-    <Box bg={colors.primaryBg} color={colors.whiteText} {...props}>
+    <Box bg={colors.primaryBg} color={colors.whiteText} w={media.isMobile || media.isTablet ? "100%": "70%"} {...props}>
     <AccordionComponent allowToggle={true}>
       {data.map((item) => (
         <AccordionItemComponent title={item.title} bg={colors.whiteText} color={colors.black}>

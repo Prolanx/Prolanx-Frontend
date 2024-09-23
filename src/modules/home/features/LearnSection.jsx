@@ -1,11 +1,12 @@
 import { Flex, Heading, Text, Box } from "@chakra-ui/react";
 import React from "react";
 import { colors } from "../../../constants/design";
-import showcase from "../../../assets/showcase.png";
+// import showcase from "../../../assets/showcase.png";
+import showcase from "assets/internship-home.jpg";
 import useResponsive from "../../../hooks/useResponsive";
 import { Link } from "react-router-dom";
 import BorderedButton from "../../../components/button/BorderedButton";
-import { appLinks } from "../../../constants";
+import { appLinks, internshipLink } from "../../../constants";
 import SectionWrapper2 from "../../../components/other/SectionWrapper2";
 
 function LearnSection() {
@@ -29,7 +30,9 @@ function LearnSection() {
             fontFamily="nexa"
             fontSize={media.isDesktop ? "40px" : "30px"}
           >
-            Ready to learn ?
+            {/* Ready to learn ? */}
+
+            Prolanx Internship
           </Heading>
 
           <Text
@@ -38,16 +41,19 @@ function LearnSection() {
             maxW="415px"
             fontFamily="mont"
           >
-            Our objective is to endow our students with a comprehensive set of
+            Join our three-month Full Stack Development Internship and become a competent, experienced, and confident developer
+
+            {/* Our objective is to endow our students with a comprehensive set of
             tools that will enable them to actively shape their own professional
-            journey.
+            journey. */}
           </Text>
 
           <BorderedButton
-            title="View our courses"
+            title="Enroll Now"
             w={media.isMobile ? "100%" : "250px"}
             as={Link}
-            to={appLinks.bootcampList}
+            // to={appLinks.bootcampList}
+            to={internshipLink}
             color={colors.whiteText}
             _hover={{
               color: "black",

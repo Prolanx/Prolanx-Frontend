@@ -92,6 +92,7 @@ export const faculty = {
   },
 };
 
+export const internshipLink = "https://tally.so/r/31vpvb";
 
 export const courses = courseData 
 

@@ -10,7 +10,7 @@ function SectionTitle({ name, title, ...props }) {
     <Heading
       pb="22px"
       display="inline-block"
-      fontSize={media.isMobile ? "16px" : "32px"}
+      fontSize={media.isMobile ? "25px" : "32px"}
       fontWeight="700"
       borderBottom={border}
       color={colors.black}

@@ -4,6 +4,7 @@ import TeamCard from "./TeamCard";
 import CustomHeading from "../../components/heading/Custom-Heading";
 import useResponsive from "../../hooks/useResponsive";
 import SectionWrapper2 from "../../components/other/SectionWrapper2";
+import SectionTitle from '../../components/title/Section-Title';
 
 function TeamWrapper({ heading, message, list, ...props }) {
   const media = useResponsive();
@@ -11,11 +12,12 @@ function TeamWrapper({ heading, message, list, ...props }) {
     <SectionWrapper2 {...props}>
       <Box minW="100%" >
         <Flex flexDir="column" alignItems="center" textAlign="center">
-          <CustomHeading
+          <SectionTitle
             title={heading}
-            mb="44px"
-            fontSize={media.isDesktop ? "32px" : "28px"}
+            mb={media.isMobile || media.isTablet ? "0px" : "30px"}
+            // fontSize={media.isDesktop ? "32px" : "28px"}
             fontWeight="semibold"
+            border="none"
           />
 
           <Text

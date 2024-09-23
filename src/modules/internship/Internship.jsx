@@ -23,7 +23,7 @@ const Internship = () => {
   const formLink = "https://tally.so/r/31vpvb";
   const sentence = "Become";
   const words = ["Competent", "Experienced", "Confident"];
-  const word = useTypewriterLastWord(sentence, words, 0.5, 2000);
+  const word = useTypewriterLastWord(sentence, words, 100, 2000);
 
   const enrollIcons = {
     training: innovateIcon,
