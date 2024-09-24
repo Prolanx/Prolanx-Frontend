@@ -37,7 +37,7 @@ function SectionWrapper2({ children, ...props }) {
       zIndex="200"
       {...props}
     >
-      <Box maxWidth="1320px"  width="100%" px={padding}>
+      <Box maxWidth="1320px" h="100%"  width="100%" px={padding}>
         {children}
       </Box>
     </Box>
