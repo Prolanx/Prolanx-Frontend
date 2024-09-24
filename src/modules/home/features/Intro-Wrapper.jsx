@@ -8,12 +8,11 @@ function IntroWrapper({ children, height, mobileHeight, ...props }) {
   const media = useResponsive();
 
   const introHeightDesktop = height || "646px"
-
   const introMobileHeight  =  mobileHeight || "85vh";
 
   return (
     <Box
-      height={media.isDesktop ? introHeightDesktop : introMobileHeight}
+      h={media.isDesktop ? introHeightDesktop : introMobileHeight}
       position="relative"
       {...props}
     >

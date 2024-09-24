@@ -20,16 +20,16 @@ function ChooseUsItem({ data, icons, ...props }) {
 
       <Heading
         minH="60px"
-        fontSize={media.isDesktop ? "23px" : "20px"}
+        fontSize={media.isDesktop ? "20px" : "20px"}
         w="100%"
         fontWeight="500"
-        fontFamily="nexa"
+        fontFamily="mont"
       >
         {data.title}
       </Heading>
 
       <Text
-        fontSize={media.isDesktop ? "14.5px" : "14px"}
+        fontSize={media.isDesktop ? "14.3px" : "14px"}
         fontFamily="mont"
         color={colors.accent2}
         mt="35px"
